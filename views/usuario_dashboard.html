@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/style_usuario_dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!--PARTE DE CIMA DA TELA-->
+    <header>
+        <div class="container">
+            <div class="icone_perfil">
+                <img src="../assents/img/icone_perfil.png" alt="icone perfil">
+            </div>
+
+            <div class="sair">
+                <ul>
+                    <li><a href="#">Sair</a>
+                        <img src="../assents/img/icone_sair.png" alt="icone_sair">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!--LADO ESQUERDO DA TELA-->
+        <div class="lado_esquerdo">
+            <div class="opcoes_laterais">
+                <ul>
+                    <li class="nome_cliente"><b>Brandão</b></li>
+                    <li class="icone_dashboard"><a href="#"><img src="../assents/img/icone_dashboard.png"
+                                alt="icone dashboard"><b>Dashboard</b></a></li>
+                    <li class="icone_add_perfil"><a href="#"><img src="../assents/img/icone_add_perfil.png"
+                                alt="icone add perfil">Add. <br> responsável</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--DASHBOARD-->
+        <div class="dashboard">
+            <h1>Olá Brandão, Bem vindo ao seu DashBoard</h1>
+            <section class="section_armazem">
+                <span>Selecione seu armazém:</span>
+                <select id="select_armazem">
+                    <option value="1">Armazém 1</option>
+                    <option value="2">Armazém 2</option>
+                    <option value="3">Armazém 3</option>
+                </select>
+            </section>
+            <section class="section_kpi">
+                <div class="kpi"> Média da <br> temperatura <br> diária (C°): <br><span
+                        class="span_media_temp">20</span></div>
+                <div class="kpi">Temperatura <br> máxima (C°): <br><span class="span_temp_max">26</span></div>
+                <div class="kpi">Média da <br> umidade <br> diária (UR): <span class="span_media_umidade">62%</span>
+                </div>
+                <div class="kpi">Umidade <br> máxima (UR): <span class="span_umidade_max">70%</span> </div>
+            </section>
+            <div class="grafico1">
+                <canvas id="grafico_linha"></canvas>
+            </div>
+            <div class="grafico2">
+                <canvas id="grafico_barra"></canvas>
+            </div>
+            
+        </div>
+    </main>
+
+</body>
+
+</html>
+<!--GRAFICO 1-->
+<script>
+    const labels = [
+        '00:00',
+        '01:00',
+        '02:00',
+        '03:00',
+        '04:00',
+        '05:00',
+        '06:00',
+        '07:00',
+        '08:00',
+        '09:00',
+        '10:00',
+        '11:00',
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+        '18:00',
+        '19:00',
+        '20:00',
+        '21:00',
+        '22:00',
+        '23:00',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Tempertatura',
+            backgroundColor: 'rgb(170, 0, 0)',
+            borderColor: 'rgb(170, 0, 0)',
+            data: [20, 21, 19, 19, 18, 18.5, 18, 19, 20, 19, 21, 23, 25, 26, 24, 25, 23, 22, 22, 20, 19, 20, 18, 19],
+        }, {
+            label: 'Umidade',
+            backgroundColor: 'rgb(0, 0, 172)',
+            borderColor: 'rgb(0, 0, 172)',
+            data: [65, 63, 65, 67, 70, 65, 62, 60, 57, 60, 58, 57, 55, 58, 60, 62, 59, 56, 54, 52, 50, 53, 55, 57],
+        }
+        ]
+    };
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+</script>
+<script>
+
+    const myChart = new Chart(
+        document.getElementById('grafico_linha'),
+        config
+    );
+</script>
+
+<!--GRAFICO 2-->
+<script>
+    const labels2 = [
+        'semana 1',
+        'semana 2',
+        'semana 3',
+        'semana',
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Tempertatura Média',
+            backgroundColor: 'rgb(170, 0, 0)',
+            borderColor: 'rgb(170, 0, 0)',
+            data: [20, 21, 19, 19],
+        }, {
+            label: 'Umidade Média',
+            backgroundColor: 'rgb(0, 0, 172)',
+            borderColor: 'rgb(0, 0, 172)',
+            data: [65, 63, 65, 67],
+        }
+        ]
+    };
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+
+</script>
+<script>
+    const myChart1 = new Chart(
+        document.getElementById('grafico_barra'),
+        config2
+    );
+</script>
