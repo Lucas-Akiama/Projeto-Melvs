@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Faça uma simulação</title>
+        <link rel="stylesheet" href="estilo_simulador_financeiro.css">
+        <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon" />
+    </head>
+    <body>
+        <header>
+            <div class="containerPadrao">
+                <div class="titulo">
+                    <a href="#"><img src="melvs_logo.png" width="90px" alt=""></a>
+                        <li class="itens">Nossa Solução </li>
+                        <li class="itens">Sobre Nós </li>
+                        <li class="itens">Simule </li>
+                    </ul>
+                </div>
+                <div class="nav">
+                    <ul class="nav">
+                        <li class="itens"><button class="cadastrar">Cadastrar</button></li>
+                        <li class="itens"><button class="entrar">Entrar</button></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div class="background">
+                <div class="simulacao">
+                    <h2>Faça uma simulação</h2>
+                    <div class="caixa">
+                        <span>Quantidade de soja armazenada em toneladas:</span>
+                        <div class="campo">
+                            <input type="number"id="input_toneladas_armazenadas">
+                        </div>
+                        <button onclick="calcular_prejuizo()"> <b>Simular</b> </button>
+                    </div>
+                        <div class="apresentar_resultado" id="div_resultado"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    function calcular_prejuizo(){
+        var toneladas_armazenadas = Number(input_toneladas_armazenadas.value);
+        var preco_soja = 2890;
+        var estoque_soja = preco_soja * toneladas_armazenadas;
+        
+        var perda1mes_dinheiro = estoque_soja - ((preco_soja * toneladas_armazenadas) * 0.70);
+        var perda1mes_soja = toneladas_armazenadas * 0.30;
+
+        var perda_melvs_dinheiro = (preco_soja * toneladas_armazenadas) * 0.05;
+        var perda_melvs_soja = toneladas_armazenadas * 0.05;
+
+        if(toneladas_armazenadas == 0){
+            div_resultado.innerHTML = `Notamos que você não armazena soja.`
+        } else if (toneladas_armazenadas < 0){
+            div_resultado.innerHTML = `Por favor, insira um valor válido.`
+        }
+        else{
+            div_resultado.innerHTML = `
+                Levando em conta que o valor da tonelada da soja é <b>R$ ${preco_soja.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</b> <br> <br>
+    
+                Seu armazém tem o valor de <b>${estoque_soja.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</b> <br> <br>
+    
+                Com a tecnologia Melvs ao invés de você ter uma perda de 30% no seu produto que seria <b>${perda1mes_dinheiro.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</b> <br> <br>
+    
+                Reduziremos suas perdas para 5% que seria <b> ${perda_melvs_dinheiro.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}.`
+        }
+    }
+</script>
