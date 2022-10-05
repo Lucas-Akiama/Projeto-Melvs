@@ -1,0 +1,158 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/*
+Codigo para resetar CSS
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+Codigo para resetar CSS
+
+--------------------------------------
+
+Inicio do CSS
+
+HEADER
+*/
+
+header {
+  padding: 15px 0;
+  background-color: #eff0e8;
+  border-bottom: 3px solid #d9d9d9;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav {
+  width: 350px;
+  color: #11c76f;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  width: 27rem;
+  justify-content: space-between;
+  justify-self: flex-end;
+}
+
+.itens{
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/*
+Fim HEADER
+----------------------------------------
+Inicio footer
+*/
+
+footer {
+  padding: 35px 0;
+  background-color: #eff0e8;
+  border-bottom: 3px solid #d9d9d9;
+}
+
+.faleConosco{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.faleConosco .titulo {
+  font-weight: bold;
+  color: #054A29;
+  font-size: 24px;
+}
+
+.email{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.faleConosco .textoEmail {
+  font-weight: bold;
+  color: #11C76F;
+  font-size: 20px;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+.tel{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.faleConosco .textoTell {
+  font-weight: bold;
+  color: #11C76F;
+  font-size: 18px;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+.hr{
+  background-color: #054A29;
+  height:1px;
+  width: 100%;
+  margin:20px 0;
+}
+
+.faleConosco .imgFaleConosco{
+  display: flex;
+  justify-content:flex-end;
+}
