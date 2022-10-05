@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+/*
+Banner
+*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.banner{
+    display: flex;
+    background-image: url("../assents/img/imgMain.png");
+    padding: 100px 0 0 0;
+    background-size: cover;
+    flex-direction: column;
+}
+
+.banner .container{
+    height: 21.875rem;
+    justify-content: flex-start;
+    align-items:flex-start;
+    flex-direction:column;
+}
+
+.tituloBanner{
+    margin-top:20px;
+    color: #06AA51;
+    font-size: 50px;
+    width: 400px;
+}
+
+.containerIcons{
+    height: 21.875rem;
+    align-items:center;
+    flex-direction:column;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tituloIcones{
+    color: #80ebb8;
+    font-weight: bold;
+    font-size:28px;
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+
+.textoIcones{
+    color: #EFF0E8;
+    font-size: 22px;
+}
+
+.icon-Itens{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.conteudoIcones{
+    text-align: center;
+    width:300px;
+}
+
+/*
+Fim Banner
+----------------------------------------------------------------
+Nossa Solução
+*/
+
+.nossaSolucao{
+    display:flex;
+    background-color: #EFF0E8;
+    padding: 100px 0;
+    background-size: cover;
+    flex-direction: column;
+}
+
+.nossaSolucao .container{
+    justify-content: space-between;
+}
+
+.container .conteudoSolucao{
+    flex-direction: column;
+    width: 500px;
+}
+
+.titulo{
+    color: #06AA51;
+    font-size: 2.25rem; 
+}
+
+.texto{
+    color: #054A29;
+    font-size: 22px;
+}
+
+/*
+Fim nossa solução
+------------------------------------------------------------------
+Inicio Quem somos nós
+*/
+
+.quemSomos{
+    display: flex;
+    background-image: url(../assents/img/imgSobreNos.png);
+    padding: 100px 0;
+    background-size: cover;
+    flex-direction: column;
+}
+
+.quemSomos .container{
+    height: 21.875rem;
+    justify-content: flex-start;
+    align-items:flex-start;
+}
+
+.container .conteudoQuemSomos{
+    flex-direction: column;
+    width: 1000px;
+}
+
+.textoQuemSomos{
+    color: #EFF0E8;
+    font-size: 22px;
+}
