@@ -1,16 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 /* 
 ----------------------------------------------
 */
 .background{
-  background-image: url(../assents/img/bg-simulador.jpg);
+  background-image: url(../assets/img/bg-simulador.jpg);
   background-size: cover;
   height: 93vh;
   width: auto;

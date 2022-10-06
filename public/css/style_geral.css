@@ -64,6 +64,8 @@ header {
   padding: 6px 0;
   background-color: #eff0e8;
   border-bottom: 3px solid #11C76F;
+  position: fixed;
+  width: 100%;
 }
 
 .containerPadrao {
@@ -202,4 +204,15 @@ footer {
 .faleConosco .imgFaleConosco{
   display: flex;
   justify-content:flex-end;
+}
+
+/*
+Fim FOOTER
+------------------------------------------
+Inicio formatação de links
+*/
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
