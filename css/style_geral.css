@@ -61,13 +61,13 @@ HEADER
 */
 
 header {
-  padding: 15px 0;
+  padding: 6px 0;
   background-color: #eff0e8;
-  border-bottom: 3px solid #d9d9d9;
+  border-bottom: 3px solid #11C76F;
 }
 
-.container {
-  width: 80%;
+.containerPadrao {
+  width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -76,21 +76,68 @@ header {
 }
 
 .nav {
-  width: 350px;
+  width: 650px;
   color: #11c76f;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.titulo{
+  width: 650px;
+  color: #11c76f;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
 }
 
 .menu {
-  display: flex;
   list-style: none;
-  width: 27rem;
-  justify-content: space-between;
-  justify-self: flex-end;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .itens{
-  font-size: 1rem;
+  font-size: 16px;
   cursor: pointer;
+  margin-left: 40px;
+}
+
+.itens .cadastrar{
+  background-color: #eff0e8;
+  border: 1px solid #11c76f;
+  height: 30px;
+  width: 90px;
+  border-radius: 15px;
+  font-weight: 700;
+  color: #11c76f;
+  cursor: pointer;
+  font-size: 80%;
+}
+
+.itens .entrar{
+  background-color: #11c76f;
+  border: none;
+  height: 30px;
+  width: 70px;
+  border-radius: 15px;
+  font-weight: 700;
+  color: #eff0e8;
+  cursor: pointer;
+  font-size: 80%;
+}
+
+.itens button{
+  font-size: 1px;
+  cursor: pointer;
+  margin-left: 0px;
+}
+
+ol, ul {
+  list-style: none;
 }
 
 /*
