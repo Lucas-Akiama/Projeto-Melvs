@@ -7,6 +7,15 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
 .banner{
     display: flex;
     background-image: url("../assents/img/imgMain.png");
