@@ -18,7 +18,7 @@ body {
 
 .banner{
     display: flex;
-    background-image: url("../assents/img/imgMain.png");
+    background-image: url("../assets/img/imgMain.png");
     padding: 100px 0 0 0;
     background-size: cover;
     flex-direction: column;
@@ -115,7 +115,7 @@ Inicio Quem somos nós
 
 .quemSomos{
     display: flex;
-    background-image: url(../assents/img/imgSobreNos.png);
+    background-image: url(../assets/img/imgSobreNos.png);
     padding: 100px 0;
     background-size: cover;
     flex-direction: column;
