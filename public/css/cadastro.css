@@ -28,13 +28,18 @@
       /* Tirando a borda do input, deixando da mesma cor da pagina e movimentando ela */
      .textologin input{
        background-color: #EFF0E8 ;
-       border: 0;
-       box-sizing: border-box;
+       border: none;
+       /*box-sizing: border-box;*/
        border-bottom: 1px solid #054A29;
        width: 100%;
        height: 30px;
        margin-top: 70px;
      }
+     input:focus     { outline:none; }
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
   
          /* Deixando o background de tudo da mesma cor e deixando o display como flexivel */ 
       .telaLogin{

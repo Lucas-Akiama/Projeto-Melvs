@@ -1,57 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-     <!-- Linkar o css ao SITE HTML  -->
-    <link rel="stylesheet" href="./css/login.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
-  </head>
-  <body>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <main>
-         <!-- Div que engloba todo o site -->
-     <div class="telaLogin">
 
-             <!-- DIV que Pega a parte esqueda do login (as que contem a imagens e o botão de retornar a home) -->
-        <div class="esquerda-login">
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="./css/login.css" />
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
+   <title>Login | Melvs</title>
+</head>
 
-                  <!-- Div que contem o botão de voltar para a home (casinha) -->
-                <div class="voltar">
-                   <!-- Colocar a imagem do Botão de Voltar (casinha)-->
-                   <a class="botaodevoltarparaahome"  href='./index.html'><img src="./assets/img/BotaodeVoltar.png"> </a>
-                </div>
+<body>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   <main>
+      <!-- Div que engloba todo o site -->
+      <div class="telaLogin">
+
+         <!-- DIV que Pega a parte esqueda do login (as que contem a imagens e o botão de retornar a home) -->
+         <div class="esquerda-login">
+
+            <!-- Div que contem o botão de voltar para a home (casinha) -->
+            <div class="voltar">
+               <!-- Colocar a imagem do Botão de Voltar (casinha)-->
+               <a class="botaodevoltarparaahome" href='./index.html'><img src="./assets/img/BotaodeVoltar.png"> </a>
+            </div>
 
 
-                 <!-- Colocar a imagem da logo melvs (a logo branca de login)-->
-                <img src="./assets/img/MelvslogoLogin.png" alt="" class="imagemlogologin"><br>
-          
-                    <!-- Colocar a imagem da soja no site-->
-                <img src="./assets/img/soja.png" alt="" class="imagemsoja">
+            <!-- Colocar a imagem da logo melvs (a logo branca de login)-->
+            <img src="./assets/img/MelvslogoLogin.png" alt="" class="imagemlogologin"><br>
+
+            <!-- Colocar a imagem da soja no site-->
+            <img src="./assets/img/soja.png" alt="" class="imagemsoja">
          </div>
 
-            <!-- Div que contem a parte Direita do site que tem os inputs, botão e o texto de login-->
+         <!-- Div que contem a parte Direita do site que tem os inputs, botão e o texto de login-->
          <div class="textologin">
 
-               <!-- Frase da tela de Login -->
+            <!-- Frase da tela de Login -->
             <h1 class="fraselogin">Login</h1><br>
 
-                        <!-- Inputs -->
-                      <input type="text" name="Usuario" placeholder="Usuario">
-                      <input type="password" name="senha" placeholder="Senha">
-                      
-                       <!-- Botão -->
-                    <div class="div_botaologin">
-                        <button class="botaologin"> Login</button>
-                    </div>
-                       <!-- Linkar a frase para a tela de login -->
-                  <a class="botaoVoltarParaATeladeCadastro" href='./cadastro.html'> Não tem conta ? crie uma clicando aqui!</a>
+            <!-- Inputs -->
+            <input onkeyup="verificacao1()" id="input_email" type="text" name="Email" placeholder="Email">
+            <input onkeyup="verificacao2()" id="input_senha" type="password" name="senha" placeholder="Senha">
+
+            <div id="div_verificacao"></div>
+
+            <!-- Botão -->
+            <div class="div_botaologin">
+               <button class="botaologin"> Login</button>
+            </div>
+            <!-- Linkar a frase para a tela de login -->
+            <a class="botaoVoltarParaATeladeCadastro" href='./cadastro.html'> Não tem conta ? crie uma clicando
+               aqui!</a>
          </div>
-     </div>
-</main>
+      </div>
+   </main>
 </body>
+
 </html>
+
+<script>
+   function verificacao1(){
+      var email = input_email.value;
+
+      if (frase.indexOf ("@") > -1) {
+      div_verificacao.innerHTML = "Tem arroba!"
+      }
+   }
+</script>

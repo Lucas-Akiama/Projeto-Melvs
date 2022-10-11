@@ -34,6 +34,11 @@
      height: 30px;
      margin-top: 70px;
    }
+   input:focus     { outline:none; }
+   input::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+   }
   
        /* Deixando o background de tudo da mesma cor e deixando o display como flexivel */ 
     .telaLogin{
