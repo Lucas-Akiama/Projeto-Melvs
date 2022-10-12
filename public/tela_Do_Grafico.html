@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Linkando O  CSS da tela de dashboard (grafico)-->
+    <link rel="stylesheet" href="./css/estilo_Tela_Do_Grafico.css">
+
+    <!-- Linkando o chart.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- linkando os icones-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+</head>
+
+<body>
+
+    <!-- Div container do grafico e da navegação -->
+    <div class="containerGrafico">
+
+        <!-- Div que contem a parte de navegação (parte verde do menu)-->
+        <div class="navegacao">
+            <ul>
+                <li>
+                    <!-- Foto De Perfil do USUARIO e o NOME do mesmo -->
+                    <div class="fotoDePerfil">
+                        <a href="#">
+
+                            <!-- imagem do ICONE DA FOTO DE PERFIL-->
+                            <span class="icone"><i class="uil uil-user"></i> </span>
+                            <span class="titulo">Brandão</span>
+
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="./tela_Inicial_Do_Grafico.html">
+
+                        <!-- Imagem do ICONE DO GRAFICO-->
+                        <span class="icone"><i class="uil uil-chart-line"></i> </span>
+                        <span class="titulo">Graficos </span>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+
+                        <!--Imagem do ICONE DE ADICIONAR -->
+                        <span class="icone"> <i class="uil uil-user-plus"></i> </span>
+                        <span class="titulo"> Adionar Responsavel</span>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+
+                        <!-- Imagem do ICONE CHAT -->
+                        <span class="icone"><i class="uil uil-comment-dots"></i> </span>
+                        <span class="titulo"> Messagem </span>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+
+                        <!-- Imagem do ICONE DE SUPORTE -->
+                        <span class="icone"><i class="uil uil-question"></i> </span>
+                        <span class="titulo"> Ajuda </span>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+
+                        <!-- Imagem do ICONE DE CONFIGURAÇÕES -->
+                        <span class="icone"><i class="uil uil-cog"></i></span>
+                        <span class="titulo"> Configurações</span>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+
+                        <!-- Dark Mode -->
+                        <span class="icone"><i class="uil uil-moon"></i> </span>
+                        <span id="ModoEscuro" class="Modo" onclick="ModoClaro()"> Modo Escuro </span>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+
+                        <!-- Botão de Sair  -->
+                        <span class="icone"><i class="uil uil-signout"></i> </span>
+                        <span class="titulo"> Sair </span>
+
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</body>
+
+<!-- **************************************************************************************** -->
+
+<!--Menu-->
+
+<div class="menu">
+
+    <!-- Parte de Cima que contem A logo de Melvs e O botão de ocutar o menu-->
+    <div class="barra-de-cima">
+
+        <!-- Div Que tem o icone de Menu-->
+        <div class="toggle">
+
+            <!-- Imagem do ICONE DE MENU -->
+            <i class="uil uil-list-ul"></i>
+
+        </div>
+
+        <!-- Div que contem A LOGO DA MELVIS -->
+        <div>
+            <!-- Imagem da logo da MELVS VERDE -->
+            <img src="./assets/img/melvsLogo.png">
+
+        </div>
+
+        <!-- Div que contem o botão de Sair -->
+        <div class="Sair">
+
+            <!-- Imagem do Botão de sair -->
+            <i class="uil uil-signout"></i>
+
+        </div>
+
+    </div>
+
+    <!-- **************************************************************************************** -->
+
+    <!--KPI'S-->
+
+    <!-- A div que engloba todas as caixas -->
+    <div class="caixas">
+
+        <!-- Primeira Caixa -->
+        <div class="caixa">
+            <div>
+
+                <!-- Conteudo dentro da caixa -->
+                <div class="KPI-nome">Média Temperatura diária </div>
+                <div class="KPI-numeros">20°C</div>
+
+
+            </div>
+        </div>
+
+        <!-- Segunda Caixa -->
+        <div class="caixa">
+            <div>
+
+                <!-- Conteudo dentro da caixa -->
+                <div class="KPI-nome"> Temperatura máxima </div>
+                <div class="KPI-numeros">26°C</div>
+
+
+            </div>
+        </div>
+
+        <!-- Terceira Caixa -->
+        <div class="caixa">
+            <div>
+
+                <!-- Conteudo dentro da caixa -->
+                <div class="KPI-nome"> Média da umidade diária</div>
+                <div class="KPI-numeros">62%</div>
+
+
+            </div>
+        </div>
+
+        <!-- Quarta Caixa -->
+        <div class="caixa">
+            <div>
+
+                <!-- Conteudo dentro da caixa -->
+                <div class="KPI-nome"> Umidade máxima </div>
+                <div class="KPI-numeros">70%</div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- **************************************************************************************** -->
+
+
+    <!--Graficos-->
+    <div class="graficos">
+
+        <!-- Grafico de Linha -->
+        <div class="grafico_de_linha">
+            <canvas id="grafico_linha"></canvas>
+        </div>
+
+        <!-- Grafico de Barra -->
+        <div class="grafico_de_barra">
+            <canvas id="grafico_barra"></canvas>
+        </div>
+
+    </div>
+
+</div>
+
+</html>
+
+
+<!-- SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  -->
+
+<!--GRAFICO 1 (grafico de TEMPERATURA E UMIDADE )-->
+
+<script>
+    // COR GRAFICO
+
+
+    // TEMPERATURA  TEMPERATURA  TEMPERATURA  TEMPERATURA  TEMPERATURA  TEMPERATURA  TEMPERATURA  TEMPERATURA 
+
+    // Definindo de quanto em quanto tempo vamos pegar o Grafico 
+
+    const labels = [
+
+        '00:00',
+        '01:00',
+        '02:00',
+        '03:00',
+        '04:00',
+        '05:00',
+        '06:00',
+        '07:00',
+        '08:00',
+        '09:00',
+        '10:00',
+        '11:00',
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+        '18:00',
+        '19:00',
+        '20:00',
+        '21:00',
+        '22:00',
+        '23:00',
+    ];
+
+
+
+    // CORES DO GRAFICO 
+
+    var AzulClaro = 'rgba(168,217,254,1)'
+    var VermelhoClaro = 'rgba(239,203,198,1)'
+
+
+    // Definindo as temperatura do nosso Grafico 
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Tempertatura',
+            backgroundColor: 'rgba(240,0,0)',
+            borderColor: VermelhoClaro,
+            data: [20, 21, 19, 19, 18, 18.5, 18, 19, 20, 19, 21, 23, 25, 26, 24, 25, 23, 22, 22, 20, 19, 20, 18, 19],
+        },
+
+
+        // Definindo a Umidade do nosso Grafico 
+        {
+            label: 'Umidade',
+            backgroundColor: 'rgba(0,0,240)',
+            borderColor: AzulClaro,
+            data: [65, 63, 65, 67, 70, 65, 62, 60, 57, 60, 58, 57, 55, 58, 60, 62, 59, 56, 54, 52, 50, 53, 55, 57],
+        }
+        ]
+    };
+
+    // Definindo o tipo do Grafico (Que seria em linha)
+    Chart.defaults.font.size = 14;
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+
+
+</script>
+
+
+<script>
+
+    const myChart = new Chart(
+        document.getElementById('grafico_linha'),
+        config
+    );
+
+
+</script>
+
+<!--GRAFICO 2 (grafico de Barra que demonstra o desempenho semanal )-->
+
+<script>
+
+    // Defindo de qaunto em quanto tempo vamos pegar os dados (4 semanas )
+    const labels2 = [
+        'semana 1',
+        'semana 2',
+        'semana 3',
+        'semana 4',
+    ];
+
+
+    // Pegando a Temperatura e Umidade media dos graficos de cada semana 
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Tempertatura Média',
+            backgroundColor: VermelhoClaro,
+            borderColor: 'rgba(240,0,0)',
+            data: [20, 21, 19, 19],
+        }, {
+            label: 'Umidade Média',
+            backgroundColor: AzulClaro,
+            borderColor: 'rgba(0,0,240)',
+            data: [65, 63, 65, 67],
+        }
+        ]
+    };
+
+    // Definindo nosso grafico em estilo de barra 
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+
+</script>
+
+
+<script>
+
+
+    const myChart1 = new Chart(
+        document.getElementById('grafico_barra'),
+        config2
+    );
+
+
+</script>
+
+
+<!-- MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU  -->
+<script>
+    //deixar o menu toggle 
+    let toggle = document.querySelector('.toggle');
+    let navegacao = document.querySelector('.navegacao');
+    let menu = document.querySelector('.menu');
+
+
+    //Criando a função para quando clicar ativar e desativar
+    toggle.onclick = function () {
+        navegacao.classList.toggle('ativar');
+        menu.classList.toggle('ativar');
+    }
+
+</script>
+
+
+
+<!-- MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO -->
+<script>
+    var clique = 1;
+
+
+    // Mudando a frase ao clicar 
+    function ModoClaro() {
+        if (clique >= 10) {
+            clique = 0;
+        }
+        if (clique % 2 == 1) {
+            ModoEscuro.innerHTML = 'Modo Claro'
+            clique += 1;
+
+        } else {
+            ModoEscuro.innerHTML = 'Modo Escuro'
+            clique += 1;
+        }
+    }
+
+    // 
+
+
+    const body = document.querySelector("body");
+    const modoEscuro = body.querySelector(".Modo");
+
+    modoEscuro.addEventListener("click", () => {
+        body.classList.toggle("Escuro");
+    });
+
+</script>
