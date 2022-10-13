@@ -17,6 +17,7 @@
   
     /* Tirar o sublinhado */
     a {
+      width: 100%;
       text-decoration: none;
     }
      
@@ -92,6 +93,7 @@
       do botão para a mesma cor do site, e entre outros*/ 
        .textologin .botaocadastrar {
        margin-top: 60px;
+       margin-left: 25%;
        width: 50%;
        color: #054A29   ;
        background-color: #D9D9D9;
@@ -131,14 +133,10 @@
        /*botão para voltar para a home do site*/ 
        .botaodevoltarparaahome {
        cursor: pointer; 
+       margin-left: 30px;
+       margin-top: 30px;
        }
    
-       /* Div para colocar o botão no centro */
-       .div_botaocadastrar {
-         justify-content: center;
-         display: flex;
-         align-items: center;
-       }
   
        /* Div para colocar a frase de voltar */
        .voltar{
