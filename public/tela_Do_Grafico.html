@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Perfil | Grafico</title>
 
     <!-- Linkando O  CSS da tela de dashboard (grafico)-->
     <link rel="stylesheet" href="./css/estilo_Tela_Do_Grafico.css">
@@ -16,6 +16,9 @@
     <!-- linkando os icones-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
 </head>
 
 <body>
@@ -84,16 +87,16 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="Modo" onclick="ModoClaro()">
 
                         <!-- Dark Mode -->
                         <span class="icone"><i class="uil uil-moon"></i> </span>
-                        <span id="ModoEscuro" class="Modo" onclick="ModoClaro()"> Modo Escuro </span>
+                        <span id="ModoEscuro" class="Modo"> Modo Escuro </span>
 
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="./index.html">
 
                         <!-- Botão de Sair  -->
                         <span class="icone"><i class="uil uil-signout"></i> </span>
@@ -133,10 +136,10 @@
 
         <!-- Div que contem o botão de Sair -->
         <div class="Sair">
-
-            <!-- Imagem do Botão de sair -->
-            <i class="uil uil-signout"></i>
-
+            <a href="./index.html">
+                <!-- Imagem do Botão de sair -->
+                <i class="uil uil-signout"></i>
+            </a>
         </div>
 
     </div>
