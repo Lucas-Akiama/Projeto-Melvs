@@ -1,61 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro</title>
-         <!-- Linkar o css ao SITE HTML  -->
-    <link rel="stylesheet" href="./css/cadastro.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
-  </head>
-  <body>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <main>
-          <!-- Div que engloba todo o site -->
-        <div class="telaLogin">
 
-             <!-- DIV que Pega a parte esqueda do login (as que contem a imagens e o botão de retornar a home) -->
-            <div class="esquerda-login">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro</title>
+  <!-- Linkar o css ao SITE HTML  -->
+  <link rel="stylesheet" href="./css/cadastro.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
+</head>
 
-                       <!-- Div que contem o botão de voltar para a home (casinha) -->
-                     <div class = 'voltar'>
-                           <!-- Colocar a imagem do Botão de Voltar (casinha)-->
-                         <a class="botaodevoltarparaahome"  href='./index.html'><img src="./assets/img/BotaodeVoltar.png"> </a>
-                     </div>
-
-                   <!-- Colocar a imagem da logo melvs (a logo branca de login)-->
-                <img src="./assets/img/MelvslogoLogin.png" alt="" class="imagemlogologin"><br>
-
-                    <!-- Colocar a imagem da soja no site-->
-                <img src="./assets/img/soja.png" alt="" class="imagemsoja">
-                
-           </div>
-                   <!-- Div que contem a parte Direita do site que tem os inputs, botão e o texto de login--> 
-                 <div class="textologin">
-
-                           <!-- Frase da tela de Login -->     
-                         <h1 class="frasecadastro">Cadastro</h1><br>
-
-                           <!-- Inputs -->
-                         <input type="text" name="Usuario" placeholder="Usuario">
-                         <input type="email" name="Email" placeholder="Email">
-                         <input type="password" name="Senha" placeholder="Senha">
-                         <input type="" name="CPF" placeholder="CPF">
-
-                         <!-- Botão -->
-                       <Div class="div_botaocadastrar">
-                           <button class="botaocadastrar">Cadastrar</button>
-                       </Div>
-
-                       <!-- Linkar a frase para a tela de login -->
-                    <a class="botaoVoltarParaATeladeLogin" href='./login.html'>já tem uma conta ? Entre Aqui</a>
-                 </div>
-      </div>
-</main>
 <body>
-    
-</body>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <main>
+    <!-- Div que engloba todo o site -->
+    <div class="telaLogin">
+
+      <!-- DIV que Pega a parte esqueda do login (as que contem a imagens e o botão de retornar a home) -->
+      <div class="esquerda-login">
+
+        <!-- Div que contem o botão de voltar para a home (casinha) -->
+        <div class='voltar'>
+          <!-- Colocar a imagem do Botão de Voltar (casinha)-->
+          <a class="botaodevoltarparaahome" href='./index.html'><img src="./assets/img/BotaodeVoltar.png" width="30px"> </a>
+        </div>
+
+        <!-- Colocar a imagem da logo melvs (a logo branca de login)-->
+        <img src="./assets/img/MelvslogoLogin.png" alt="" class="imagemlogologin"><br>
+
+        <!-- Colocar a imagem da soja no site-->
+        <img src="./assets/img/soja.png" alt="" class="imagemsoja">
+
+      </div>
+      <!-- Div que contem a parte Direita do site que tem os inputs, botão e o texto de login-->
+      <div class="textologin">
+
+        <!-- Frase da tela de Login -->
+        <h1 class="frasecadastro">Cadastro</h1><br>
+
+        <!-- Inputs -->
+        <input type="text" name="Usuario" placeholder="Usuario">
+        <input type="email" name="Email" placeholder="Email">
+        <input type="password" name="Senha" placeholder="Senha">
+        <input type="" name="CPF" placeholder="CPF">
+
+        <!-- Botão -->
+        <Div class="div_botaocadastrar">
+          <a href="./tela_Inicial_Do_Grafico.html">
+            <button class="botaocadastrar">Cadastrar</button>
+          </a>
+        </Div>
+
+        <!-- Linkar a frase para a tela de login -->
+        <a class="botaoVoltarParaATeladeLogin" href='./login.html'>já tem uma conta ? Entre Aqui</a>
+      </div>
+    </div>
+  </main>
+
+  <body>
+
+  </body>
+
 </html>
