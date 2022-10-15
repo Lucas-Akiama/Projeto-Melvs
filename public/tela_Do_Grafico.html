@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Perfil | Grafico</title>
 
     <!-- Linkando O  CSS da tela de dashboard (grafico)-->
     <link rel="stylesheet" href="./css/estilo_Tela_Do_Grafico.css">
@@ -16,6 +16,9 @@
     <!-- linkando os icones-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
 </head>
 
 <body>
@@ -78,22 +81,22 @@
                     <a href="#">
 
                         <!-- Imagem do ICONE DE CONFIGURAÇÕES -->
-                        <span class="icone"><i class="uil uil-cog"></i></span>
+                        <span class="icone" onclick="grafico()"><i class="uil uil-cog"></i></span>
                         <span class="titulo"> Configurações</span>
 
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="Modo" onclick="ModoClaro()">
 
                         <!-- Dark Mode -->
                         <span class="icone"><i class="uil uil-moon"></i> </span>
-                        <span id="ModoEscuro" class="Modo" onclick="ModoClaro()"> Modo Escuro </span>
+                        <span id="ModoEscuro" class="Modo"> Modo Escuro </span>
 
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="./index.html">
 
                         <!-- Botão de Sair  -->
                         <span class="icone"><i class="uil uil-signout"></i> </span>
@@ -127,18 +130,12 @@
         <!-- Div que contem A LOGO DA MELVIS -->
         <div>
             <!-- Imagem da logo da MELVS VERDE -->
-            <img src="./assets/img/melvsLogo.png">
+            <img src="./assets/img/melvsLogo.png" onclick="grafico()" class="logo">
 
         </div>
-
-        <!-- Div que contem o botão de Sair -->
-        <div class="Sair">
-
-            <!-- Imagem do Botão de sair -->
-            <i class="uil uil-signout"></i>
+        <div>
 
         </div>
-
     </div>
 
     <!-- **************************************************************************************** -->
@@ -153,11 +150,17 @@
             <div>
 
                 <!-- Conteudo dentro da caixa -->
-                <div class="KPI-nome">Média Temperatura diária </div>
-                <div class="KPI-numeros">20°C</div>
-
-
+                <div class="KPI-nome">Temperatura</div>
+                <div class="KPI-TerceiraLinha">
+                    Temperatura Maxima
+                    <span id="temperatura_maxima" class="ideal">18ºc</span>
+                </div>
             </div>
+
+                <div class="KPI-numeros">
+                    Temperatura Minima
+                    <span id="temperatura_minima" class="ideal">14ºc</span>
+                </div>
         </div>
 
         <!-- Segunda Caixa -->
@@ -165,9 +168,13 @@
             <div>
 
                 <!-- Conteudo dentro da caixa -->
-                <div class="KPI-nome"> Temperatura máxima </div>
-                <div class="KPI-numeros">26°C</div>
-
+                <div class="KPI-nome"> Umidade</span></div>
+                <div class="KPI-TerceiraLinha"> Umidade Maxima
+                    <span id="umidade_maxima" class="ideal">14%</span>
+                </div>
+                <div class="KPI-numeros">Umidade Minima
+                    <span id="umidade_minima" class="ideal">12%</span>
+                </div>
 
             </div>
         </div>
@@ -177,23 +184,18 @@
             <div>
 
                 <!-- Conteudo dentro da caixa -->
-                <div class="KPI-nome"> Média da umidade diária</div>
-                <div class="KPI-numeros">62%</div>
+                <div class="KPI-nome"> Quantidade de vezes </div>
+                <div class="KPI-nome"> que saiu do ideal</div>
+                <div class="KPI-numeros">
+                    <spans id="quantidade" class='ideal'>0</span>
+                </div>
 
 
             </div>
         </div>
 
         <!-- Quarta Caixa -->
-        <div class="caixa">
-            <div>
-
-                <!-- Conteudo dentro da caixa -->
-                <div class="KPI-nome"> Umidade máxima </div>
-                <div class="KPI-numeros">70%</div>
-
-            </div>
-        </div>
+    
     </div>
 
 
@@ -377,6 +379,8 @@
         navegacao.classList.toggle('ativar');
         menu.classList.toggle('ativar');
     }
+    navegacao.classList.toggle('ativar');
+    menu.classList.toggle('ativar');
 
 </script>
 
@@ -411,5 +415,83 @@
     modoEscuro.addEventListener("click", () => {
         body.classList.toggle("Escuro");
     });
+
+    var contador = 0;
+    function grafico() {
+        if (contador == 4) {
+            contador = 0;
+        }
+        if (contador == 1) {
+            temperatura_maxima.classList = 'atencao';
+            temperatura_minima.classList = 'atencao';
+
+
+            temperatura_maxima.innerHTML = '19ºc';
+            temperatura_minima.innerHTML = '13ºc';
+
+
+            umidade_maxima.innerHTML = '15%';
+            umidade_minima.innerHTML = '11%';
+
+
+            umidade_maxima.classList = 'atencao'
+            umidade_minima.classList = 'atencao'
+
+            quantidade.innerHTML = '1'
+            quantidade.classList = 'atencao'
+        }
+
+        if (contador == 2) {
+            temperatura_maxima.classList = 'critico';
+            temperatura_minima.classList = 'critico';
+
+
+            temperatura_maxima.innerHTML = '21ºc';
+            temperatura_minima.innerHTML = '10ºc';
+
+
+            umidade_maxima.innerHTML = '17%';
+            umidade_minima.innerHTML = '9%';
+
+
+            umidade_maxima.classList = 'critico'
+            umidade_minima.classList = 'critico'
+
+            quantidade.innerHTML = '2'
+            quantidade.classList = 'critico'
+        }
+
+        if (contador == 3) {
+            temperatura_maxima.classList = 'ideal';
+            temperatura_minima.classList = 'ideal';
+
+
+            temperatura_maxima.innerHTML = '14ºc';
+            temperatura_minima.innerHTML = '18ºc';
+
+
+            umidade_maxima.innerHTML = '12%';
+            umidade_minima.innerHTML = '14%';
+
+
+            umidade_maxima.classList = 'ideal';
+            umidade_minima.classList = 'ideal';
+
+            quantidade.innerHTML = '0'
+            quantidade.classList = 'ideal'
+        }
+
+        if(contador == 1){
+
+            
+        }
+        contador += 1;
+    }
+</script>
+
+
+
+<script>
+
 
 </script>

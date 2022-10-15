@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Perfil</title>
 
     <!-- Linkando O  CSS da tela de dashboard (grafico)-->
     <link rel="stylesheet" href="./css/estilo_Tela_Inicial_Do_Grafico.css">
@@ -13,6 +13,7 @@
 
     <!-- linkando os icones-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
 
 </head>
 
@@ -37,11 +38,11 @@
                     </div>
                 </li>
                 <li>
-                    <a href="./tela_Inicial_Do_Grafico.html">
+                    <a href="#">
 
                         <!-- Imagem do ICONE DO GRAFICO-->
-                        <span class="icone"> <i class="uil uil-home"></i> </span>
-                        <span class="titulo"> Início </span>
+                        <span class="icone"><i class="uil uil-chart-line"></i> </span>
+                        <span class="titulo">Grafico </span>
 
                     </a>
                 </li>
@@ -82,11 +83,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" class="Modo" onclick="ModoClaro()">
 
                         <!-- Dark Mode -->
                         <span class="icone"><i class="uil uil-moon"></i> </span>
-                        <span id="ModoEscuro" class="Modo" onclick="ModoClaro()"> Modo Escuro </span>
+                        <span id="ModoEscuro" class="Modo"> Modo Escuro </span>
 
                     </a>
                 </li>
@@ -125,7 +126,7 @@
         <!-- Div que contem A LOGO DA MELVIS -->
         <div>
             <!-- Imagem da logo da MELVS VERDE -->
-            <img src="./assets/img/melvsLogo.png">
+            <img src="./assets/img/melvs_logo.png" alt="">
 
         </div>
 
@@ -133,8 +134,6 @@
         <div class="Sair">
 
             <!-- Imagem do Botão de sair -->
-            <i class="uil uil-signout"></i>
-
         </div>
 
     </div>
@@ -161,8 +160,8 @@
                             <!-- Div que contem a imagem (aquela bola)-->
                             <div class="imagem">
 
-                                <!-- imagem que vai ficar na bola do card-->
-                                <img src="./assets/img/Dashboard.png">
+                                <!-- imagem que vai ficar no quadrado do card-->
+                                <img src="./assets/img/SiloVermelho.png">
 
                             </div>
 
@@ -183,14 +182,12 @@
 
                             <!-- Div que contem o status do armazem -->
                             <div class="status-armazem1">
-                                <span>Tem algum problema</span>
+                                <span class="">Problema</span>
                             </div>
 
                             <!-- Div que tem o botão -->
                             <div class="botao">
-                                <a href="./tela_Do_Grafico.html">
-                                    <button> Visualizar Armazem </button>
-                                </a>
+                                <a href="./tela_Do_Grafico.html"> <button> Visualizar Armazem </button></a>
                             </div>
                         </div>
                     </div>
@@ -215,7 +212,7 @@
                             <div class="imagem">
 
                                 <!-- imagem que vai ficar no quadrado do card-->
-                                <img src="./assets/img/Dashboard.png">
+                                <img src="./assets/img/SiloAmarelo.png">
 
                             </div>
 
@@ -236,17 +233,22 @@
 
                             <!-- Div que contem o status do armazem -->
                             <div class="status-armazem2">
-                                <span>Provavel que dê problema</span>
+                                <span>Atenção
+                                </span>
                             </div>
 
                             <!-- Div que tem o botão -->
-                            <div class="botao">
+                            <div class="botao"><a href="./tela_Do_Grafico.html">
                                 <button> Visualizar Armazem </button>
+                            </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!--Dei varios crlt c e clrt v -->
+            <!--***********************************************************************************************************-->
             <!-- Div que engloba todas as divs -->
             <div class="container">
 
@@ -263,7 +265,7 @@
                             <div class="imagem">
 
                                 <!-- imagem que vai ficar no quadrado do card-->
-                                <img src="./assets/img/Dashboard.png">
+                                <img src="./assets/img/siloVerde.png">
 
                             </div>
 
@@ -284,64 +286,20 @@
 
                             <!-- Div que contem o status do armazem -->
                             <div class="status-armazem">
-                                <span>seu armazen está tranquilo</span>
+                                <span>ok</span>
                             </div>
 
                             <!-- Div que tem o botão -->
-                            <div class="botao">
+                            <div class="botao"><a href="./tela_Do_Grafico.html">
                                 <button> Visualizar Armazem </button>
+                            </a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Div que engloba todas as divs -->
-            <div class="container">
 
-                <!-- Div que tem o conteudo em si -->
-                <div class="conteudo">
+       <!--***********************************************************************************************************-->
 
-                    <!-- Div que tem todo o quadrado ou cada card (ou cada post-it) -->
-                    <div class="card">
-
-                        <!-- Counteudo que tem em cada card (ou post-it)-->
-                        <div class="conteudo-card">
-
-                            <!-- Div que contem a imagem (aquela bola)-->
-                            <div class="imagem">
-
-                                <!-- imagem que vai ficar no quadrado do card-->
-                                <img src="./assets/img/Dashboard.png">
-
-                            </div>
-
-                            <!-- Div que contem os icones-->
-                            <div class="icones">
-                                <!-- icones que estão linkados com o Font Awesorme-->
-                                <i class="fa-sharp fa-solid fa-phone"></i>
-                                <i class="fa-sharp fa-solid fa-envelope"></i>
-                                <i class="fa-sharp fa-solid fa-comment"></i>
-                            </div>
-
-                            <!-- Div que contem o nome do armazem -->
-                            <div class="nome-do-armazem-e-sua-descrisao">
-                                <span class="nome-do-armazem">Armazem nª4</span>
-                                <span class="descrisao-do-armazem">armazem da rua paulista</span>
-                                <span> <i class="fa-solid fa-circle-info"></i> </span>
-                            </div>
-
-                            <!-- Div que contem o status do armazem -->
-                            <div class="status-armazem">
-                                <span>seu armazen está tranquilo</span>
-                            </div>
-
-                            <!-- Div que tem o botão -->
-                            <div class="botao">
-                                <button> Visualizar Armazem </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
     </section>
 </div>
@@ -367,7 +325,8 @@
         navegacao.classList.toggle('ativar');
         menu.classList.toggle('ativar');
     }
-
+    navegacao.classList.toggle('ativar');
+    menu.classList.toggle('ativar');
 </script>
 
 
@@ -379,7 +338,7 @@
 
     // Mudando a frase ao clicar 
     function ModoClaro() {
-        if (clique >= 10) {
+        if (clique >= 13) {
             clique = 0;
         }
         if (clique % 2 == 1) {
