@@ -1,57 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-     <!-- Linkar o css ao SITE HTML  -->
-    <link rel="stylesheet" href="./css/login.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
-  </head>
-  <body>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <main>
-         <!-- Div que engloba todo o site -->
-     <div class="telaLogin">
+    <link rel="stylesheet" href="./css/style_geral.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <title>Login | Melvs</title>
+</head>
 
-             <!-- DIV que Pega a parte esqueda do login (as que contem a imagens e o botão de retornar a home) -->
+<body>
+
+    <header>
+        <div class="containerPadrao">
+            <div class="titulo">
+                <a href="./index.html"><img src="./assets/img/melvs_logo.png" width="90px" alt=""></a>
+                <li class="itens"> <a href="./index.html#nossaSolucao">Nossa Solução</a> </li>
+                <li class="itens"> <a href="./index.html#quemSomos">Sobre Nós</a> </li>
+                <li class="itens"> <a href="./simulador_financeiro.html">Simule</a> </li>
+                </ul>
+            </div>
+            <div class="nav">
+                <ul class="nav">
+                    <li class="itens"><button class="cadastrar"> <a href="./cadastro.html">Cadastrar</a> </button></li>
+                    <li class="itens"><button class="entrar"><a href="./login.html">Entrar</a></button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="principal-login">
         <div class="esquerda-login">
-
-                  <!-- Div que contem o botão de voltar para a home (casinha) -->
-                <div class="voltar">
-                   <!-- Colocar a imagem do Botão de Voltar (casinha)-->
-                   <a class="botaodevoltarparaahome"  href='./index.html'><img src="./assets/img/BotaodeVoltar.png"> </a>
+            <img src="./assets/img/computer-login-animate.svg" class="esquerda-login-imagem"
+                alt="representação do login">
+        </div>
+        <div class="direita-login">
+            <div class="card-login">
+                <h1>Login</h1>
+                <div class="campo">
+                    <span class="span_titulo">Email:</span>
+                    <input type="text" id="input_email" placeholder="Email">
+                    <span class="validacao" id="span_validacao_email"></span>
                 </div>
-
-
-                 <!-- Colocar a imagem da logo melvs (a logo branca de login)-->
-                <img src="./assets/img/MelvslogoLogin.png" alt="" class="imagemlogologin"><br>
-          
-                    <!-- Colocar a imagem da soja no site-->
-                <img src="./assets/img/soja.png" alt="" class="imagemsoja">
-         </div>
-
-            <!-- Div que contem a parte Direita do site que tem os inputs, botão e o texto de login-->
-         <div class="textologin">
-
-               <!-- Frase da tela de Login -->
-            <h1 class="fraselogin">Login</h1><br>
-
-                        <!-- Inputs -->
-                      <input type="text" name="Usuario" placeholder="Usuario">
-                      <input type="password" name="senha" placeholder="Senha">
-                      
-                       <!-- Botão -->
-                    <div class="div_botaologin">
-                        <button class="botaologin"> Login</button>
+                <div class="campo">
+                    <span class="span_titulo">Senha:</span>
+                    <input type="password" id="input_senha" placeholder="••••••••">
+                    <span class="validacao" id="span_validacao_senha"></span>
+                </div>
+                <div class="campo">
+                    <div class="manter-conectado">
+                        <input type="checkbox" id="mantenha-me-conectado" name="mantenha-me-conectado"
+                            value="manter-conexao">
+                        <span>Mantenha-me conectado</span>
                     </div>
-                       <!-- Linkar a frase para a tela de login -->
-                  <a class="botaoVoltarParaATeladeCadastro" href='./cadastro.html'> Não tem conta ? crie uma clicando aqui!</a>
-         </div>
-     </div>
-</main>
+                </div>
+                <div class="validacao" id="div_validacao"></div>
+                <!-- <div class="container-botao"> -->
+                        <button class="botao-login" onclick="login()">
+                            Entrar
+                        </button>
+                <!-- </div> -->
+                <span class="esqueci-senha">Esqueceu sua senha?</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="faleConosco">
+                <span class="titulo">Fale Conosco</span>
+                <div class="email">
+                    <img src="./assets/icons/mail.png" alt="">
+                    <span class="textoEmail">melvs@melvs.com</span>
+                </div>
+                <div class="tel">
+                    <img src="./assets/icons/call.png" alt="" srcset="">
+                    <span class="textoTell">(11)91234-5678</span>
+                </div>
+            </div>
+            <div class="imgFaleConosco">
+                <img src="./assets/img/melvsLogo.png" alt="">
+            </div>
+        </div>
+        <div class="hr">
+
+        </div>
+        <div class="container">
+            <div class="fimFooter">
+                <span>© 2022 Melvs | A Solução da Sua Plantação</span>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
+
+<script>
+    function login() {
+        var email = input_email.value;
+        var senha = input_senha.value;
+
+        if (email.indexOf("@") == -1) {
+            span_validacao_email.innerHTML = `Email invalido`
+        }
+
+        if (senha.length < 5) {
+            span_validacao_senha.innerHTML = `Senha invalida`
+        }
+
+        if ((senha.length >= 5) && (email.indexOf("@") > -1)) {
+            window.location.href = "./tela_Inicial_Do_Grafico.html";
+        }
+    }
+</script>
