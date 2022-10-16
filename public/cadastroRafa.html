@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style_geral.css">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
+
+    <title>Registro | Melvs</title>
+</head>
+
+<body>
+    <header>
+        <div class="containerPadrao">
+            <div class="titulo">
+                <a href="./index.html"><img src="./assets/img/melvs_logo.png" width="90px" alt=""></a>
+                <li class="itens"> <a href="./index.html#nossaSolucao">Nossa Solução</a> </li>
+                <li class="itens"> <a href="./index.html#quemSomos">Sobre Nós</a> </li>
+                <li class="itens"> <a href="./simulador_financeiro.html">Simule</a> </li>
+                </ul>
+            </div>
+            <div class="nav">
+                <ul class="nav">
+                    <li class="itens"><button class="cadastrar"> <a href="./cadastro.html">Cadastrar</a> </button></li>
+                    <li class="itens"><button class="entrar"><a href="./login.html">Entrar</a></button></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="principal-cadastro">
+        <div class="esquerda-cadastro">
+            <img src="./assets/img/forms-animate.svg" class="esquerda-cadastro-imagem" alt="representação do cadastro">
+        </div>
+        <div class="direita-cadastro">
+            <div class="card-cadastro">
+                <h1>Registro</h1>
+                <div class="campo">
+                    <span class="span_titulo">Nome:</span>
+                    <input type="text" id="input_nome" placeholder="Nome e sobrenome">
+                    <span class="validacao" id="span_validacao_nome"></span>
+                </div>
+                <div class="campo">
+                    <span class="span_titulo">Email:</span>
+                    <input type="text" id="input_email" placeholder="usuario@email.com">
+                    <span class="validacao" id="span_validacao_email"></span>
+                </div>
+                <div class="campo">
+                    <span class="span_titulo">CPF:</span>
+                    <input type="text" maxlength="11" id="input_cpf" placeholder="XXX.XXX.XXX-XX" onkeyup="cpfPontos()">
+                    <span class="validacao" id="span_validacao_cpf"></span>
+                </div>
+                <div class="organizar-senhas">
+                    <div class="senha">
+                        <div class="campo">
+                            <span class="span_titulo">Senha:</span>
+                            <input type="password" id="input_senha" placeholder="••••••">
+                            <span class="validacao" id="span_validacao_senha"></span>
+                        </div>
+                    </div>
+                    <div class="senha">
+                        <div class="campo">
+                            <span class="span_titulo">Confirme a senha:</span>
+                            <input type="password" id="input_confirme_senha" placeholder="••••••">
+                            <span class="validacao" id="span_validacao_confirme_senha"></span>
+                        </div>
+                    </div>
+                </div>
+                <button class="botao-cadastro" onclick="cadastro()">Registrar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="faleConosco">
+                <span class="titulo">Fale Conosco</span>
+                <div class="email">
+                    <img src="./assets/icons/mail.png" alt="">
+                    <span class="textoEmail">melvs@melvs.com</span>
+                </div>
+                <div class="tel">
+                    <img src="./assets/icons/call.png" alt="" srcset="">
+                    <span class="textoTell">(11)91234-5678</span>
+                </div>
+            </div>
+            <div class="imgFaleConosco">
+                <img src="./assets/img/melvsLogo.png" alt="">
+            </div>
+        </div>
+        <div class="hr">
+
+        </div>
+        <div class="container">
+            <div class="fimFooter">
+                <span>© 2022 Melvs | A Solução da Sua Plantação</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    function cadastro() {
+        var email = input_email.value;
+        var senha = input_senha.value;
+        var nome = input_nome.value;
+        var cpf = input_cpf.value;
+        var senha = input_senha.value;
+        var confirme_senha = input_confirme_senha.value;
+
+        if (nome.length < 3) {
+            span_validacao_nome.innerHTML = `Nome invalido`
+        } else {
+            span_validacao_nome.innerHTML = ''
+        }
+
+        if (email.indexOf ("@") > -1) {
+            span_validacao_email.innerHTML = ''
+        } else {
+            span_validacao_email.innerHTML = `Email invalido`
+        }
+
+        if (cpf.length == 14) {
+            span_validacao_cpf.innerHTML = ''
+        } else {
+            span_validacao_cpf.innerHTML = `CPF invalido`
+        }
+
+        if (senha.length < 5) {
+            span_validacao_senha.innerHTML = `Senha fraca`
+        } else {
+            span_validacao_senha.innerHTML = ''
+        }
+
+        if (confirme_senha != senha) {
+            span_validacao_confirme_senha.innerHTML = `Senha incorreta`
+        } else {
+         span_validacao_confirme_senha.innerHTML =''
+
+        }
+        if((nome.length >= 3) && (email.indexOf ("@") > -1) && (cpf.length == 14) && (senha.length >= 5) && (confirme_senha == senha)){
+            window.location.href = "./tela_Inicial_Do_Grafico.html";
+        }
+    }
+
+    function cpfPontos() {
+        var cpfz = input_cpf.value;
+        var Digito1 = cpfz[0]
+        var Digito2 = cpfz[1]
+        var Digito3 = cpfz[2]
+        var Digito4 = cpfz[3]
+        var Digito5 = cpfz[4]
+        var Digito6 = cpfz[5]
+        var Digito7 = cpfz[6]
+        var Digito8 = cpfz[7] 
+        var Digito9 = cpfz[8]
+        var Digito10 = cpfz[9]
+        var Digito11 = cpfz[10]
+        var cpfInteiro = `${Digito1}${Digito2}${Digito3}.${Digito4}${Digito5}${Digito6}.${Digito7}${Digito8}${Digito9}-${Digito10}${Digito11}`
+        if (cpfz.length == 11){
+        input_cpf.value = `${cpfInteiro}`
+        }
+
+    }
+</script>
