@@ -24,8 +24,16 @@
             </div>
             <div class="nav">
                 <ul class="nav">
-                    <li class="itens"><button class="cadastrar"> <a href="./cadastro.html">Cadastrar</a> </button></li>
-                    <li class="itens"><button class="entrar"><a href="./login.html">Entrar</a></button></li>
+                    <li class="itens">
+                        <a href="./cadastro.html">
+                            <button class="cadastrar">Cadastrar </button>
+                        </a>
+                    </li>
+                    <li class="itens">
+                        <a href="./login.html">
+                            <button class="entrar">Entrar</button>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -119,7 +127,7 @@
             span_validacao_nome.innerHTML = ''
         }
 
-        if (email.indexOf ("@") > -1) {
+        if (email.indexOf("@") > -1) {
             span_validacao_email.innerHTML = ''
         } else {
             span_validacao_email.innerHTML = `Email invalido`
@@ -140,10 +148,10 @@
         if (confirme_senha != senha) {
             span_validacao_confirme_senha.innerHTML = `Senha incorreta`
         } else {
-         span_validacao_confirme_senha.innerHTML =''
+            span_validacao_confirme_senha.innerHTML = ''
 
         }
-        if((nome.length >= 3) && (email.indexOf ("@") > -1) && (cpf.length == 14) && (senha.length >= 5) && (confirme_senha == senha)){
+        if ((nome.length >= 3) && (email.indexOf("@") > -1) && (cpf.length == 14) && (senha.length >= 5) && (confirme_senha == senha)) {
             window.location.href = "./tela_Inicial_Do_Grafico.html";
         }
     }
@@ -157,13 +165,13 @@
         var Digito5 = cpfz[4]
         var Digito6 = cpfz[5]
         var Digito7 = cpfz[6]
-        var Digito8 = cpfz[7] 
+        var Digito8 = cpfz[7]
         var Digito9 = cpfz[8]
         var Digito10 = cpfz[9]
         var Digito11 = cpfz[10]
         var cpfInteiro = `${Digito1}${Digito2}${Digito3}.${Digito4}${Digito5}${Digito6}.${Digito7}${Digito8}${Digito9}-${Digito10}${Digito11}`
-        if (cpfz.length == 11){
-        input_cpf.value = `${cpfInteiro}`
+        if (cpfz.length == 11) {
+            input_cpf.value = `${cpfInteiro}`
         }
 
     }
