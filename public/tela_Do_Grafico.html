@@ -81,7 +81,7 @@
                     <a href="#">
 
                         <!-- Imagem do ICONE DE CONFIGURAÇÕES -->
-                        <span class="icone"><i class="uil uil-cog"></i></span>
+                        <span class="icone" onclick="grafico()"><i class="uil uil-cog"></i></span>
                         <span class="titulo"> Configurações</span>
 
                     </a>
@@ -130,18 +130,12 @@
         <!-- Div que contem A LOGO DA MELVIS -->
         <div>
             <!-- Imagem da logo da MELVS VERDE -->
-            <img src="./assets/img/melvsLogo.png">
+            <img src="./assets/img/melvsLogo.png" onclick="grafico()" class="logo">
 
         </div>
+        <div>
 
-        <!-- Div que contem o botão de Sair -->
-        <div class="Sair">
-            <a href="./index.html">
-                <!-- Imagem do Botão de sair -->
-                <i class="uil uil-signout"></i>
-            </a>
         </div>
-
     </div>
 
     <!-- **************************************************************************************** -->
@@ -156,11 +150,17 @@
             <div>
 
                 <!-- Conteudo dentro da caixa -->
-                <div class="KPI-nome">Média Temperatura diária </div>
-                <div class="KPI-numeros">20°C</div>
-
-
+                <div class="KPI-nome">Temperatura</div>
+                <div class="KPI-TerceiraLinha">
+                    Temperatura Maxima
+                    <span id="temperatura_maxima" class="ideal">16ºc</span>
+                </div>
             </div>
+
+                <div class="KPI-numeros">
+                    Temperatura Minima
+                    <span id="temperatura_minima" class="ideal">14ºc</span>
+                </div>
         </div>
 
         <!-- Segunda Caixa -->
@@ -168,9 +168,13 @@
             <div>
 
                 <!-- Conteudo dentro da caixa -->
-                <div class="KPI-nome"> Temperatura máxima </div>
-                <div class="KPI-numeros">26°C</div>
-
+                <div class="KPI-nome"> Umidade</span></div>
+                <div class="KPI-TerceiraLinha"> Umidade Maxima
+                    <span id="umidade_maxima" class="ideal">14%</span>
+                </div>
+                <div class="KPI-numeros">Umidade Minima
+                    <span id="umidade_minima" class="ideal">12%</span>
+                </div>
 
             </div>
         </div>
@@ -180,23 +184,18 @@
             <div>
 
                 <!-- Conteudo dentro da caixa -->
-                <div class="KPI-nome"> Média da umidade diária</div>
-                <div class="KPI-numeros">62%</div>
+                <div class="KPI-nome"> Quantidade de vezes </div>
+                <div class="KPI-nome"> que saiu do ideal</div>
+                <div class="KPI-numeros">
+                    <spans id="quantidade" class='ideal'>0</span>
+                </div>
 
 
             </div>
         </div>
 
         <!-- Quarta Caixa -->
-        <div class="caixa">
-            <div>
-
-                <!-- Conteudo dentro da caixa -->
-                <div class="KPI-nome"> Umidade máxima </div>
-                <div class="KPI-numeros">70%</div>
-
-            </div>
-        </div>
+    
     </div>
 
 
@@ -380,6 +379,8 @@
         navegacao.classList.toggle('ativar');
         menu.classList.toggle('ativar');
     }
+    navegacao.classList.toggle('ativar');
+    menu.classList.toggle('ativar');
 
 </script>
 
@@ -414,5 +415,83 @@
     modoEscuro.addEventListener("click", () => {
         body.classList.toggle("Escuro");
     });
+
+    var contador = 0;
+    function grafico() {
+        if (contador == 4) {
+            contador = 0;
+        }
+        if (contador == 1) {
+            temperatura_maxima.classList = 'atencao';
+            temperatura_minima.classList = 'atencao';
+
+
+            temperatura_maxima.innerHTML = '19ºc';
+            temperatura_minima.innerHTML = '13ºc';
+
+
+            umidade_maxima.innerHTML = '15%';
+            umidade_minima.innerHTML = '11%';
+
+
+            umidade_maxima.classList = 'atencao'
+            umidade_minima.classList = 'atencao'
+
+            quantidade.innerHTML = '1'
+            quantidade.classList = 'atencao'
+        }
+
+        if (contador == 2) {
+            temperatura_maxima.classList = 'critico';
+            temperatura_minima.classList = 'critico';
+
+
+            temperatura_maxima.innerHTML = '21ºc';
+            temperatura_minima.innerHTML = '10ºc';
+
+
+            umidade_maxima.innerHTML = '17%';
+            umidade_minima.innerHTML = '9%';
+
+
+            umidade_maxima.classList = 'critico'
+            umidade_minima.classList = 'critico'
+
+            quantidade.innerHTML = '2'
+            quantidade.classList = 'critico'
+        }
+
+        if (contador == 3) {
+            temperatura_maxima.classList = 'ideal';
+            temperatura_minima.classList = 'ideal';
+
+
+            temperatura_maxima.innerHTML = '16ºc';
+            temperatura_minima.innerHTML = '14ºc';
+
+
+            umidade_maxima.innerHTML = '12%';
+            umidade_minima.innerHTML = '14%';
+
+
+            umidade_maxima.classList = 'ideal';
+            umidade_minima.classList = 'ideal';
+
+            quantidade.innerHTML = '0'
+            quantidade.classList = 'ideal'
+        }
+
+        if(contador == 1){
+
+            
+        }
+        contador += 1;
+    }
+</script>
+
+
+
+<script>
+
 
 </script>
