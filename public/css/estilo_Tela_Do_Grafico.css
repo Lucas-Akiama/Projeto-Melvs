@@ -13,6 +13,10 @@
     --VerdeEscuro: #054A29;
     --FundoGrafico: #eff0e8d5;
     --Sombra: rgba(0, 0, 0, 0.08);
+    --ideal: #054a29;
+    --critico: #ff0000;
+    --atencao: #bbb502;
+
 }
 
 body {
@@ -30,7 +34,7 @@ body.Escuro {
     --VerdeEscuro: #3A4A40;
     --FundoGrafico: rgba(255, 255, 255, 0.179);
     --Sombra: rgba(255, 255, 255, 0.179);
-
+    --ideal: #11C76F;
 
 }
 
@@ -84,6 +88,11 @@ body.Escuro {
 
 }
 
+.caixas .caixa:hover .KPI-TerceiraLinha {
+    color: var(--TextoPreto);
+    font-weight: bold;
+
+}
 
 .caixas .caixa:hover .KPI-nome {
     color: var(--TextoPreto);
@@ -221,6 +230,12 @@ i {
     color: var(--TextoPreto);
 }
 
+.caixas .caixa .KPI-TerceiraLinha {
+    margin-top: 3px;
+    text-align: center;
+    color: var(--TextoPreto);
+}
+
 /* Graficos */
 .graficos {
     margin-left: 10px;
@@ -256,4 +271,30 @@ i {
 .menu.ativar {
     width: calc(100% - 80px);
     left: 80px;
+}
+
+.ideal {
+    color: var(--ideal);
+    font-weight: bold;
+    transition: 0.5s
+
+}
+
+.critico {
+    color: var(--critico);
+    font-weight: bold;
+    transition: 0.5s
+}
+
+.atencao {
+    color: var(--atencao);
+    font-weight: bold;
+    transition: 0.5s
+
+}
+
+.logo {
+    cursor: pointer;
+    font-weight: bold;
+
 }
