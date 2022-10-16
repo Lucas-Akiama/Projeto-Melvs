@@ -1,146 +1,151 @@
-/* resetando a margin do site */
-* {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+}
+
+.principal-cadastro {
+    width: 100vw;
+    height: 50vw;
+    background-color: #EFF0E8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
-  
-    /* Deuxar o botão transparente ao passar mouse */
-    .textologin button:hover {
-      opacity: 0.5;
-    }
-  
-    /* Deuxar o input transparente ao passar mouse */
-    .textologin input:hover{
-      opacity: 0.5;
-    }
-  
-    /* Tirar o sublinhado */
-    a {
-      width: 100%;
-      text-decoration: none;
-    }
-     
-    /* Dando cor ao placeholder(palavra dentro do input) */
-    .textologin ::placeholder{
-      color: #054A29;
-      }
-  
-      /* Tirando a borda do input, deixando da mesma cor da pagina e movimentando ela */
-     .textologin input{
-       background-color: #EFF0E8 ;
-       border: 0;
-       box-sizing: border-box;
-       border-bottom: 1px solid #054A29;
-       width: 100%;
-       height: 30px;
-       margin-top: 70px;
-     }
-  
-         /* Deixando o background de tudo da mesma cor e deixando o display como flexivel */ 
-      .telaLogin{
-      background-color: #EFF0E8;
-      display: flex;
-      }
-  
-         /* Essa parte é a que tem a imagem da soja e a logo */ 
-       .esquerda-login{
-        width: 50%;
-       height: 100%;
-       display: flex;
-       justify-content:center ;
-       align-items:center ;
-       flex-direction: column;
-       background: rgb(17,199,111);
-       background: linear-gradient(to bottom, rgba(18, 190, 107, 0.658) 54%, rgba(  239, 240, 232, 0.66
-       ) 83%);
-       }
-  
-       /* Definindo tamanho para a imagem da soja*/ 
-       .esquerda-login .imagemsoja{
-       width: 30vw;
-       }
-  
-       /* Definindo tamanho para a imagem da logo*/ 
-       .esquerda-login .imagemlogologin{
-       width: 30vw;
-       }
-  
-      /* Colocando no centro a frase de Cadastro e dando uma cor mais escura ao texto*/ 
-       .frasecadastro {
-       display: flex;
-       text-align: center;
-       justify-content: center;
-       color: #054A29;
-       }
-  
-      /*Essa parte é toda a parte de login (seria como a parte direita do site)
-      onde tem os input de cadastro e os botão*/ 
-       .textologin {
-       width: 50%;
-       height: 100%;
-       border: none;
-       padding: 50px;
-       background-color: #EFF0E8    ;
-       font-size: 12pt;
-       box-sizing: border-box;
-       display: flex;
-       flex-direction: column;
-       justify-content: center;
-       }
-  
-      /* Modificando o botão da tela de cadastro (tirando a borda, colocando um background
-      do botão para a mesma cor do site, e entre outros*/ 
-       .textologin .botaocadastrar {
-       margin-top: 60px;
-       margin-left: 25%;
-       width: 50%;
-       color: #054A29   ;
-       background-color: #D9D9D9;
-       padding: 15px 30px 15px;
-       font-weight: bold;
-       border: none;
-       border-radius: 30px;
-       cursor: pointer;
-       }
-    
-       /* Modificando TODOS os inputs da tela da direita*/ 
-      .textologin input{
-       background-color: #EFF0E8 ;
-       border: 0;
-       box-sizing: border-box;
-       border-bottom: 1px solid #054A29;
-       width: 100%;
-       height: 30px;
-       margin-top: 70px;
-       }
-  
-      /* Estilizando o botão de voltar para a tela de Login*/ 
-       .textologin .botaoVoltarParaATeladeLogin {
-       background-color: #EFF0E8;
-       border: 0;
-       color: #054A29;
-       font-size: 13px;
-       font-weight: bold;
-       margin-top: 120px;
-       cursor: pointer;
-       display: flex;
-       text-align: center;
-       justify-content: center;
-       font-size: 12pt;
-      }
-  
-       /*botão para voltar para a home do site*/ 
-       .botaodevoltarparaahome {
-       cursor: pointer; 
-       margin-left: 30px;
-       margin-top: 30px;
-       }
-   
-  
-       /* Div para colocar a frase de voltar */
-       .voltar{
-          display: flex;
-          justify-content: flex-start;
-          width: 100%;
-       }
+
+.esquerda-cadastro {
+    width: 50vw;
+    height: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.esquerda-cadastro>h1 {
+    color: #054A29;
+    margin-top: 15vh;
+}
+
+.esquerda-cadastro-imagem {
+    width: 40vw;
+}
+
+.direita-cadastro {
+    width: 50vw;
+    height: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-cadastro {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 30px;
+    background-color: rgb(17, 199, 111);
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.253)
+}
+
+.organizar-senhas {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.senha {
+    display: flex;
+    width: 48%;
+}
+
+.card-cadastro>h1 {
+    color: #EFF0E8;
+    font-weight: 800;
+    margin: 0;
+}
+
+.validacao {
+    width: 100%;
+    height: 5px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    font-size: small;
+    text-decoration: underline;
+}
+
+.campo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.span_titulo {
+    font-weight: 800;
+}
+
+.campo>input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: rgb(51, 210, 133);
+    color: #054A29;
+    font-size: 12pt;
+    outline: none;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.09)
+}
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.campo>span {
+    color: #EFF0E8;
+    margin-bottom: 10px;
+}
+
+.campo>input::placeholder {
+    color: #eff0e871;
+    font-size: thin;
+}
+
+.botao-cadastro {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #054A29;
+    background-color: #EFF0E8;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #EFF0E8;
+}
