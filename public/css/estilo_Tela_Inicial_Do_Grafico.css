@@ -225,6 +225,7 @@ i {
     margin: 20px 20px;
     width: 100%;
     box-sizing: border-box;
+    border: 1px solid var(--VerdeEscuro);
 }
 
 
@@ -310,6 +311,7 @@ i {
     border-radius: 20px;
     font-size: 15px;
     cursor: pointer;
+    border: 1px solid var(--VerdeEscuro);
 }
 
 
@@ -359,8 +361,8 @@ section .card .imagem {
 
 
 section .card .imagem img {
-    height: 100%;
     width: 100%;
+    height: 100%;
     border-radius: 20px;
     padding: 3px;
    
