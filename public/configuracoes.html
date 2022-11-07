@@ -158,11 +158,13 @@
                     <div class="inputsConfig">
                         <label class="ml" for="input_nome">Nome</label>
                         <input class="input margin" placeholder="Brandão" type="text" name="input_nome" id="input_nome">
+                        <span class="validacao" id="span_validacao_nome"></span>
                         <br>
                         <label class="ml" for="input_senha">Senha</label>
                         <input class="input margin" placeholder="***********" type="password" name="input_senha" id="input_senha">
+                        <span class="validacao" id="span_validacao_senha"></span>
                     </div>
-                    <button class="botao-config" onclick="">
+                    <button class="botao-config" onclick="salvar()">
                         salvar
                     </button>
         </div>
@@ -179,6 +181,22 @@
 
 
 <!-- MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU  -->
+<script>
+    function salvar() {
+        var nome = input_nome.value;
+        var senha = input_senha.value;
+
+        if (nome.length >= 0) {
+            span_validacao_nome.innerHTML = `Nome invalido`
+        }
+
+        if (senha.length < 5) {
+            span_validacao_senha.innerHTML = `Senha invalida`
+        }
+
+    }
+</script>
+
 <script>
     //deixar o menu toggle 
     let toggle = document.querySelector('.toggle');

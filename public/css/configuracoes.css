@@ -114,3 +114,9 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.validacao{
+    display: flex;
+    color: red;
+    justify-content:center;
+}
