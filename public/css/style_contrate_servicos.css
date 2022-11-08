@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');*/
+/*
+Banner
+*/
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+.banner{
+    display: flex;
+    background-image: url("../assets/img/silo_contrato1.jpg");
+    padding: 100px 0 0 0;
+    background-size: cover;
+    flex-direction: column;
+}
+
+.banner .container{
+    height: 21.875rem;
+    justify-content: flex-start;
+    align-items:flex-start;
+    flex-direction:column;
+}
+
+.tituloBanner{
+    margin-top:20px;
+    color: #06AA51;
+    font-size: 50px;
+    width: 400px;
+}
+
+.retangulo_passos {
+    background-color: #EFF0E8;
+    width: 70vw;
+    height: 50vh;
+    display: flex;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: 2px solid #054A29;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+.caixa_passos{
+    width: 30vw;
+    height: 30vh;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.numeracao_passos {
+    display: flex;
+    justify-content: center;
+}
+.numeracao {
+    background-color: #11C76F;
+    border-radius: 20px ;
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+}
+.passos {
+    margin-top: 40px;
+    justify-content: center;
+    display: flex;
+    margin-left: 20px;
+    font-weight: 500;
+}
+/*
+Fim Banner
+----------------------------------------------------------------
+Nossa Solução
+*/
+
+.nossaSolucao{
+    display:flex;
+    background-color: #EFF0E8;
+    padding: 100px 0;
+    background-size: cover;
+    flex-direction: column;
+}
+
+.nossaSolucao .container{
+    justify-content: space-between;
+}
+
+.container .conteudoSolucao{
+    flex-direction: column;
+    width: 500px;
+}
+
+.titulo{
+    color: #06AA51;
+    font-size: 2.25rem; 
+}
+
+.texto{
+    color: #054A29;
+    font-size: 22px;
+}
+.container2 {
+    display: flex;
+    justify-content: space-around;
+}
+.solucao {
+    display: flex;
+    flex-direction: row;
+    border: blue;
+    border-width: 5px;
+    padding: 15px;
+}
+.textosolucao {
+    padding: 15px;
+    font-size: 22px;
+}
+/*
+Fim nossa solução
+------------------------------------------------------------------
+Inicio Quem somos nós
+*/
+
+.quemSomos{
+    display: flex;
+    background-image: url("../assets/img/silo_contrato1.jpg");
+    padding: 100px 0;
+    
+    background-size: cover;
+    flex-direction: column;
+}
+
+.quemSomos .container{
+    height: 21.875rem;
+    justify-content: flex-start;
+    align-items:flex-start;
+}
+
+.container .conteudoQuemSomos{
+    flex-direction: column;
+    width: 1000px;
+}
+
+.textoQuemSomos{
+    color: #EFF0E8;
+    font-size: 22px;
+}
+.quemSomos .texto {
+    color: white;
+    font-size: x-large;
+}
