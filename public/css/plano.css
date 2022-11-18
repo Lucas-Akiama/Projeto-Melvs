@@ -374,3 +374,12 @@ section{
     position: relative;
 
 }
+
+
+.menuDeAdicionar{
+    display: none;
+}
+
+.ativo{
+    display: block;
+}

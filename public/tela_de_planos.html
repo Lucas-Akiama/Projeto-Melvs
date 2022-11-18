@@ -49,7 +49,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" onclick="abrirOpcao()">
 
                         <!--Imagem do ICONE DE ADICIONAR -->
                         <span class="icone"> <i class="uil uil-user-plus"></i> </span>
@@ -57,6 +57,27 @@
 
                     </a>
                 </li>
+                <div class="menuDeAdicionar">
+
+                    <li>
+                        <a href="#">
+    
+                            <!--Imagem do ICONE DE ADICIONAR -->
+                            <span class="icone"> <i class="uil uil-user-plus"></i> </span>
+                            <span class="titulo"> Adicionar Responsável</span>
+    
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="">
+    
+                            <!--Imagem do ICONE DE ADICIONAR -->
+                            <span class="icone"> <i class="uil uil-user-plus"></i> </span>
+                            <span class="titulo"> Adicionar Responsável</span>
+    
+                        </a>
+                    </li>
+                </div>
                 <li>
                     <a href="#">
 
@@ -354,5 +375,20 @@
     modoEscuro.addEventListener("click", () => {
         body.classList.toggle("Escuro");
     });
+
+</script>
+
+<script>
+    function abrirOpcao(){
+        const menuDeAdicionar = document.querySelector('.menuDeAdicionar');
+
+       /* se ela tiver ativa ela desativa pq não faz sentido ja começar com o negocio ativo */
+        if (menuDeAdicionar.classList.contains('ativo')){
+            menuDeAdicionar.classList.remove('ativo')
+        }else{
+            menuDeAdicionar.classList.add('ativo')
+        }
+    }
+
 
 </script>
