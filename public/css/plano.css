@@ -8,6 +8,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
     --brancopuro: #FFF;
     --BrancoMelvs: #eff0e8d5;
@@ -16,7 +17,7 @@
     --TextoPreto: #000;
     --TextoVerdeEscuro: #054A29;
     --VerdeEscuro: #054A29;
-    --FundoGrafico: #eff0e8d5;
+    --Fundoplanos: #eff0e8d5;
     --Sombra: rgba(0, 0, 0, 0.08);
     --TextoVerdeClaro: #11C76F;
     --Botao: #D9D9D9;
@@ -24,8 +25,6 @@
     --ok: #11C76F;
     --atencao:  #bbb502;
 }
-
-
 
 * {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -54,7 +53,7 @@ body.Escuro {
     --TextoPreto: #CCC;
     --TextoVerdeEscuro: #CCC;
     --VerdeEscuro: #3A4A40;
-    --FundoGrafico: rgba(255, 255, 255, 0.179);
+    --Fundoplanos: rgba(255, 255, 255, 0.179);
     --Sombra: rgba(255, 255, 255, 0.179);
     --brancopuro: #000;
     --TextoVermelho: #B75E38;
@@ -72,7 +71,6 @@ i {
     color: var(--TextoVerdeEscuro);
 }
 
-
 /* tag ativar */
 .navegacao.ativar {
     width: 60px;
@@ -86,12 +84,12 @@ i {
 
 section{
     background-color: var(--BrancoMelvs);
+    display: flex   ;
+    justify-content: center;
 }
 
-.container {
-    background-color: var(--BrancoMelvs);
-}
-.containerGrafico {
+
+.containerplanos {
     position: relative;
     width: 100%;
 }
@@ -125,9 +123,6 @@ section{
 }
 
 /* hover */
-
-
-
 
 .caixas .caixa:hover .KPI-nome {
     color: var(--TextoPreto);
@@ -164,7 +159,6 @@ section{
     color: var(--TextoVerdeEscuro);
 }
 
-
 .navegacao ul li a .titulo {
     position: relative;
     display: block;
@@ -180,9 +174,6 @@ section{
     height: 60px;
     line-height: 60px;
 }
-
-
-
 
 .menu {
     position: absolute;
@@ -239,7 +230,7 @@ section{
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
     position: relative;
-    margin: 20px 20px;
+    margin: 10px;
     width: 100%;
     box-sizing: border-box;
     border: 1px solid var(--VerdeEscuro);
@@ -261,7 +252,6 @@ section{
     background-color: var(--BrancoMelvs);
     justify-content: center;
     flex-direction: row;
-    position: relative;
 }
 .subtitulo {
     color: rgb(240, 9, 240);
