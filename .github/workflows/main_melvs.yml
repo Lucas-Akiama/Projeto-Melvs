@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'melvs'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_01D492FEAE04402FBA04E76FD86296FB }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_40BDFF00F5CF442EBBEE592577D36274 }}
           package: .
