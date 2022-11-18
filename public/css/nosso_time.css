@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+
+.card {
+    background-color: #F6F3F3;
+    border-radius: 20px;
+    position: relative;
+    margin: 20px 20px;
+    width: 280px;
+
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    background: purple;
+    border-radius: 20px 20px 0 0;
+}
+
+.card .conteudo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    z-index: 100;
+}
+
+.card .icones i {
+    color: #054A29;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.card .nome-do-integrante-e-profissao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    color: #054A29;
+}
+
+.nome-do-integrante-e-profissao .nome-do-integrante {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.nome-do-integrante-e-profissao .profissao {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+.nome-do-integrante-e-profissao i {
+    color: #11C76F;
+    opacity: 0.6;
+}
+
+/************************************************************************************************************ */
+
+/* dando opacidade para quando o mouser passar por cima  */
+/* dando opacidade para os icones de instagram, facebook e linkedin  */
+.card .icones i:hover {
+    opacity: 1;
+}
+
+/* dando opacidade para quando o icone do I informativo */
+.nome-do-integrante-e-profissao i:hover {
+    opacity: 1;
+}
+
+/************************************************************************************************************ */
+
+
+/*Comandos que tem que ser alterados por alguma div quando for transcrevidos  */
+.body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #eff0e8;
+    border-bottom: 1px solid #054A29;
+
+}
+
+/*Comandos que tem que ser alterados por alguma div quando for transcrevidos  */
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/************************************************************************************************************ */
+section .card .imagem {
+    height: 140px;
+    width: 140px;
+    border-radius: 20px;
+    padding: 3px;
+    background-color: #11C76F;
+}
+
+
+section .card .imagem img {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 3px solid #FFF;
+}
