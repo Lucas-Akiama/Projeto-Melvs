@@ -9,6 +9,40 @@
 	vertical-align: baseline;
 }
 
+:root {
+    --BrancoMelvs: #eff0e8d5;
+    --VerdeClaro: #11C76F;
+    --HoverMenu: rgba(23, 233, 132, 0.701);
+    --TextoPreto: #000;
+    --TextoVerdeEscuro: #054A29;
+    --VerdeEscuro: #054A29;
+    --FundoGrafico: #eff0e8d5;
+    --Sombra: rgba(0, 0, 0, 0.08);
+    --ideal: #054a29;
+    --critico: #ff0000;
+    --atencao: #bbb502;
+    --TextoVerdeEscuro2: #054A29;
+
+}
+
+body.Escuro {
+    --BrancoMelvs: #3A3B3C;
+    --VerdeClaro: #242526;
+    --HoverMenu: #4D4C4C;
+    --TextoPreto: #CCC;
+    --TextoVerdeEscuro: #CCC;
+    --VerdeEscuro: #3A4A40;
+    --FundoGrafico: rgba(255, 255, 255, 0.179);
+    --Sombra: rgba(255, 255, 255, 0.179);
+    --brancopuro: #000;
+    --TextoVermelho: #B75E38;
+    --TextoLaranja:#F9F871;
+    --TextoVerdeClaro: #11C76F;
+    --Botao: #697987;
+    --TextoVerdeEscuro2: #11C76F;
+
+
+}
 body{
     font-family: 'Roboto', sans-serif;
 }
@@ -20,6 +54,7 @@ body{
 .containerConfig{
     display: flex;
     justify-content: flex-start;
+    color: var(--TextoPreto);
 }
 
 .containerConfig a { 
@@ -31,11 +66,12 @@ body{
     display: flex;
     flex-direction: column;
     width: 20%;
-    border: 1px solid #054A29;
+    border: 1px solid var(--TextoVerdeEscuro2);
     border-radius: 5px;
 }
 
-.conteudoMenuConfig ul li{border: 25px;
+.conteudoMenuConfig ul li{
+    border: 25px;
     border-color: yellow;
     list-style: none;
 
@@ -46,26 +82,28 @@ body{
     flex-direction: column;
     margin-left:50px;
     width:50%;
-    border: 1px solid #054A29;
+    border: 1px solid var(--TextoVerdeEscuro2);
     border-radius: 5px;
 }
 
 .tituloConfig{
     width:100%;
     font-size:25px;
-    border-bottom: 0.5px solid #054a29;
+    border-bottom: 0.5px solid var(--TextoVerdeEscuro2);
+    color: var(--TextoPreto);
 }
 
 .iconConfigPerfil{
     display: flex;
     justify-content: center;
+    color: var(--TextoVerdeEscuro2);
 }
 
 .icon{
     width:90px;
     margin-top: 20px;
-    -webkit-box-shadow: 5px 5px 24px 5px #054A29; 
-    box-shadow: 5px 5px 24px 5px #054A29;
+    -webkit-box-shadow: 5px 5px 24px 5px var(--TextoVerdeEscuro2); 
+    box-shadow: 5px 5px 24px 5px var(--TextoVerdeEscuro2);
 }
 
 .inputsConfig{
@@ -73,6 +111,7 @@ body{
     flex-direction:column;
     justify-content: center;
     width:50%;
+    color: var(--TextoPreto);
 }
 
 .input{
@@ -91,7 +130,7 @@ body{
 }
 
 .containerButton{
-    border: 0.5px solid #054A29;
+    border: 0.5px solid var(--TextoVerdeEscuro2);
     border-radius: 5px;
 }
 
@@ -106,8 +145,8 @@ body{
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 2px;
-    color: #EFF0E8;
-    background-color: #054A29;
+    color: #fff;
+    background-color:var(--TextoVerdeEscuro2);
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px #EFF0E8;
     display: flex;
