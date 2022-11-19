@@ -142,6 +142,10 @@
                 <input class="input margin" placeholder="XX. XXX. XXX/0001-XX" id="input_cnpj_empresa"> <br>
                 <label class="ml" for="input_cep_empresa">Cep</label> <br>
                 <input class="input margin" placeholder="000.00.000" id="input_cep_empresa"> <br>
+                <label class="ml" for="input_cidade_empresa">Cidade</label><br>
+                <input class="input margin" placeholder="Curitiba" id="input_cidade_empresa"> <br>
+                <label class="ml" for="input_estado_empresa">Estado</label><br>
+                <input class="input margin" placeholder="Parana" id="input_estado_empresa"> <br>
                 <label class="ml" for="input_complemento_empresa">Complemento</label><br>
                 <input class="input margin" placeholder="N° XXX" id="input_complemento_empresa"> <br>
                 <button class="botao" onclick="add_emp()"> Add empresa</button>
@@ -150,23 +154,29 @@
 
         <div class="lista_emp">
             <h1 class="titulo_empresa">Empresas</h1>
-            <div class="coluna_emp">
-                <li>Nome</li>
-                <li>Cnpj</li>
-                <li>Cep</li>
-                <li>Complemento</li>
-            </div>
-            <div class="exibir_lista">
+            <div class="lista">
                 <div class="itens_lista" id="lista_nome_empresa">
+                    <li>Nome</li>
                     <div class="div_lista_armazem" id="div_nome_empresa"></div>
                 </div>
                 <div class="itens_lista" id="lista_cnpj">
+                    <li>Cnpj</li>
                     <div class="div_lista_armazem" id="div_cnpj"></div>
                 </div>
                 <div class="itens_lista" id="lista_cep">
+                    <li>Cep</li>
                     <div class="div_lista_armazem" id="div_cep"></div>
                 </div>
+                <div class="itens_lista" id="lista_cidade">
+                    <li>Cidade</li>
+                    <div class="div_lista_armazem" id="div_cidade"></div>
+                </div>
+                <div class="itens_lista" id="lista_estado">
+                    <li>Estado</li>
+                    <div class="div_lista_armazem" id="div_estado"></div>
+                </div>
                 <div class="itens_lista" id="lista_omplemento">
+                    <li>Complemento</li>
                     <div class="div_lista_armazem" id="div_complemento"></div>
                 </div>
             </div>
@@ -255,6 +265,7 @@
         div_cnpj.innerHTML = ""
         div_cep.innerHTML = ""
         div_complemento.innerHTML = ""
+
     for(var contador_lista_empresa = 0;
         contador_lista_empresa < lista_nome_empresa.length;
         contador_lista_empresa++){

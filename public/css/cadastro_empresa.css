@@ -52,19 +52,14 @@ body{
 }
 
 
-.coluna_emp{
+.lista{
     display: flex;
     list-style: none;
     flex-direction: row;
     justify-content: space-around;
+    list-style: none;
 }
-.exibir_lista{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    
-}
+
 
 .itens_lista{
     display: flex;

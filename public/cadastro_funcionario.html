@@ -144,27 +144,34 @@
                 <input class="input margin" type="password" placeholder="*****" id="input_senha_funcionario"> <br>
                 <label class="ml" for="input_empresa_funcionario">Empresa funcionário</label> <br>
                 <input class="input margin" placeholder="Melvs" id="input_empresa_funcionario"> <br>
+                <label class="ml" for="input_tipo_funcionario">Permição</label> <br>
+                <select class="input margin" id="input_tipo_funcionario">
+                    <option value="1">Admin</option>
+                    <option value="2">Analista</option>
+                </select> <br>
                 <button class="botao" onclick="add_funcionario()">Add Funcionário</button>
             </div>
         </div>
 
         <div class="lista_funcionario">
             <h1 class="titulo_funcionario">Funcionários</h1>
-            <div class="coluna_funcionario">
-                <li>Nome</li>
-                <li>Email</li>
-                <li>Empresa</li>
-            </div>
-            <div class="exibir_lista">
-                <div class="itens_lista" id="lista_nome_funcionario">
-                    <div class="div_lista_armazem" id="div_nome_funcionario"></div>
-                </div>
-                <div class="itens_lista" id="lista_email_funcionario">
-                    <div class="div_lista_armazem" id="div_email_funcionario"></div>
-                </div>
-                <div class="itens_lista" id="lista_empresa_funcionario">
-                    <div class="div_lista_armazem" id="div_empresa_funcionario"></div>
-                </div>
+          <div class="lista">
+                    <div class="itens_lista" id="lista_nome_funcionario">
+                        <li>Nome</li>
+                        <div class="div_lista_armazem" id="div_nome_funcionario"></div>
+                    </div>
+                    <div class="itens_lista" id="lista_email_funcionario">
+                        <li>Email</li>
+                        <div class="div_lista_armazem" id="div_email_funcionario"></div>
+                    </div>
+                    <div class="itens_lista" id="lista_empresa_funcionario">
+                        <li>Empresa</li>
+                        <div class="div_lista_armazem" id="div_empresa_funcionario"></div>
+                    </div>
+                    <div class="itens_lista" id="lista_tipo_funcionario">
+                        <li>Permição</li>
+                        <div class="div_lista_armazem" id="div_tipo_funcionario"></div>
+                    </div>             
             </div>
         </div>
     </div>
@@ -233,19 +240,23 @@
     var lista_nome_funcionario = [];
     var lista_email_funcionario = [];
     var lista_empresa_funcionario = [];
+    var lista_tipo_funcionario = [];
 
     function add_funcionario() {
         var nome_funcionario= input_nome_funcionario.value;
         var email_funcionario = input_email_funcionario.value;
         var empresa_funcionario = input_empresa_funcionario.value;
+        var tipo_funcionario = input_tipo_funcionario.value;
 
         lista_nome_funcionario.push(nome_funcionario);
         lista_email_funcionario.push(email_funcionario);
         lista_empresa_funcionario.push(empresa_funcionario);
-
+        lista_tipo_funcionario.push(tipo_funcionario)
         div_nome_funcionario.innerHTML = ""
         div_email_funcionario.innerHTML = ""
         div_empresa_funcionario.innerHTML = ""
+        div_tipo_funcionario.innerHTML = ""
+
     for(var contador_funcionario = 0;
         contador_funcionario < lista_nome_funcionario.length;
         contador_funcionario++){
@@ -253,6 +264,7 @@
             div_nome_funcionario.innerHTML += `${lista_nome_funcionario[contador_funcionario]} <br>`;
             div_email_funcionario.innerHTML += `${lista_email_funcionario[contador_funcionario]} <br>`;
             div_empresa_funcionario.innerHTML +=`${lista_empresa_funcionario[contador_funcionario]} <br>`;
+            div_tipo_funcionario.innerHTML += `${lista_tipo_funcionario[contador_funcionario]}<br>`
         }        
     }
 </script>
