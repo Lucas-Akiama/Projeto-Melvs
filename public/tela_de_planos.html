@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
+    <title>Perfil | Planos</title>
 
-    <!-- Linkando O  CSS da tela de dashboard (grafico)-->
+    <!-- Linkando O  CSS da tela (planos)-->
     <link rel="stylesheet" href="./css/plano.css">
     <!-- linkando os icones-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -21,8 +21,8 @@
 
 <body>
 
-    <!-- Div container do grafico e da navegação -->
-    <div class="containerGrafico">
+    <!-- Div container do planos e da navegação -->
+    <div class="containerplanos">
 
         <!-- Div que contem a parte de navegação (parte verde do menu)-->
         <div class="navegacao">
@@ -42,14 +42,14 @@
                 <li>
                     <a href="#">
 
-                        <!-- Imagem do ICONE DO GRAFICO-->
+                        <!-- Imagem do ICONE DO planos-->
                         <span class="icone"> <i class="uil uil-home"></i> </span>
                         <span class="titulo"> Início </span>
 
                     </a>
                 </li>
                 <li>
-                    <a href="#" onclick="abrirOpcao()">
+                    <a href="#">
 
                         <!--Imagem do ICONE DE ADICIONAR -->
                         <span class="icone"> <i class="uil uil-user-plus"></i> </span>
@@ -57,27 +57,6 @@
 
                     </a>
                 </li>
-                <div class="menuDeAdicionar">
-
-                    <li>
-                        <a href="#">
-    
-                            <!--Imagem do ICONE DE ADICIONAR -->
-                            <span class="icone"> <i class="uil uil-user-plus"></i> </span>
-                            <span class="titulo"> Adicionar Responsável</span>
-    
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" onclick="">
-    
-                            <!--Imagem do ICONE DE ADICIONAR -->
-                            <span class="icone"> <i class="uil uil-user-plus"></i> </span>
-                            <span class="titulo"> Adicionar Responsável</span>
-    
-                        </a>
-                    </li>
-                </div>
                 <li>
                     <a href="#">
 
@@ -145,7 +124,7 @@
     <!-- **************************************************************************************** -->
 
 
-    <!--Graficos-->
+    <!--planoss-->
     <section>
         <div class="body">
             <div class="container">
@@ -375,20 +354,5 @@
     modoEscuro.addEventListener("click", () => {
         body.classList.toggle("Escuro");
     });
-
-</script>
-
-<script>
-    function abrirOpcao(){
-        const menuDeAdicionar = document.querySelector('.menuDeAdicionar');
-
-       /* se ela tiver ativa ela desativa pq não faz sentido ja começar com o negocio ativo */
-        if (menuDeAdicionar.classList.contains('ativo')){
-            menuDeAdicionar.classList.remove('ativo')
-        }else{
-            menuDeAdicionar.classList.add('ativo')
-        }
-    }
-
 
 </script>
