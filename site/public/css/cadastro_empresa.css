@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.titulo_add_emp{
+    margin: 15px;
+}
+
+.add_emp{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.containerConfig a { 
+    color: inherit; 
+    text-decoration: none;
+} 
+
+.menu_add_emp{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    border: 1px solid #054A29;
+    border-radius: 5px;
+}
+
+.titulo_empresa{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 35px;
+}
+
+.lista_emp{
+    display: flex;
+    flex-direction: column;
+    margin-left:50px;
+    width:70%;
+    border: 1px solid #054A29;
+    border-radius: 5px;
+}
+
+
+.coluna_emp{
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.exibir_lista{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.itens_lista{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div_lista_armazem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container_titulo_add_emp{
+    border: 1px solid #054a29;
+    width:100%;
+    font-size:25px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.formulario_add_emp{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.input{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    width:90%;
+    margin-top:5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #054A29;
+}
+
+.ml{
+    margin-left: 10px;
+}
+
+.margin{
+    margin-left: 10px ;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+
+.botao{
+    width: 80%;
+    padding: 16px 0px;
+    margin: 25px;
+    margin-top: 0px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #EFF0E8;
+    background-color: #054A29;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao:hover{
+-webkit-box-shadow: 0px 0px 10px 2px rgba(15,105,25,1);
+-moz-box-shadow: 0px 0px 10px 2px rgba(15,105,25,1);
+box-shadow: 0px 0px 10px 2px rgba(15,105,25,1);
+}
+
+.icone2{
+    transition: 3s;
+    align-items: center;
+    width: 100%;
+    display: flex;
+   justify-content: flex-end;
+}
+
+.adicionar{
+    display: none;
+    background-color: #D4FADE;
+}
+
+.adicionar4{
+    margin-left: 3px;
+    margin-right: 6px;
+    background-color: #D4FADE;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+}

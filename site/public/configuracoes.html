@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+
+    <!-- Linkando O  CSS da tela de dashboard (grafico)-->
+    <link rel="stylesheet" href="./css/estilo_Tela_Inicial_Do_Grafico.css">
+
+    <link rel="stylesheet" href="./css/configuracoes.css">
+    <script src="./js/funcoes.js"></script>
+
+    <!-- linkando os icones-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
+</head>
+
+<body>
+
+    <!-- Div container do grafico e da navegação -->
+    <div class="containerGrafico">
+
+        <!-- Div que contem a parte de navegação (parte verde do menu)-->
+        <div class="navegacao">
+            <ul>
+                <li>
+                    <!-- Foto De Perfil do USUARIO e o NOME do mesmo -->
+                    <div class="fotoDePerfil">
+                        <a href="#">
+
+                            <!-- imagem do ICONE DA FOTO DE PERFIL-->
+                            <span class="icone"><i class="uil uil-user"></i> </span>
+                            <span class="titulo"><span id="b_usuario">usuário</span></span>
+
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="./tela_Inicial_Do_Grafico.html">
+
+                        <!-- Imagem do ICONE DO GRAFICO-->
+                        <span class="icone"> <i class="uil uil-home"></i> </span>
+                        <span class="titulo"> Início </span>
+
+                    </a>
+                </li>
+                <li onclick="Adicionar()" id="adicionar2">
+                    <a href="#">
+
+                        <!--Imagem do ICONE DE ADICIONAR -->
+                        <span class="icone"> <i class="uil uil-plus"></i> </span>
+                        <span class="titulo"> Adicionar</span>
+                        <span class="icone2"><i class="uil uil-angle-down"></i></span>
+
+                    </a>
+                </li>
+                <div class="adicionar" id="adicionar3">
+
+                    <li>
+                        <a href="./cadastro_armazem.html">
+
+                            <!--Imagem do ICONE DE ADICIONAR -->
+                            <span class="icone"> <i class="uil uil-estate"></i> </span>
+                            <span class="titulo"> Adicionar Armazem</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./cadastro_empresa.html">
+
+                            <!--Imagem do ICONE DE ADICIONAR -->
+                            <span class="icone"> <i class="uil uil-building"></i></span>
+                            <span class="titulo"> Adicionar Empresa</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./cadastro_funcionario.html">
+
+                            <!--Imagem do ICONE DE ADICIONAR -->
+                            <span class="icone"> <i class="uil uil-user-plus"></i> </span>
+                            <span class="titulo"> Adicionar Responsável</span>
+
+                        </a>
+                    </li>
+                </div>
+                <li>
+                    <a href="./configuracoes.html">
+
+                        <!-- Imagem do ICONE DE CONFIGURAÇÕES -->
+                        <span class="icone"><i class="uil uil-cog"></i></span>
+                        <span class="titulo"> Configurações</span>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="Modo" onclick="ModoClaro()">
+
+                        <!-- Dark Mode -->
+                        <span class="icone"><i class="uil uil-moon"></i> </span>
+                        <span id="ModoEscuro" class="Modo"> Modo Escuro </span>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="./index.html">
+
+                        <!-- Botão de Sair  -->
+                        <span class="icone"><i class="uil uil-signout"></i> </span>
+                        <span class="titulo"> Sair </span>
+
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</body>
+
+<!-- **************************************************************************************** -->
+
+<!--Menu-->
+
+<div class="menu">
+
+    <!-- Parte de Cima que contem A logo de Melvs e O botão de ocutar o menu-->
+    <div class="barra-de-cima">
+
+        <!-- Div Que tem o icone de Menu-->
+        <div class="toggle">
+
+            <!-- Imagem do ICONE DE MENU -->
+            <i class="uil uil-list-ul"></i>
+
+        </div>
+
+        <!-- Div que contem A LOGO DA MELVIS -->
+        <div>
+            <!-- Imagem da logo da MELVS VERDE -->
+            <img src="./assets/img/melvs_logo.png" alt="">
+
+        </div>
+
+       <div>
+        
+       </div>
+
+    </div>
+
+    <!-- **************************************************************************************** -->
+    <div class="containerConfig">
+        <div class="menuConfig">
+            <div class="conteudoMenuConfig">
+                <ul>
+                    <li>
+                        <!-- Configurações que podem mudar no seu perfil -->
+                        <div class="fotoDePerfil">
+                            <a href="#">
+                                <div class="containerButton">
+                                    <!-- imagem do ICONE DA FOTO DE PERFIL-->
+                                    <span class="iconeConfig ml"><i class="uil uil-pen"></i> </span>
+                                    <span class="tituloConfigNav">Editar Perfil</span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>   
+
+        <div class="conteudoConfiguracoes">
+            <h1 class="tituloConfig">Edite seu Perfil</h1>
+            <!-- Foto De Perfil do USUARIO e o NOME do mesmo -->
+                    <div class="iconConfigPerfil">
+                        <a href="#">
+                            <!-- imagem do ICONE DA FOTO DE PERFIL-->
+                            <img class="icon" src="./assets/icons/iconPerfilConfig.svg" alt="">
+
+                        </a>
+                    </div>
+
+                    <div class="inputsConfig">
+                        <label class="ml" for="input_nome">Nome</label>
+                        <input class="input margin" placeholder="Brandão" type="text" name="input_nome" id="input_nome">
+                        <span class="validacao" id="span_validacao_nome"></span>
+                        <br>
+                        <label class="ml" for="input_senha">Senha</label>
+                        <input class="input margin" placeholder="***********" type="password" name="input_senha" id="input_senha">
+                        <span class="validacao" id="span_validacao_senha"></span>
+                    </div>
+                    <button class="botao-config" onclick="salvar()">
+                        salvar
+                    </button>
+        </div>
+    </div>
+    
+</div>
+
+</div>
+
+</html>
+
+
+<!-- SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  -->
+
+
+<!-- MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU  -->
+<script>
+    function salvar() {
+        var nome = input_nome.value;
+        var senha = input_senha.value;
+
+        if (nome.length >= 0) {
+            span_validacao_nome.innerHTML = `Nome invalido`
+        }
+
+        if (senha.length < 5) {
+            span_validacao_senha.innerHTML = `Senha invalida`
+        }
+
+    }
+</script>
+
+<script>
+        // colcoar o nome do usuario
+        b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+        
+    //deixar o menu toggle 
+    let toggle = document.querySelector('.toggle');
+    let navegacao = document.querySelector('.navegacao');
+    let menu = document.querySelector('.menu');
+
+
+    //Criando a função para quando clicar ativar e desativar
+    toggle.onclick = function () {
+        navegacao.classList.toggle('ativar');
+        menu.classList.toggle('ativar');
+    }
+    navegacao.classList.toggle('ativar');
+    menu.classList.toggle('ativar');
+</script>
+
+
+
+<!-- MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO -->
+<script>
+    var clique = 1;
+
+
+    // Mudando a frase ao clicar 
+    function ModoClaro() {
+        if (clique >= 13) {
+            clique = 0;
+        }
+        if (clique % 2 == 1) {
+            ModoEscuro.innerHTML = 'Modo Claro'
+            clique += 1;
+
+        } else {
+            ModoEscuro.innerHTML = 'Modo Escuro'
+            clique += 1;
+        }
+    }
+
+    // 
+
+
+    const body = document.querySelector("body");
+    const modoEscuro = body.querySelector(".Modo");
+
+    modoEscuro.addEventListener("click", () => {
+        body.classList.toggle("Escuro");
+    });
+
+</script>
+
+<script>
+    var adicionar = 0;
+    function Adicionar() {
+        if (adicionar == 0) {
+            adicionar3.classList = 'adicionar4'
+            adicionar++;
+            adicionar2.innerHTML = `                   
+             <a href="#" >
+
+<!--Imagem do ICONE DE ADICIONAR -->
+<span class="icone"> <i class="uil uil-plus"></i> </span>
+<span class="titulo"> Adicionar</span>
+<span class="icone2"><i class="uil uil-angle-up"></i></span>
+
+</a>`
+
+        } else {
+            adicionar3.classList = 'adicionar'
+            adicionar = 0
+
+            adicionar2.innerHTML = `                   
+             <a href="#" >
+
+<!--Imagem do ICONE DE ADICIONAR -->
+<span class="icone"> <i class="uil uil-plus"></i> </span>
+<span class="titulo"> Adicionar</span>
+<span class="icone2"><i class="uil uil-angle-down"></i></span>
+
+</a>`
+        }
+    }
+
+
+</script>
