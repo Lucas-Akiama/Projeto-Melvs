@@ -51,15 +51,45 @@
 
                     </a>
                 </li>
-                <li>
+                <li onclick="Adicionar()" id="adicionar2">
                     <a href="#">
 
                         <!--Imagem do ICONE DE ADICIONAR -->
-                        <span class="icone"> <i class="uil uil-user-plus"></i> </span>
-                        <span class="titulo"> Adicionar Responsável</span>
+                        <span class="icone"> <i class="uil uil-plus"></i> </span>
+                        <span class="titulo"> Adicionar</span>
+                        <span class="icone2"><i class="uil uil-angle-down"></i></span>
 
                     </a>
                 </li>
+                <div class="adicionar" id="adicionar3">
+
+                    <li>
+                        <a href="./cadastro_armazem.html">
+
+                            <!--Imagem do ICONE DE ADICIONAR -->
+                            <span class="icone"> <i class="uil uil-estate"></i> </span>
+                            <span class="titulo"> Adicionar Armazem</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./cadastro_empresa.html">
+
+                            <!--Imagem do ICONE DE ADICIONAR -->
+                            <span class="icone"> <i class="uil uil-building"></i></span>
+                            <span class="titulo"> Adicionar Empresa</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./cadastro_funcionario.html">
+
+                            <!--Imagem do ICONE DE ADICIONAR -->
+                            <span class="icone"> <i class="uil uil-user-plus"></i> </span>
+                            <span class="titulo"> Adicionar Responsável</span>
+
+                        </a>
+                    </li>
+                </div>
                 <li>
                     <a href="./configuracoes.html">
 
@@ -247,5 +277,40 @@
     modoEscuro.addEventListener("click", () => {
         body.classList.toggle("Escuro");
     });
+
+</script>
+
+<script>
+    var adicionar = 0;
+    function Adicionar() {
+        if (adicionar == 0) {
+            adicionar3.classList = 'adicionar4'
+            adicionar++;
+            adicionar2.innerHTML = `                   
+             <a href="#" >
+
+<!--Imagem do ICONE DE ADICIONAR -->
+<span class="icone"> <i class="uil uil-plus"></i> </span>
+<span class="titulo"> Adicionar</span>
+<span class="icone2"><i class="uil uil-angle-up"></i></span>
+
+</a>`
+
+        } else {
+            adicionar3.classList = 'adicionar'
+            adicionar = 0
+
+            adicionar2.innerHTML = `                   
+             <a href="#" >
+
+<!--Imagem do ICONE DE ADICIONAR -->
+<span class="icone"> <i class="uil uil-plus"></i> </span>
+<span class="titulo"> Adicionar</span>
+<span class="icone2"><i class="uil uil-angle-down"></i></span>
+
+</a>`
+        }
+    }
+
 
 </script>

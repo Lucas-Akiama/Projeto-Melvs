@@ -24,6 +24,8 @@
     --critico: #ff0000;
     --ok: #11C76F;
     --atencao:  #bbb502;
+    --adicionar: #D4FADE;
+
 }
 
 * {
@@ -60,6 +62,8 @@ body.Escuro {
     --TextoLaranja:#F9F871;
     --TextoVerdeClaro: #11C76F;
     --Botao: #697987;
+    --adicionar: #3a3a3a;
+
 }
 
 i {
@@ -124,11 +128,6 @@ section{
 
 /* hover */
 
-.caixas .caixa:hover .KPI-nome {
-    color: var(--TextoPreto);
-    font-weight: bold;
-}
-
 
 .navegacao ul li a {
     position: relative;
@@ -139,6 +138,11 @@ section{
     color: var(--TextoVerdeEscuro);
 
 }
+
+.navegacao ul li a:hover{
+background-color: var(--HoverMenu);
+}
+
 
 .navegacao ul li a .icone {
     position: relative;
@@ -364,3 +368,25 @@ section{
     position: relative;
 
 }
+
+.icone2{
+    align-items: center;
+    width: 100%;
+    display: flex;
+   justify-content: flex-end;
+}
+
+.adicionar{
+    display: none;
+}
+
+
+.adicionar4{
+    margin-left: 3px;
+    margin-right: 6px;
+    background-color: var(--adicionar);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+}
+

@@ -18,7 +18,7 @@
     --ideal: #054a29;
     --critico: #ff0000;
     --atencao: #bbb502;
-
+    --adicionar: #D4FADE;
 }
 
 body {
@@ -38,6 +38,7 @@ body.Escuro {
     --FundoGrafico: rgba(255, 255, 255, 0.179);
     --Sombra: rgba(255, 255, 255, 0.179);
     --ideal: #11C76F;
+    --adicionar: #3a3a3a;
 
 }
 
@@ -301,5 +302,24 @@ i {
 .logo {
     cursor: pointer;
     font-weight: bold;
+
+}
+
+.icone2{
+    align-items: center;
+    width: 100%;
+    display: flex;
+   justify-content: flex-end;
+}
+
+.adicionar{
+    display: none;
+}
+.adicionar4{
+    margin-left: 3px;
+    margin-right: 6px;
+    background-color: var(--adicionar);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 
 }
