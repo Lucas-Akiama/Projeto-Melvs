@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./css/cadastro_funcionario.css">
     <script src="./js/funcoes.js"></script>
 
+    <link rel="stylesheet" href="./js/funcoes.js">
     <!-- linkando os icones-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
@@ -175,7 +176,7 @@
                 <input class="input margin" type="password" placeholder="*****" id="input_senha_funcionario"> <br>
                 <label class="ml" for="input_empresa_funcionario">Empresa funcionário</label> <br>
                 <input class="input margin" placeholder="Melvs" id="input_empresa_funcionario"> <br>
-                <button class="botao" onclick="add_funcionario()">Add Funcionário</button>
+                <button class="botao" onclick="cadastrarFuncionario()">Add Funcionário</button>
             </div>
         </div>
 
@@ -210,6 +211,75 @@
 
 
 <!-- MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU  -->
+
+<script>
+    function cadastrarFuncionario() {
+   //     aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = input_nome_funcionario.value
+        var emailVar = input_email_funcionario.value;
+        var senhaVar = input_senha_funcionario.value;
+        var empresaVar = input_empresa_funcionario.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "") {
+    //        cardErro.style.display = "block"
+      //      mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+        //    finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrarFuncionario", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                empresaServer: empresaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+            //    cardErro.style.display = "block";
+
+               /* mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login..."; */
+
+                setTimeout(() => {
+                    window.location = "./tela_de_planos.html";
+                }, 2000)
+                
+                limparFormulario();
+         //       finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+       //     finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+    //    cardErro.style.display = "none"
+    }
+
+</script>
+
 <script>
     //deixar o menu toggle 
     let toggle = document.querySelector('.toggle');
@@ -322,7 +392,9 @@
 
 </a>`
         }
+        cadastrarFuncionario()
     }
 
 
 </script>
+
