@@ -9,7 +9,6 @@
 
     <!-- Linkando O  CSS da tela de dashboard (grafico)-->
     <link rel="stylesheet" href="./css/estilo_Tela_Inicial_Do_Grafico.css">
-    <script src="./js/funcoes.js"></script>
 
     <link rel="stylesheet" href="./css/cadastro_armazem.css">
 
@@ -27,8 +26,8 @@
     <!-- Div container do grafico e da navegação -->
     <div class="containerGrafico">
 
-        <!-- Div que contem a parte de navegação (parte verde do menu)-->
-        <div class="navegacao">
+          <!-- Div que contem a parte de navegação (parte verde do menu)-->
+          <div class="navegacao">
             <ul>
                 <li>
                     <!-- Foto De Perfil do USUARIO e o NOME do mesmo -->
@@ -43,9 +42,9 @@
                     </div>
                 </li>
                 <li>
-                    <a href="./tela_Inicial_Do_Grafico.html">
+                    <a href="#">
 
-                        <!-- Imagem do ICONE DO GRAFICO-->
+                        <!-- Imagem do ICONE DO planos-->
                         <span class="icone"> <i class="uil uil-home"></i> </span>
                         <span class="titulo"> Início </span>
 
@@ -91,7 +90,7 @@
                     </li>
                 </div>
                 <li>
-                    <a href="./configuracoes.html">
+                    <a href="#">
 
                         <!-- Imagem do ICONE DE CONFIGURAÇÕES -->
                         <span class="icone"><i class="uil uil-cog"></i></span>
@@ -109,7 +108,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./index.html">
+                    <a href="#">
 
                         <!-- Botão de Sair  -->
                         <span class="icone"><i class="uil uil-signout"></i> </span>
@@ -203,9 +202,6 @@
 
 <!-- MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU  -->
 <script>
-        // colcoar o nome do usuario
-        b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-        
     //deixar o menu toggle 
     let toggle = document.querySelector('.toggle');
     let navegacao = document.querySelector('.navegacao');
@@ -281,7 +277,6 @@
     }
     }
 </script>
-
 
 <script>
     var adicionar = 0;

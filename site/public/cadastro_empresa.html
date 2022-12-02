@@ -9,7 +9,6 @@
 
     <!-- Linkando O  CSS da tela de dashboard (grafico)-->
     <link rel="stylesheet" href="./css/estilo_Tela_Inicial_Do_Grafico.css">
-    <script src="./js/funcoes.js"></script>
 
     <link rel="stylesheet" href="./css/cadastro_empresa.css">
 
@@ -26,7 +25,6 @@
 
     <!-- Div container do grafico e da navegação -->
     <div class="containerGrafico">
-
         <!-- Div que contem a parte de navegação (parte verde do menu)-->
         <div class="navegacao">
             <ul>
@@ -43,9 +41,9 @@
                     </div>
                 </li>
                 <li>
-                    <a href="./tela_Inicial_Do_Grafico.html">
+                    <a href="#">
 
-                        <!-- Imagem do ICONE DO GRAFICO-->
+                        <!-- Imagem do ICONE DO planos-->
                         <span class="icone"> <i class="uil uil-home"></i> </span>
                         <span class="titulo"> Início </span>
 
@@ -91,7 +89,7 @@
                     </li>
                 </div>
                 <li>
-                    <a href="./configuracoes.html">
+                    <a href="#">
 
                         <!-- Imagem do ICONE DE CONFIGURAÇÕES -->
                         <span class="icone"><i class="uil uil-cog"></i></span>
@@ -109,7 +107,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./index.html">
+                    <a href="#">
 
                         <!-- Botão de Sair  -->
                         <span class="icone"><i class="uil uil-signout"></i> </span>
@@ -173,6 +171,10 @@
                 <input class="input margin" placeholder="XX. XXX. XXX/0001-XX" id="input_cnpj_empresa"> <br>
                 <label class="ml" for="input_cep_empresa">Cep</label> <br>
                 <input class="input margin" placeholder="000.00.000" id="input_cep_empresa"> <br>
+                <label class="ml" for="input_cidade_empresa">Cidade</label><br>
+                <input class="input margin" placeholder="Curitiba" id="input_cidade_empresa"> <br>
+                <label class="ml" for="input_estado_empresa">Estado</label><br>
+                <input class="input margin" placeholder="Parana" id="input_estado_empresa"> <br>
                 <label class="ml" for="input_complemento_empresa">Complemento</label><br>
                 <input class="input margin" placeholder="N° XXX" id="input_complemento_empresa"> <br>
                 <button class="botao" onclick="add_emp()"> Add empresa</button>
@@ -181,23 +183,29 @@
 
         <div class="lista_emp">
             <h1 class="titulo_empresa">Empresas</h1>
-            <div class="coluna_emp">
-                <li>Nome</li>
-                <li>Cnpj</li>
-                <li>Cep</li>
-                <li>Complemento</li>
-            </div>
-            <div class="exibir_lista">
+            <div class="lista">
                 <div class="itens_lista" id="lista_nome_empresa">
+                    <li>Nome</li>
                     <div class="div_lista_armazem" id="div_nome_empresa"></div>
                 </div>
                 <div class="itens_lista" id="lista_cnpj">
+                    <li>Cnpj</li>
                     <div class="div_lista_armazem" id="div_cnpj"></div>
                 </div>
                 <div class="itens_lista" id="lista_cep">
+                    <li>Cep</li>
                     <div class="div_lista_armazem" id="div_cep"></div>
                 </div>
+                <div class="itens_lista" id="lista_cidade">
+                    <li>Cidade</li>
+                    <div class="div_lista_armazem" id="div_cidade"></div>
+                </div>
+                <div class="itens_lista" id="lista_estado">
+                    <li>Estado</li>
+                    <div class="div_lista_armazem" id="div_estado"></div>
+                </div>
                 <div class="itens_lista" id="lista_omplemento">
+                    <li>Complemento</li>
                     <div class="div_lista_armazem" id="div_complemento"></div>
                 </div>
             </div>
@@ -216,9 +224,6 @@
 
 <!-- MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU  -->
 <script>
-        // colcoar o nome do usuario
-        b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-        
     //deixar o menu toggle 
     let toggle = document.querySelector('.toggle');
     let navegacao = document.querySelector('.navegacao');
@@ -289,6 +294,7 @@
         div_cnpj.innerHTML = ""
         div_cep.innerHTML = ""
         div_complemento.innerHTML = ""
+
     for(var contador_lista_empresa = 0;
         contador_lista_empresa < lista_nome_empresa.length;
         contador_lista_empresa++){
@@ -300,8 +306,6 @@
         }        
     }
 </script>
-
-
 
 <script>
     var adicionar = 0;
