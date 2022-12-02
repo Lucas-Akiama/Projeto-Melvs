@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="./css/estilo_Tela_Inicial_Do_Grafico.css">
 
     <link rel="stylesheet" href="./css/cadastro_funcionario.css">
-    <script src="./js/funcoes.js"></script>
 
     <!-- linkando os icones-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -27,99 +26,99 @@
     <!-- Div container do grafico e da navegação -->
     <div class="containerGrafico">
 
-        <!-- Div que contem a parte de navegação (parte verde do menu)-->
-        <div class="navegacao">
-            <ul>
-                <li>
-                    <!-- Foto De Perfil do USUARIO e o NOME do mesmo -->
-                    <div class="fotoDePerfil">
+              <!-- Div que contem a parte de navegação (parte verde do menu)-->
+              <div class="navegacao">
+                <ul>
+                    <li>
+                        <!-- Foto De Perfil do USUARIO e o NOME do mesmo -->
+                        <div class="fotoDePerfil">
+                            <a href="#">
+    
+                                <!-- imagem do ICONE DA FOTO DE PERFIL-->
+                                <span class="icone"><i class="uil uil-user"></i> </span>
+                                <span class="titulo"><span id="b_usuario">usuário</span></span>
+    
+                            </a>
+                        </div>
+                    </li>
+                    <li>
                         <a href="#">
-
-                            <!-- imagem do ICONE DA FOTO DE PERFIL-->
-                            <span class="icone"><i class="uil uil-user"></i> </span>
-                            <span class="titulo"><span id="b_usuario">usuário</span></span>
-
+    
+                            <!-- Imagem do ICONE DO planos-->
+                            <span class="icone"> <i class="uil uil-home"></i> </span>
+                            <span class="titulo"> Início </span>
+    
                         </a>
+                    </li>
+                    <li onclick="Adicionar()" id="adicionar2">
+                        <a href="#">
+    
+                            <!--Imagem do ICONE DE ADICIONAR -->
+                            <span class="icone"> <i class="uil uil-plus"></i> </span>
+                            <span class="titulo"> Adicionar</span>
+                            <span class="icone2"><i class="uil uil-angle-down"></i></span>
+    
+                        </a>
+                    </li>
+                    <div class="adicionar" id="adicionar3">
+    
+                        <li>
+                            <a href="./cadastro_armazem.html">
+    
+                                <!--Imagem do ICONE DE ADICIONAR -->
+                                <span class="icone"> <i class="uil uil-estate"></i> </span>
+                                <span class="titulo"> Adicionar Armazem</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./cadastro_empresa.html">
+    
+                                <!--Imagem do ICONE DE ADICIONAR -->
+                                <span class="icone"> <i class="uil uil-building"></i></span>
+                                <span class="titulo"> Adicionar Empresa</span>
+    
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./cadastro_funcionario.html">
+    
+                                <!--Imagem do ICONE DE ADICIONAR -->
+                                <span class="icone"> <i class="uil uil-user-plus"></i> </span>
+                                <span class="titulo"> Adicionar Responsável</span>
+    
+                            </a>
+                        </li>
                     </div>
-                </li>
-                <li>
-                    <a href="./tela_Inicial_Do_Grafico.html">
-
-                        <!-- Imagem do ICONE DO GRAFICO-->
-                        <span class="icone"> <i class="uil uil-home"></i> </span>
-                        <span class="titulo"> Início </span>
-
-                    </a>
-                </li>
-                <li onclick="Adicionar()" id="adicionar2">
-                    <a href="#">
-
-                        <!--Imagem do ICONE DE ADICIONAR -->
-                        <span class="icone"> <i class="uil uil-plus"></i> </span>
-                        <span class="titulo"> Adicionar</span>
-                        <span class="icone2"><i class="uil uil-angle-down"></i></span>
-
-                    </a>
-                </li>
-                <div class="adicionar" id="adicionar3">
-
                     <li>
-                        <a href="./cadastro_armazem.html">
-
-                            <!--Imagem do ICONE DE ADICIONAR -->
-                            <span class="icone"> <i class="uil uil-estate"></i> </span>
-                            <span class="titulo"> Adicionar Armazem</span>
+                        <a href="#">
+    
+                            <!-- Imagem do ICONE DE CONFIGURAÇÕES -->
+                            <span class="icone"><i class="uil uil-cog"></i></span>
+                            <span class="titulo"> Configurações</span>
+    
                         </a>
                     </li>
                     <li>
-                        <a href="./cadastro_empresa.html">
-
-                            <!--Imagem do ICONE DE ADICIONAR -->
-                            <span class="icone"> <i class="uil uil-building"></i></span>
-                            <span class="titulo"> Adicionar Empresa</span>
-
+                        <a href="#" class="Modo" onclick="ModoClaro()">
+    
+                            <!-- Dark Mode -->
+                            <span class="icone"><i class="uil uil-moon"></i> </span>
+                            <span id="ModoEscuro" class="Modo"> Modo Escuro </span>
+    
                         </a>
                     </li>
                     <li>
-                        <a href="./cadastro_funcionario.html">
-
-                            <!--Imagem do ICONE DE ADICIONAR -->
-                            <span class="icone"> <i class="uil uil-user-plus"></i> </span>
-                            <span class="titulo"> Adicionar Responsável</span>
-
+                        <a href="#">
+    
+                            <!-- Botão de Sair  -->
+                            <span class="icone"><i class="uil uil-signout"></i> </span>
+                            <span class="titulo"> Sair </span>
+    
                         </a>
                     </li>
-                </div>
-                <li>
-                    <a href="./configuracoes.html">
-
-                        <!-- Imagem do ICONE DE CONFIGURAÇÕES -->
-                        <span class="icone"><i class="uil uil-cog"></i></span>
-                        <span class="titulo"> Configurações</span>
-
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="Modo" onclick="ModoClaro()">
-
-                        <!-- Dark Mode -->
-                        <span class="icone"><i class="uil uil-moon"></i> </span>
-                        <span id="ModoEscuro" class="Modo"> Modo Escuro </span>
-
-                    </a>
-                </li>
-                <li>
-                    <a href="./index.html">
-
-                        <!-- Botão de Sair  -->
-                        <span class="icone"><i class="uil uil-signout"></i> </span>
-                        <span class="titulo"> Sair </span>
-
-                    </a>
-                </li>
-
-            </ul>
-        </div>
+    
+                </ul>
+            </div>
     </div>
 </body>
 
@@ -175,27 +174,34 @@
                 <input class="input margin" type="password" placeholder="*****" id="input_senha_funcionario"> <br>
                 <label class="ml" for="input_empresa_funcionario">Empresa funcionário</label> <br>
                 <input class="input margin" placeholder="Melvs" id="input_empresa_funcionario"> <br>
+                <label class="ml" for="input_tipo_funcionario">Permição</label> <br>
+                <select class="input margin" id="input_tipo_funcionario">
+                    <option value="1">Admin</option>
+                    <option value="2">Analista</option>
+                </select> <br>
                 <button class="botao" onclick="add_funcionario()">Add Funcionário</button>
             </div>
         </div>
 
         <div class="lista_funcionario">
             <h1 class="titulo_funcionario">Funcionários</h1>
-            <div class="coluna_funcionario">
-                <li>Nome</li>
-                <li>Email</li>
-                <li>Empresa</li>
-            </div>
-            <div class="exibir_lista">
-                <div class="itens_lista" id="lista_nome_funcionario">
-                    <div class="div_lista_armazem" id="div_nome_funcionario"></div>
-                </div>
-                <div class="itens_lista" id="lista_email_funcionario">
-                    <div class="div_lista_armazem" id="div_email_funcionario"></div>
-                </div>
-                <div class="itens_lista" id="lista_empresa_funcionario">
-                    <div class="div_lista_armazem" id="div_empresa_funcionario"></div>
-                </div>
+          <div class="lista">
+                    <div class="itens_lista" id="lista_nome_funcionario">
+                        <li>Nome</li>
+                        <div class="div_lista_armazem" id="div_nome_funcionario"></div>
+                    </div>
+                    <div class="itens_lista" id="lista_email_funcionario">
+                        <li>Email</li>
+                        <div class="div_lista_armazem" id="div_email_funcionario"></div>
+                    </div>
+                    <div class="itens_lista" id="lista_empresa_funcionario">
+                        <li>Empresa</li>
+                        <div class="div_lista_armazem" id="div_empresa_funcionario"></div>
+                    </div>
+                    <div class="itens_lista" id="lista_tipo_funcionario">
+                        <li>Permição</li>
+                        <div class="div_lista_armazem" id="div_tipo_funcionario"></div>
+                    </div>             
             </div>
         </div>
     </div>
@@ -230,9 +236,6 @@
 
 <!-- MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO -->
 <script>
-        // colcoar o nome do usuario
-        b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-        
     var clique = 1;
 
 
@@ -267,19 +270,23 @@
     var lista_nome_funcionario = [];
     var lista_email_funcionario = [];
     var lista_empresa_funcionario = [];
+    var lista_tipo_funcionario = [];
 
     function add_funcionario() {
         var nome_funcionario= input_nome_funcionario.value;
         var email_funcionario = input_email_funcionario.value;
         var empresa_funcionario = input_empresa_funcionario.value;
+        var tipo_funcionario = input_tipo_funcionario.value;
 
         lista_nome_funcionario.push(nome_funcionario);
         lista_email_funcionario.push(email_funcionario);
         lista_empresa_funcionario.push(empresa_funcionario);
-
+        lista_tipo_funcionario.push(tipo_funcionario)
         div_nome_funcionario.innerHTML = ""
         div_email_funcionario.innerHTML = ""
         div_empresa_funcionario.innerHTML = ""
+        div_tipo_funcionario.innerHTML = ""
+
     for(var contador_funcionario = 0;
         contador_funcionario < lista_nome_funcionario.length;
         contador_funcionario++){
@@ -287,10 +294,10 @@
             div_nome_funcionario.innerHTML += `${lista_nome_funcionario[contador_funcionario]} <br>`;
             div_email_funcionario.innerHTML += `${lista_email_funcionario[contador_funcionario]} <br>`;
             div_empresa_funcionario.innerHTML +=`${lista_empresa_funcionario[contador_funcionario]} <br>`;
+            div_tipo_funcionario.innerHTML += `${lista_tipo_funcionario[contador_funcionario]}<br>`
         }        
     }
 </script>
-
 
 <script>
     var adicionar = 0;
