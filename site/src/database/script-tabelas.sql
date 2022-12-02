@@ -39,7 +39,6 @@ create table relacao_usuario_empresa(
 fkUsuario int, foreign key(fkUsuario) references usuario(idUsuario),
 fkTipoPerfil int, foreign key(fkTipoPerfil) references tipoPerfil(idTipoPerfil),
 fkEmpresa int, foreign key(fkEmpresa) references empresa(idEmpresa),
-relacaoEmpresa int,
 dtRelacao datetime,
 primary key(fkUsuario, fkTipoPerfil, fkEmpresa)
 );
@@ -61,7 +60,13 @@ CREATE TABLE sensor(
 	, FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa)
 );
 
-
+CREATE TABLE leitura (
+	idLeitura INT AUTO_INCREMENT
+    , temperatura1 DOUBLE
+    , umidade1 DOUBLE
+    , dtLeitura DATETIME DEFAULT CURRENT_TIMESTAMP
+    , fkSensor int, foreign key(fkSensor) references sensor(idSensor)
+);
 
 
 /*
