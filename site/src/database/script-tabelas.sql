@@ -15,15 +15,21 @@ idTipoPerfil int primary key auto_increment,
 descPerfil varchar(45)
 );
 
+insert into tipoPerfil value
+	(null, 'premium teste');
+
 CREATE TABLE usuario(
 	idUsuario INT PRIMARY KEY AUTO_INCREMENT
     , nome VARCHAR(45)
     , email VARCHAR(45)
     , senha VARCHAR(45)
-    , cpf CHAR(11)
+    , cpf CHAR(14)
     , planos varchar(15), constraint chkPlanos check (planos in ('Silver', 'Gold', 'Platinum'))
     , fkTipo int, foreign key (fktipo) references tipoPerfil(idTipoPerfil)  
 );
+
+insert into usuario value
+	(null, 'Rafael Teste', 'rafael.teste@gmail.com', '123456', '24097821830', 'Gold', 1);
 
 CREATE TABLE empresa(
 	idEmpresa INT AUTO_INCREMENT primary key
@@ -35,6 +41,9 @@ CREATE TABLE empresa(
     , complemento VARCHAR(45)
 );
 
+insert into empresa value
+	(null, '12345678912345', 'empresa teste', 'SP', 'São Paulo', '12345678', 'complemento teste');
+
 create table relacao_usuario_empresa(
 fkUsuario int, foreign key(fkUsuario) references usuario(idUsuario),
 fkTipoPerfil int, foreign key(fkTipoPerfil) references tipoPerfil(idTipoPerfil),
@@ -43,6 +52,10 @@ dtRelacao datetime,
 primary key(fkUsuario, fkTipoPerfil, fkEmpresa)
 );
 
+insert into relacao_usuario_empresa value
+	(1, 1, 1, current_timestamp());
+        
+
 CREATE TABLE armazem(
 	idArmazem INT AUTO_INCREMENT
     , nome VARCHAR(45)
@@ -50,6 +63,9 @@ CREATE TABLE armazem(
 	, FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa)
     , PRIMARY KEY (idArmazem, fkEmpresa)
 );
+
+insert into armazem value
+	(null, 'armazem teste', 1);
 
 CREATE TABLE sensor(
 	idSensor INT PRIMARY KEY AUTO_INCREMENT
@@ -60,14 +76,30 @@ CREATE TABLE sensor(
 	, FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa)
 );
 
+insert into sensor value
+	(null, 'sensor teste', 1, 1);
+
 CREATE TABLE leitura (
 	idLeitura INT AUTO_INCREMENT
     , temperatura1 DOUBLE
     , umidade1 DOUBLE
     , dtLeitura DATETIME DEFAULT CURRENT_TIMESTAMP
-    , fkSensor int, foreign key(fkSensor) references sensor(idSensor)
+    , fkSensor int, 
+    foreign key(fkSensor) references sensor(idSensor)
+    , primary key (idLeitura, fkSensor)
 );
 
+select * from leitura;
+
+select temperatura1 as temperatura, umidade1 as umidade,
+	DATE_FORMAT(dtLeitura,'%H:%i:%s') as momento_grafico, fkSensor 
+    from leitura where fkSensor = 1
+    order by idLeitura desc limit 1;
+    
+select temperatura1 as temperatura, umidade1 as umidade,
+            DATE_FORMAT(dtLeitura,'%H:%i:%s') as momento_grafico, fkSensor 
+            from leitura where fkSensor = 1
+            order by idLeitura desc limit 1;
 
 /*
 comando para sql server - banco remoto - ambiente de produção
