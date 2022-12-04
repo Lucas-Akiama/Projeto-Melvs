@@ -93,6 +93,10 @@ body{
     cursor: pointer;
 }
 
+.item-duvida a h3 {
+    font-weight: 600;
+}
+
 .container-duvidas{
     width: 100%;
     background-color: #EFF0E8;
@@ -130,4 +134,7 @@ body{
 .texto-duvida{
     margin-top: 1%;
     color: #EFF0E8;
+}
+.texto-duvida span {
+    font-weight: 400;
 }
