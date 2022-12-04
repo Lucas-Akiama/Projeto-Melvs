@@ -20,6 +20,34 @@ function listar() {
     return database.executar(instrucao);
 }
 
+function cadastrarEmpresa(nome,cnpj,cidade,cep,estado,complemento) {
+    console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarEmpresa()",nome,cnpj,cidade,cep,estado,complemento);
+    var instrucao = `
+    insert into empresa (cnpj,nomeFantasia,estado,cidade,cep,complemento) values
+    ('${cnpj}', '${nome}', '${estado}', '${cidade}', '${cep}','${complemento}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function cadastrarUsuario(nome,email,tipo,cpf,senha) {
+    console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarUsuario()",nome,email,cpf,tipo,senha,);
+    var instrucao = `
+    INSERT INTO usuario(nome, cpf, email, senha, fkTipo)  VALUES  ('${nome}', '${cpf}', '${email}',  Hashbytes('SHA2_256', '${senha}'), ${tipo});
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+function cadastrarFuncionario(cnpj,tipo,cpf) {
+    console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarFuncionario()",cnpj,tipo,cpf);
+    var instrucao = `
+    insert into relacao_usuario_empresa (fkUsuario,fkTipoPerfil,fkEmpresa,dtRelacao) values ('${cpf}',${tipo},'${cnpj}', CURRENT_TIME() );
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+
 function pesquisarDescricao(texto) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function pesquisarDescricao()");
     var instrucao = `
@@ -94,6 +122,9 @@ module.exports = {
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
+    cadastrarEmpresa,
+    cadastrarUsuario,
+    cadastrarFuncionario,
     editar,
     deletar
 }

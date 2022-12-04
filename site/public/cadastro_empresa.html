@@ -165,19 +165,50 @@
                 </ul>
             </div>
             <div class="formulario_add_emp">
-                <label class="ml" for="input_nome_empresa">Nome da Empresa</label> <br>
+                <label class="ml" for="input_nome_empresa">Nome fantasia</label> <br>
                 <input class="input margin" placeholder="Ex: Melvs" id="input_nome_empresa"> <br>
                 <label class="ml" for="input_cnpj_empresa">CNPJ</label> <br>
-                <input class="input margin" placeholder="XX. XXX. XXX/0001-XX" id="input_cnpj_empresa"> <br>
+                <input class="input margin" placeholder="XX. XXX. XXX/0001-XX" id="input_cnpj_empresa" maxlength="14"
+                    onkeyup="cnpjPontos()"> <br>
                 <label class="ml" for="input_cep_empresa">Cep</label> <br>
-                <input class="input margin" placeholder="000.00.000" id="input_cep_empresa"> <br>
+                <input class="input margin" placeholder="000.00.000" id="input_cep_empresa" maxlength="8"
+                    onkeyup="cepPontos()"> <br>
                 <label class="ml" for="input_cidade_empresa">Cidade</label><br>
-                <input class="input margin" placeholder="Curitiba" id="input_cidade_empresa"> <br>
+                <select id="input_cidade_empresa">
+                    <option value="">Escolha uma cidade</option>
+                    <option value="ac">Acre</option>
+                    <option value="al">Alagoas</option>
+                    <option value="ap">Amapa</option>
+                    <option value="am">Amazonas</option>
+                    <option value="ba">Bahia</option>
+                    <option value="ce">Ceara</option>
+                    <option value="df">Distrito Federal</option>
+                    <option value="es">Espirito Santo</option>
+                    <option value="go">Goiás</option>
+                    <option value="ma">Maranhão                   </option>
+                    <option value="mt">Mato Grosso</option>
+                    <option value="ms">Mato Grosso do Sul</option>
+                    <option value="mg">Minas Gerais</option>
+                    <option value="pa">Pará</option>
+                    <option value="pb">Paraíba</option>
+                    <option value="pr">Paraná</option>
+                    <option value="pe">Pernambuco</option>
+                    <option value="pi">Piauí</option>
+                    <option value="rj">Rio de Janeiro</option>
+                    <option value="rn">Rio Grande do Norte</option>
+                    <option value="rs">Rio Grande do Sul</option>
+                    <option value="ro">Rondônia</option>
+                    <option value="rr">Roraima</option>
+                    <option value="sc">Santa Catarina</option>
+                    <option value="sp">São Paulo</option>
+                    <option value="se">Sergipe</option>
+                    <option value="to">tocantins</option>
+                </select>
                 <label class="ml" for="input_estado_empresa">Estado</label><br>
                 <input class="input margin" placeholder="Parana" id="input_estado_empresa"> <br>
                 <label class="ml" for="input_complemento_empresa">Complemento</label><br>
                 <input class="input margin" placeholder="N° XXX" id="input_complemento_empresa"> <br>
-                <button class="botao" onclick="add_emp()"> Add empresa</button>
+                <button class="botao" onclick="cadastrarEmpresa()"> Add empresa</button>
             </div>
         </div>
 
@@ -223,6 +254,143 @@
 
 
 <!-- MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU  -->
+<script>
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function limparFormulario() {
+        document.getElementById("form_postagem").reset();
+    }
+
+    function cadastrarEmpresa() {
+        var dadosInput = {
+            nome: input_nome_empresa.value,
+            cnpj: input_cnpj_empresa.value,
+            cep: input_cep_empresa.value,
+            cidade: input_cidade_empresa.value,
+            estado: input_estado_empresa.value,
+            complemento: input_complemento_empresa.value
+        }
+
+        fetch(`/avisos/cadastrarEmpresa`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dadosInput)
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                window.location = "/dashboard/mural.html";
+                limparFormulario();
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+
+    }
+
+    function editar(idAviso) {
+        sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
+        console.log("cliquei em editar - " + idAviso);
+        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
+        window.location = "/dashboard/edicao-aviso.html"
+
+    }
+
+    function deletar(idAviso) {
+        console.log("Criar função de apagar post escolhido - ID" + idAviso);
+        fetch(`/avisos/deletar/${idAviso}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (resposta) {
+
+            if (resposta.ok) {
+                window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
+                window.location = "/dashboard/mural.html"
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    }
+
+    function atualizarFeed() {
+        fetch("/avisos/listar").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    mensagem.innerHTML = "Nenhum resultado encontrado."
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var feed = document.getElementById("feed_container");
+                    feed.innerHTML = "";
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+
+                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
+                        spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
+                        spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
+                        divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
+                        btnEditar.innerHTML = "Editar";
+                        btnDeletar.innerHTML = "Deletar";
+
+                        divPublicacao.className = "publicacao";
+                        spanTitulo.id = "inputNumero" + publicacao.idAviso;
+                        spanNome.className = "publicacao-nome";
+                        spanTitulo.className = "publicacao-titulo";
+                        divDescricao.className = "publicacao-descricao";
+
+                        divButtons.className = "div-buttons"
+
+                        btnEditar.className = "publicacao-btn-editar"
+                        btnEditar.id = "btnEditar" + publicacao.idAviso;
+                        btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
+
+                        btnDeletar.className = "publicacao-btn-editar"
+                        btnDeletar.id = "btnDeletar" + publicacao.idAviso;
+                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
+
+                        divPublicacao.appendChild(spanID);
+                        divPublicacao.appendChild(spanNome);
+                        divPublicacao.appendChild(spanTitulo);
+                        divPublicacao.appendChild(divDescricao);
+                        divPublicacao.appendChild(divButtons);
+                        divButtons.appendChild(btnEditar);
+                        divButtons.appendChild(btnDeletar);
+                        feed.appendChild(divPublicacao);
+                    }
+
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+    }
+
+</script>
+
+
 <script>
     //deixar o menu toggle 
     let toggle = document.querySelector('.toggle');
@@ -295,15 +463,15 @@
         div_cep.innerHTML = ""
         div_complemento.innerHTML = ""
 
-    for(var contador_lista_empresa = 0;
-        contador_lista_empresa < lista_nome_empresa.length;
-        contador_lista_empresa++){
+        for (var contador_lista_empresa = 0;
+            contador_lista_empresa < lista_nome_empresa.length;
+            contador_lista_empresa++) {
 
             div_nome_empresa.innerHTML += `${lista_nome_empresa[contador_lista_empresa]} <br>`;
             div_cnpj.innerHTML += `${lista_cnpj[contador_lista_empresa]} <br>`;
-            div_cep.innerHTML +=`${lista_cep[contador_lista_empresa]} <br>`;
+            div_cep.innerHTML += `${lista_cep[contador_lista_empresa]} <br>`;
             div_complemento.innerHTML += `${lista_complemento[contador_lista_empresa]} <br>`;
-        }        
+        }
     }
 </script>
 
@@ -339,5 +507,41 @@
         }
     }
 
+
+    function cnpjPontos() {
+        var cnpjz = input_cnpj_empresa.value;
+        var Digito1 = cnpjz[0]
+        var Digito2 = cnpjz[1]
+        var Digito3 = cnpjz[2]
+        var Digito4 = cnpjz[3]
+        var Digito5 = cnpjz[4]
+        var Digito6 = cnpjz[5]
+        var Digito7 = cnpjz[6]
+        var Digito8 = cnpjz[7]
+        var Digito13 = cnpjz[12]
+        var Digito14 = cnpjz[13]
+        var cnpjInteiro = `${Digito1}${Digito2}.${Digito3}${Digito4}${Digito5}.${Digito6}${Digito7}${Digito8}/0001-${Digito13}${Digito14}`
+        if (cnpjz.length == 14) {
+            input_cnpj_empresa.value = `${cnpjInteiro}`
+        }
+
+    }
+
+    function cepPontos() {
+        var cepz = input_cep_empresa.value;
+        var Digito1 = cepz[0]
+        var Digito2 = cepz[1]
+        var Digito3 = cepz[2]
+        var Digito4 = cepz[3]
+        var Digito5 = cepz[4]
+        var Digito6 = cepz[5]
+        var Digito7 = cepz[6]
+
+        var cepInteiro = `${Digito1}${Digito2}${Digito3}${Digito4}-${Digito5}${Digito6}${Digito7}`
+        if (cepz.length == 8) {
+            input_cep_empresa.value = `${cepInteiro}`
+        }
+
+    }
 
 </script>

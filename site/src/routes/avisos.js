@@ -19,6 +19,18 @@ router.get("/pesquisar/:descricao", function (req, res) {
     avisoController.pesquisarDescricao(req, res);
 });
 
+router.post("/cadastrarEmpresa", function (req, res) {
+    avisoController.cadastrarEmpresa(req, res);
+});
+
+router.post("/cadastrarFuncionario", function (req, res) {
+    avisoController.cadastrarFuncionario(req, res);
+});
+
+router.post("/cadastrarUsuario", function (req, res) {
+    avisoController.cadastrarUsuario(req, res);
+});
+
 router.post("/publicar/:idUsuario", function (req, res) {
     avisoController.publicar(req, res);
 });
