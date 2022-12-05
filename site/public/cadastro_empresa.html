@@ -262,7 +262,6 @@
                     </div> <!-- div - menu -->
                 </dialog>
             </div>
-        </div> <!-- div - menu -->
     </div><!-- div - menu -->
 
 </div> <!-- div - menu -->
@@ -319,11 +318,10 @@
     var id = sessionStorage.ID_USUARIO
     function cadastrarEmpresaAdmin() {
         var dadosInput = {
-            cnpj: input_cnpj_empresa.value,
-            cpf: id
+            cnpj: input_cnpj_empresa.value
         }
 
-        fetch(`/avisos/cadastrarEmpresaAdmin`, {
+        fetch(`/avisos/cadastrarEmpresaAdmin/${id}`, {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
@@ -334,9 +332,7 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                window.location = "/dashboard/mural.html";
-                limparFormulario();
+window.location = 'cadastro_empresa.html'
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {

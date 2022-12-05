@@ -142,7 +142,7 @@ function cadastrarEmpresa(req, res) {
 
 function cadastrarEmpresaAdmin(req, res) {
     var cnpj = req.body.cnpj;
-    var cpf = req.body.id;
+    var cpf = req.params.id;
 
     if (cpf == undefined) {
         res.status(400).send("O cep está indefinido!");
