@@ -167,38 +167,27 @@
                     </div>
                     <div id="form" class="form">
                         <div class="containerInput">
-                            <label>Nome Fantasia</label>
-                            <input class="input margin" placeholder="Melvs" id="input_nome_empresa">
-                            <small>Error message</small>
+                            <input class="input margin" placeholder="Nome Fantasia" id="input_nome_empresa">
                         </div>
                         <div class="containerInput">
-                            <label>CNPJ</label>
-                            <input class="input margin" placeholder="XX.XXX.XXX/0001-XX" id="input_cnpj_empresa"
+                            <input class="input margin" placeholder="CNPJ" id="input_cnpj_empresa"
                                 maxlength="14" onkeyup="cnpjPontos()">
-                            <small>Error message</small>
                         </div>
                         <div class="cep-cidade">
                             <div class="containerInput">
-                                <label>CEP</label>
-                                <input class="input margin" placeholder="00000-000" id="input_cep_empresa" maxlength="8"
+                                <input class="input margin" placeholder="CEP" id="input_cep_empresa" maxlength="8"
                                 onkeyup="cepPontos()">
                                 <i class="fas fa-check-circle"></i>
                                 <i class="fas fa-exclamation-circle"></i>
-                                <small>Error message</small>
                             </div>
                             <div class="containerInput">
-                                <label>Cidade</label>
-                                <input class="input margin" placeholder="Parana" id="input_cidade_empresa">
-                                <small>Error message</small>
+                                <input class="input margin" placeholder="Cidade" id="input_cidade_empresa">
                             </div>
                             <div class="containerInput">
-                                <label>Complemento</label>
-                                <input class="input margin" placeholder="" id="input_complemento_empresa">
-                                <small>Error message</small>
+                                <input class="input margin" placeholder="Complemento" id="input_complemento_empresa">
                             </div>
                         </div>
                         <div class="containerInput">
-                            <label>Estado</label>
                             <select id="input_estado_empresa" class="input margin">
                                 <option value="">Escolha um estado</option>
                                 <option value="ac">Acre</option>
@@ -229,7 +218,6 @@
                                 <option value="se">Sergipe</option>
                                 <option value="to">tocantins</option>
                             </select>
-                            <small>Error message</small>
                         </div>
 
                         <!-- Container input-->
@@ -241,7 +229,9 @@
 
     </div> <!-- div - menu -->
     <div class="listaConteudo">
-        <button onclick="modal()">Modal</button>
+        <div class="cadastrar">
+            <button onclick="modal()"><i class="uil uil-building"></i>     Cadastrar Empresa</button>
+        </div>
         <ul id="listaEmpresa">
         </ul>
     </div>
@@ -268,7 +258,8 @@
             cnpj: input_cnpj_empresa.value,
             cep: input_cep_empresa.value,
             cidade: input_cidade_empresa.value,
-            estado: input_estado_empresa.value
+            estado: input_estado_empresa.value,
+            complemento: input_complemento_empresa.value
         }
 
         fetch(`/avisos/cadastrarEmpresa`, {

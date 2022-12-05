@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/estilo_Tela_Inicial_Do_Grafico.css">
 
     <link rel="stylesheet" href="./css/cadastro_funcionario.css">
-    
+
     <!-- linkando os icones-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
@@ -157,91 +157,59 @@
 
         <div class="lista_funcionario">
             <h1 class="titulo_funcionario">Funcionários</h1>
-          <div class="lista">
-                    <div class="itens_lista" id="lista_nome_funcionario">
-                        <li>Nome</li>
-                        <div class="div_lista_armazem" id="div_nome_funcionario"></div>
-                    </div>
-                    <div class="itens_lista" id="lista_email_funcionario">
-                        <li>Email</li>
-                        <div class="div_lista_armazem" id="div_email_funcionario"></div>
-                    </div>
-                    <div class="itens_lista" id="lista_empresa_funcionario">
-                        <li>Empresa</li>
-                        <div class="div_lista_armazem" id="div_empresa_funcionario">
-                    </div>
-                    <div class="itens_lista" id="lista_tipo_funcionario">
-                        <li>Permição</li>
-                        <button onclick="modal()">MODAL</button>
-                        <div class="div_lista_armazem" id="div_tipo_funcionario"></div>
-                    </div>        
                     <dialog class="dialogzinho">
 
-                    <div class="dialog">
-                        <div class="form">
-                            <div class="form">
-                                <div class="form">
-                                    <div class="form">
-                                        <div class="form">
-
-                                        </div>
-                                    </div>
+                        <div class="dialog">
+                            <div class="header">
+                                <h2>Cadastrar Funcionario</h2>
+                                    <i class="uil uil-times-circle" onclick='fechar()'></i>
+                            </div>
+                            <div id="form" class="form">
+                                <div class="containerInput">
+                                    <input class="input margin" placeholder="Nome" id="input_nome_funcionario">
                                 </div>
-                            </div>
-                        </div>
-                        <div class="header">
-                            <
-                                h2>Cadastrar Funcionario</h2>
-                            <i class="uil uil-times-circle" onclick='fechar()'></i>
-                        </div>
-                        <div id="form" class="form">
-                            <div class="containerInput">
-                                <label>Nome</label>
-                                <input class="input margin" placeholder="Rafael" id="input_nome_funcionario"> 
-                                <small>Error message</small>
-                            </div>
-                            <div class="containerInput">
-                                <label>Email</label>
-                                <input class="input margin" placeholder="Cleber@sptech.school" id="input_email_funcionario">
-                                <small>Error message</small>
-                            </div>
-                            <div class="containerInput">
-                                <label>Senha</label>
-                                <input class="input margin" type="password" placeholder="*****" id="input_senha_funcionario"> <br>
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error message</small>
-                            </div>
-                            <div class="containerInput">
-                                <label>CPF</label>
-                                <input class="input margin" placeholder="000.000.000-00" id="input_cpf_funcionario" maxlength="11" onkeyup="cpfPontos()"> <br>
-                                <small>Error message</small>
-                            <div class="containerInput">
-                                <label>CNPJ da Empresa</label>
-                                <input class="input margin" placeholder="00.000.000/0001-00" id="input_cnpj_funcionario" onkeyup="cnpjPontos()" maxlength="14">
-                                <small>Error message</small>
-                            </div>
-                            </div>
-                            <div class="containerInput">
-                                <label>Permissão</label>
-                                <select class="input margin" id="input_tipo_funcionario">
-                                    <option value="2">Gerente</option>
-                                    <option value="3">Analista</option>
-                                </select> 
-                                <small>Error message</small>
-                            </div><!-- Container input-->
-                            <button onclick="cadastrarUsuario()">Add Funcionário</button>
-                        </div> <!-- formulario -->
-                    </div> <!-- div - menu -->
-                </dialog>
-            </div>         
-            </div>
+                                <div class="containerInput">
+                                    <input class="input margin" placeholder="Email"
+                                        id="input_email_funcionario">
+                                </div>
+                                <div class="containerInput">
+                                    <input class="input margin" type="password" placeholder="Senha"
+                                        id="input_senha_funcionario"> <br>
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </div>
+                                <div class="containerInput">
+                                    <input class="input margin" placeholder="CPF" id="input_cpf_funcionario"
+                                        maxlength="11" onkeyup="cpfPontos()"> <br>
+                                </div>
+                                 <div class="containerInput">
+                                        <input class="input margin" placeholder="CNPJ"
+                                            id="input_cnpj_funcionario" onkeyup="cnpjPontos()" maxlength="14">
+                                </div>
+                                <div class="containerInput">
+                                    <select class="input margin" id="input_tipo_funcionario">
+                                        <option value="">Permissão</option>
+                                        <option value="2">Gerente</option>
+                                        <option value="3">Analista</option>
+                                    </select>
+                                </div><!-- Container input-->
+                                <button onclick="cadastrarUsuario()" >Adicionar Funcionário</button>
+                            </div> <!-- formulario -->
+                        </div> <!-- div - menu -->
+                    </dialog>
+
         </div>
     </div>
 
+    <div class="listaConteudo">
+        <div class="cadastrar">
+            <button onclick="modal()"><i class="uil uil-user-plus"></i>      Cadastrar Funcionario</button>
+        </div>
+        <ul id="listaEmpresa">
+        </ul>
+    </div>
 </div>
 
-</div>
 
 </html>
 
@@ -256,7 +224,7 @@
     function limparFormulario() {
         document.getElementById("form_postagem").reset();
     }
-    
+
     var idUsuario = sessionStorage.ID_USUARIO
     function cadastrarUsuario() {
         var dadosInput = {
@@ -294,7 +262,7 @@
         return false;
 
     }
-    
+
     function cadastrarFuncionario() {
 
         var dadosInput = {
@@ -342,12 +310,31 @@
                     for (let i = 0; i < resposta.length; i++) {
                         var publicacao = resposta[i];
                         console.log(resposta[i])
+                        listaEmpresa.innerHTML += `
 
-
-                       div_nome_funcionario.innerHTML += `${publicacao.nome} <br>`;
-                         div_email_funcionario.innerHTML += `${publicacao.email} <br>`;
-                            div_empresa_funcionario.innerHTML +=`${publicacao.nomeFantasia}<br>`;
-                                 div_tipo_funcionario.innerHTML += `${publicacao.descPerfil}<br>`
+<li>
+<div class="avatar">
+<img src="./assets/icons/user (1).svg" alt="">
+</div>
+<div class="descrisao">
+<span>                   
+Nome: ${publicacao.nome}
+</span>
+<span>
+Email: ${publicacao.email}
+</span>
+<span>
+tipo: ${publicacao.descPerfil}
+</span>
+<span>                   
+CPF: ${publicacao.cpf}
+</span>
+<span>                   
+Empresa: ${publicacao.nomeFantasia}
+</span>
+</div>
+</li>
+`
                     }
 
                 });
@@ -417,7 +404,7 @@
     var lista_tipo_funcionario = [];
 
     function add_funcionario() {
-        var nome_funcionario= input_nome_funcionario.value;
+        var nome_funcionario = input_nome_funcionario.value;
         var email_funcionario = input_email_funcionario.value;
         var empresa_funcionario = input_empresa_funcionario.value;
         var tipo_funcionario = input_tipo_funcionario.value;
@@ -431,15 +418,15 @@
         div_empresa_funcionario.innerHTML = ""
         div_tipo_funcionario.innerHTML = ""
 
-    for(var contador_funcionario = 0;
-        contador_funcionario < lista_nome_funcionario.length;
-        contador_funcionario++){
+        for (var contador_funcionario = 0;
+            contador_funcionario < lista_nome_funcionario.length;
+            contador_funcionario++) {
 
             div_nome_funcionario.innerHTML += `${lista_nome_funcionario[contador_funcionario]} <br>`;
             div_email_funcionario.innerHTML += `${lista_email_funcionario[contador_funcionario]} <br>`;
-            div_empresa_funcionario.innerHTML +=`${lista_empresa_funcionario[contador_funcionario]} <br>`;
+            div_empresa_funcionario.innerHTML += `${lista_empresa_funcionario[contador_funcionario]} <br>`;
             div_tipo_funcionario.innerHTML += `${lista_tipo_funcionario[contador_funcionario]}<br>`
-        }        
+        }
     }
 </script>
 
@@ -494,7 +481,7 @@
 
     }
     function cpfPontos() {
-        var cpfz =  input_cpf_funcionario.value;
+        var cpfz = input_cpf_funcionario.value;
         var Digito1 = cpfz[0]
         var Digito2 = cpfz[1]
         var Digito3 = cpfz[2]
@@ -515,15 +502,15 @@
 </script>
 <script>
 
-var modalzinho = document.querySelector("dialog")
-function modal() {
-    modalzinho.showModal()
-    modalzinho.classList = 'dialogzinho2'
-}
+    var modalzinho = document.querySelector("dialog")
+    function modal() {
+        modalzinho.showModal()
+        modalzinho.classList = 'dialogzinho2'
+    }
 
-function fechar() {
-    modalzinho.close()
-    modalzinho.classList = 'dialogzinho'
+    function fechar() {
+        modalzinho.close()
+        modalzinho.classList = 'dialogzinho'
 
-}
+    }
 </script>
