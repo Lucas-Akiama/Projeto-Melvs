@@ -21,7 +21,7 @@
     <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
 </head>
 
-<body>
+<body onload="atualizarEmpresa()">
 
     <!-- Div container do grafico e da navegação -->
     <div class="containerGrafico">
@@ -151,36 +151,9 @@
 
     </div>
 
-
     <!-- **************************************************************************************** -->
+
     <div class="add_emp">
-        <div class="menu_add_emp">
-            <div class="conteudo_add_emp">
-                <ul>
-
-                    <div class="container_titulo_add_emp">
-                        <span class="titulo_add_emp">Add+ Empresa</span>
-                    </div>
-
-                </ul>
-            </div>
-            <div class="formulario_add_emp">
-                <label class="ml" for="input_nome_empresa">Nome da Empresa</label> <br>
-                <input class="input margin" placeholder="Ex: Melvs" id="input_nome_empresa"> <br>
-                <label class="ml" for="input_cnpj_empresa">CNPJ</label> <br>
-                <input class="input margin" placeholder="XX. XXX. XXX/0001-XX" id="input_cnpj_empresa"> <br>
-                <label class="ml" for="input_cep_empresa">Cep</label> <br>
-                <input class="input margin" placeholder="000.00.000" id="input_cep_empresa"> <br>
-                <label class="ml" for="input_cidade_empresa">Cidade</label><br>
-                <input class="input margin" placeholder="Curitiba" id="input_cidade_empresa"> <br>
-                <label class="ml" for="input_estado_empresa">Estado</label><br>
-                <input class="input margin" placeholder="Parana" id="input_estado_empresa"> <br>
-                <label class="ml" for="input_complemento_empresa">Complemento</label><br>
-                <input class="input margin" placeholder="N° XXX" id="input_complemento_empresa"> <br>
-                <button class="botao" onclick="add_emp()"> Add empresa</button>
-            </div>
-        </div>
-
         <div class="lista_emp">
             <h1 class="titulo_empresa">Empresas</h1>
             <div class="lista">
@@ -188,6 +161,7 @@
                     <li>Nome</li>
                     <div class="div_lista_armazem" id="div_nome_empresa"></div>
                 </div>
+                <button onclick="modal()">asdsada</button>
                 <div class="itens_lista" id="lista_cnpj">
                     <li>Cnpj</li>
                     <div class="div_lista_armazem" id="div_cnpj"></div>
@@ -210,10 +184,88 @@
                 </div>
             </div>
 
-        </div>
-    </div>
+            <div>
 
-</div>
+                <dialog class="dialogzinho">
+
+                    <div class="dialog">
+                        <div class="form">
+                            <div class="form">
+
+                            </div>
+                        </div>
+                        <div class="header">
+                            <h2>Cadastrar Empresa</h2>
+                            <i class="uil uil-times-circle" onclick='fechar()'></i>
+                        </div>
+                        <div id="form" class="form">
+                            <div class="containerInput">
+                                <label>Nome Fantasia</label>
+                                <input class="input margin" placeholder="Melvs" id="input_nome_empresa">
+                                <small>Error message</small>
+                            </div>
+                            <div class="containerInput">
+                                <label>CNPJ</label>
+                                <input class="input margin" placeholder="XX.XXX.XXX/0001-XX" id="input_cnpj_empresa"
+                                    maxlength="14" onkeyup="cnpjPontos()">
+                                <small>Error message</small>
+                            </div>
+                            <div class="containerInput">
+                                <label>CEP</label>
+                                <input class="input margin" placeholder="00000-000" id="input_cep_empresa" maxlength="8"
+                                    onkeyup="cepPontos()">
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small>Error message</small>
+                            </div>
+                            <div class="containerInput">
+                                <label>Cidade</label>
+                                <input class="input margin" placeholder="Parana" id="input_cidade_empresa">
+                                <small>Error message</small>
+                            </div>
+                            <div class="containerInput">
+                                <label>Estado</label>
+                                <select id="input_estado_empresa" class="input margin">
+                                    <option value="">Escolha um estado</option>
+                                    <option value="ac">Acre</option>
+                                    <option value="al">Alagoas</option>
+                                    <option value="ap">Amapa</option>
+                                    <option value="am">Amazonas</option>
+                                    <option value="ba">Bahia</option>
+                                    <option value="ce">Ceara</option>
+                                    <option value="df">Distrito Federal</option>
+                                    <option value="es">Espirito Santo</option>
+                                    <option value="go">Goiás</option>
+                                    <option value="ma">Maranhão </option>
+                                    <option value="mt">Mato Grosso</option>
+                                    <option value="ms">Mato Grosso do Sul</option>
+                                    <option value="mg">Minas Gerais</option>
+                                    <option value="pa">Pará</option>
+                                    <option value="pb">Paraíba</option>
+                                    <option value="pr">Paraná</option>
+                                    <option value="pe">Pernambuco</option>
+                                    <option value="pi">Piauí</option>
+                                    <option value="rj">Rio de Janeiro</option>
+                                    <option value="rn">Rio Grande do Norte</option>
+                                    <option value="rs">Rio Grande do Sul</option>
+                                    <option value="ro">Rondônia</option>
+                                    <option value="rr">Roraima</option>
+                                    <option value="sc">Santa Catarina</option>
+                                    <option value="sp">São Paulo</option>
+                                    <option value="se">Sergipe</option>
+                                    <option value="to">tocantins</option>
+                                </select>
+                                <small>Error message</small>
+                            </div><!-- Container input-->
+                            <button onclick='cadastrarEmpresa()'>Cadastrar</button>
+                        </div> <!-- formulario -->
+                    </div> <!-- div - menu -->
+                </dialog>
+            </div>
+        </div> <!-- div - menu -->
+    </div><!-- div - menu -->
+
+</div> <!-- div - menu -->
 
 </div>
 
@@ -223,6 +275,112 @@
 
 
 <!-- MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU  -->
+<script>
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function limparFormulario() {
+        document.getElementById("form_postagem").reset();
+    }
+
+    function cadastrarEmpresa() {
+        var dadosInput = {
+            nome: input_nome_empresa.value,
+            cnpj: input_cnpj_empresa.value,
+            cep: input_cep_empresa.value,
+            cidade: input_cidade_empresa.value,
+            estado: input_estado_empresa.value,
+        }
+
+        fetch(`/avisos/cadastrarEmpresa`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dadosInput)
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cadastrarEmpresaAdmin()
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+
+    }
+    var id = sessionStorage.ID_USUARIO
+    function cadastrarEmpresaAdmin() {
+        var dadosInput = {
+            cnpj: input_cnpj_empresa.value,
+            cpf: id
+        }
+
+        fetch(`/avisos/cadastrarEmpresaAdmin`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dadosInput)
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                window.location = "/dashboard/mural.html";
+                limparFormulario();
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+
+    }
+
+
+    function atualizarEmpresa() {
+        fetch(`/avisos/atualizarEmpresa/${id}`).then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+                        div_nome_empresa.innerHTML += `${publicacao.nomeFantasia} <br>`;
+                        div_cnpj.innerHTML += `${publicacao.cnpj} <br>`;
+                        div_cep.innerHTML += `${publicacao.cep} <br>`;
+                        div_complemento.innerHTML += `${publicacao.div_complemento} <br>`;
+                    }
+
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+    }
+
+</script>
+
+
 <script>
     //deixar o menu toggle 
     let toggle = document.querySelector('.toggle');
@@ -272,40 +430,6 @@
     });
 
 </script>
-<!--function para add na lista de empresa-->
-<script>
-    var lista_nome_empresa = [];
-    var lista_cnpj = [];
-    var lista_cep = [];
-    var lista_complemento = [];
-
-    function add_emp() {
-        var nome_empresa = input_nome_empresa.value;
-        var cnpj_empresa = input_cnpj_empresa.value;
-        var cep_empresa = input_cep_empresa.value;
-        var complemento_empresa = input_complemento_empresa.value;
-
-        lista_nome_empresa.push(nome_empresa);
-        lista_cnpj.push(cnpj_empresa);
-        lista_cep.push(cep_empresa);
-        lista_complemento.push(complemento_empresa)
-
-        div_nome_empresa.innerHTML = ""
-        div_cnpj.innerHTML = ""
-        div_cep.innerHTML = ""
-        div_complemento.innerHTML = ""
-
-    for(var contador_lista_empresa = 0;
-        contador_lista_empresa < lista_nome_empresa.length;
-        contador_lista_empresa++){
-
-            div_nome_empresa.innerHTML += `${lista_nome_empresa[contador_lista_empresa]} <br>`;
-            div_cnpj.innerHTML += `${lista_cnpj[contador_lista_empresa]} <br>`;
-            div_cep.innerHTML +=`${lista_cep[contador_lista_empresa]} <br>`;
-            div_complemento.innerHTML += `${lista_complemento[contador_lista_empresa]} <br>`;
-        }        
-    }
-</script>
 
 <script>
     var adicionar = 0;
@@ -340,4 +464,51 @@
     }
 
 
+    function cnpjPontos() {
+        var cnpjz = input_cnpj_empresa.value;
+        var Digito1 = cnpjz[0]
+        var Digito2 = cnpjz[1]
+        var Digito3 = cnpjz[2]
+        var Digito4 = cnpjz[3]
+        var Digito5 = cnpjz[4]
+        var Digito6 = cnpjz[5]
+        var Digito7 = cnpjz[6]
+        var Digito8 = cnpjz[7]
+        var Digito13 = cnpjz[12]
+        var Digito14 = cnpjz[13]
+        var cnpjInteiro = `${Digito1}${Digito2}.${Digito3}${Digito4}${Digito5}.${Digito6}${Digito7}${Digito8}/0001-${Digito13}${Digito14}`
+        if (cnpjz.length == 14) {
+            input_cnpj_empresa.value = `${cnpjInteiro}`
+        }
+
+    }
+
+    function cepPontos() {
+        var cepz = input_cep_empresa.value;
+        var Digito1 = cepz[0]
+        var Digito2 = cepz[1]
+        var Digito3 = cepz[2]
+        var Digito4 = cepz[3]
+        var Digito5 = cepz[4]
+        var Digito6 = cepz[5]
+        var Digito7 = cepz[6]
+
+        var cepInteiro = `${Digito1}${Digito2}${Digito3}${Digito4}-${Digito5}${Digito6}${Digito7}`
+        if (cepz.length == 8) {
+            input_cep_empresa.value = `${cepInteiro}`
+        }
+
+    }
+
+    var modalzinho = document.querySelector("dialog")
+    function modal() {
+        modalzinho.showModal()
+        modalzinho.classList = 'dialogzinho2'
+    }
+
+    function fechar() {
+        modalzinho.close()
+        modalzinho.classList = 'dialogzinho'
+
+    }
 </script>

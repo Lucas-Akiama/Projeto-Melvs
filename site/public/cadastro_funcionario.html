@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/estilo_Tela_Inicial_Do_Grafico.css">
 
     <link rel="stylesheet" href="./css/cadastro_funcionario.css">
-
+    
     <!-- linkando os icones-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
@@ -21,7 +21,7 @@
     <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
 </head>
 
-<body>
+<body onload="atualizarFuncionario()">
 
     <!-- Div container do grafico e da navegação -->
     <div class="containerGrafico">
@@ -155,33 +155,6 @@
 
     <!-- **************************************************************************************** -->
     <div class="add_funcionario">
-        <div class="menu_add_funcionario">
-            <div class="conteudo_add_funcionario">
-                <ul>
-
-                    <div class="container_titulo_add_funcionario">
-                        <span class="titulo_add_funcionario">Add+ Funcionário</span>
-                    </div>
-
-                </ul>
-            </div>
-            <div class="formulario_add_funcionario">
-                <label class="ml" for="input_nome_funcionario">Nome funcionário</label> <br>
-                <input class="input margin" placeholder="Ex: Cleber" id="input_nome_funcionario"> <br>
-                <label class="ml" for="input_email_funcionario">Email funcionário</label> <br>
-                <input class="input margin" placeholder="Cleber@sptech.school" id="input_email_funcionario"> <br>
-                <label class="ml" for="input_senha_funcionario">Senha funcionário</label> <br>
-                <input class="input margin" type="password" placeholder="*****" id="input_senha_funcionario"> <br>
-                <label class="ml" for="input_empresa_funcionario">Empresa funcionário</label> <br>
-                <input class="input margin" placeholder="Melvs" id="input_empresa_funcionario"> <br>
-                <label class="ml" for="input_tipo_funcionario">Permição</label> <br>
-                <select class="input margin" id="input_tipo_funcionario">
-                    <option value="1">Admin</option>
-                    <option value="2">Analista</option>
-                </select> <br>
-                <button class="botao" onclick="add_funcionario()">Add Funcionário</button>
-            </div>
-        </div>
 
         <div class="lista_funcionario">
             <h1 class="titulo_funcionario">Funcionários</h1>
@@ -196,12 +169,72 @@
                     </div>
                     <div class="itens_lista" id="lista_empresa_funcionario">
                         <li>Empresa</li>
-                        <div class="div_lista_armazem" id="div_empresa_funcionario"></div>
+                        <div class="div_lista_armazem" id="div_empresa_funcionario">
                     </div>
                     <div class="itens_lista" id="lista_tipo_funcionario">
                         <li>Permição</li>
+                        <button onclick="modal()">MODAL</button>
                         <div class="div_lista_armazem" id="div_tipo_funcionario"></div>
-                    </div>             
+                    </div>        
+                    <dialog class="dialogzinho">
+
+                    <div class="dialog">
+                        <div class="form">
+                            <div class="form">
+                                <div class="form">
+                                    <div class="form">
+                                        <div class="form">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header">
+                            <h2>Cadastrar Funcionario</h2>
+                            <i class="uil uil-times-circle" onclick='fechar()'></i>
+                        </div>
+                        <div id="form" class="form">
+                            <div class="containerInput">
+                                <label>Nome</label>
+                                <input class="input margin" placeholder="Rafael" id="input_nome_funcionario"> 
+                                <small>Error message</small>
+                            </div>
+                            <div class="containerInput">
+                                <label>Email</label>
+                                <input class="input margin" placeholder="Cleber@sptech.school" id="input_email_funcionario">
+                                <small>Error message</small>
+                            </div>
+                            <div class="containerInput">
+                                <label>Senha</label>
+                                <input class="input margin" type="password" placeholder="*****" id="input_senha_funcionario"> <br>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small>Error message</small>
+                            </div>
+                            <div class="containerInput">
+                                <label>CPF</label>
+                                <input class="input margin" placeholder="000.000.000-00" id="input_cpf_funcionario" maxlength="11" onkeyup="cpfPontos()"> <br>
+                                <small>Error message</small>
+                            <div class="containerInput">
+                                <label>CNPJ da Empresa</label>
+                                <input class="input margin" placeholder="00.000.000/0001-00" id="input_cnpj_funcionario" onkeyup="cnpjPontos()" maxlength="14">
+                                <small>Error message</small>
+                            </div>
+                            </div>
+                            <div class="containerInput">
+                                <label>Permissão</label>
+                                <select class="input margin" id="input_tipo_funcionario">
+                                    <option value="2">Gerente</option>
+                                    <option value="3">Analista</option>
+                                </select> 
+                                <small>Error message</small>
+                            </div><!-- Container input-->
+                            <button onclick="cadastrarUsuario()">Add Funcionário</button>
+                        </div> <!-- formulario -->
+                    </div> <!-- div - menu -->
+                </dialog>
+            </div>         
             </div>
         </div>
     </div>
@@ -216,6 +249,117 @@
 
 
 <!-- MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU  -->
+<script>
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    function limparFormulario() {
+        document.getElementById("form_postagem").reset();
+    }
+    
+    var idUsuario = sessionStorage.ID_USUARIO
+    function cadastrarUsuario() {
+        var dadosInput = {
+            nome: input_nome_funcionario.value,
+            email: input_email_funcionario.value,
+            tipo: input_tipo_funcionario.value,
+            cpf: input_cpf_funcionario.value,
+            senha: input_senha_funcionario.value,
+            id: idUsuario
+        }
+
+        fetch(`/avisos/cadastrarUsuario`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dadosInput)
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+                cadastrarFuncionario()
+
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+
+    }
+    
+    function cadastrarFuncionario() {
+
+        var dadosInput = {
+            cnpj: input_cnpj_funcionario.value,
+            cpf: input_cpf_funcionario.value,
+        }
+
+        fetch(`/avisos/cadastrarFuncionario`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(dadosInput)
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+
+    }
+
+
+    function atualizarFuncionario() {
+        var id = idUsuario;
+        fetch(`/avisos/atualizarFuncionario/${id}`).then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+                        console.log(resposta[i])
+
+
+                       div_nome_funcionario.innerHTML += `${publicacao.nome} <br>`;
+                         div_email_funcionario.innerHTML += `${publicacao.email} <br>`;
+                            div_empresa_funcionario.innerHTML +=`${publicacao.nomeFantasia}<br>`;
+                                 div_tipo_funcionario.innerHTML += `${publicacao.descPerfil}<br>`
+                    }
+
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+    }
+</script>
+
 <script>
     //deixar o menu toggle 
     let toggle = document.querySelector('.toggle');
@@ -331,5 +475,55 @@
         }
     }
 
+    function cnpjPontos() {
+        var cnpjz = input_cnpj_funcionario.value;
+        var Digito1 = cnpjz[0]
+        var Digito2 = cnpjz[1]
+        var Digito3 = cnpjz[2]
+        var Digito4 = cnpjz[3]
+        var Digito5 = cnpjz[4]
+        var Digito6 = cnpjz[5]
+        var Digito7 = cnpjz[6]
+        var Digito8 = cnpjz[7]
+        var Digito13 = cnpjz[12]
+        var Digito14 = cnpjz[13]
+        var cnpjInteiro = `${Digito1}${Digito2}.${Digito3}${Digito4}${Digito5}.${Digito6}${Digito7}${Digito8}/0001-${Digito13}${Digito14}`
+        if (cnpjz.length == 14) {
+            input_cnpj_funcionario.value = `${cnpjInteiro}`
+        }
 
+    }
+    function cpfPontos() {
+        var cpfz =  input_cpf_funcionario.value;
+        var Digito1 = cpfz[0]
+        var Digito2 = cpfz[1]
+        var Digito3 = cpfz[2]
+        var Digito4 = cpfz[3]
+        var Digito5 = cpfz[4]
+        var Digito6 = cpfz[5]
+        var Digito7 = cpfz[6]
+        var Digito8 = cpfz[7]
+        var Digito9 = cpfz[8]
+        var Digito10 = cpfz[9]
+        var Digito11 = cpfz[10]
+        var cpfInteiro = `${Digito1}${Digito2}${Digito3}.${Digito4}${Digito5}${Digito6}.${Digito7}${Digito8}${Digito9}-${Digito10}${Digito11}`
+        if (cpfz.length == 11) {
+            input_cpf_funcionario.value = `${cpfInteiro}`
+        }
+
+    }
+</script>
+<script>
+
+var modalzinho = document.querySelector("dialog")
+function modal() {
+    modalzinho.showModal()
+    modalzinho.classList = 'dialogzinho2'
+}
+
+function fechar() {
+    modalzinho.close()
+    modalzinho.classList = 'dialogzinho'
+
+}
 </script>
