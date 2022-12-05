@@ -5,7 +5,6 @@
 /*
 comandos para mysql - banco local - ambiente de desenvolvimento
 */
-
 CREATE DATABASE melvs;
 
 USE melvs;
@@ -16,41 +15,46 @@ descPerfil varchar(45)
 );
 
 CREATE TABLE usuario(
-	idUsuario INT PRIMARY KEY AUTO_INCREMENT
-    , nome VARCHAR(45)
+     nome VARCHAR(45)
     , email VARCHAR(45)
-    , senha VARCHAR(45)
-    , cpf CHAR(11)
+    , senha VARCHAR(256)
+    , cpf CHAR(14) 
     , planos varchar(15), constraint chkPlanos check (planos in ('Silver', 'Gold', 'Platinum'))
     , fkTipo int, foreign key (fktipo) references tipoPerfil(idTipoPerfil)  
+	, primary key (cpf, fkTipo)
 );
 
+
+insert into tipoPerfil values
+(null, 'admin'),
+(null, 'analista');
+
 CREATE TABLE empresa(
-	idEmpresa INT AUTO_INCREMENT primary key
-    , cnpj CHAR(14)
+	 cnpj CHAR(18) primary key
     , nomeFantasia VARCHAR(45)
     , estado CHAR(2)
     , cidade VARCHAR(45)
-    , cep CHAR(8)
+    , cep CHAR(9)
     , complemento VARCHAR(45)
 );
 
 create table relacao_usuario_empresa(
-fkUsuario int, foreign key(fkUsuario) references usuario(idUsuario),
-fkTipoPerfil int, foreign key(fkTipoPerfil) references tipoPerfil(idTipoPerfil),
-fkEmpresa int, foreign key(fkEmpresa) references empresa(idEmpresa),
-dtRelacao datetime,
-primary key(fkUsuario, fkTipoPerfil, fkEmpresa)
+fkUsuario char(14),
+fkEmpresa char(18), 
+fkTipoPerfil int,
+ foreign key(fkEmpresa) references empresa(cnpj),
+dtRelacao datetime default current_timestamp,
+ primary key(fkUsuario, fkTipoPerfil, fkEmpresa),
+ FOREIGN KEY (fkUsuario, fkTipoPerfil) REFERENCES usuario (cpf, fkTipo)
 );
 
 CREATE TABLE armazem(
-	idArmazem INT AUTO_INCREMENT
+	idArmazem INT unique AUTO_INCREMENT
     , nome VARCHAR(45)
-    , fkEmpresa INT
-	, FOREIGN KEY (fkEmpresa) REFERENCES empresa(idEmpresa)
-    , PRIMARY KEY (idArmazem, fkEmpresa)
+    , fkEmpresa char(18)
+	, FOREIGN KEY (fkEmpresa) REFERENCES empresa(cnpj)
+    , PRIMARY KEY (idArmazem, fkEmpresa)
 );
-
 CREATE TABLE sensor(
 	idSensor INT PRIMARY KEY AUTO_INCREMENT
     , nome VARCHAR(45)

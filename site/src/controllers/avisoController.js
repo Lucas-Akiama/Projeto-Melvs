@@ -19,6 +19,50 @@ function listar(req, res) {
     });
 }
 
+function atualizarArmazem(req, res) {
+    avisoModel.atualizarArmazem().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function atualizarEmpresa(req, res) {
+    var id = req.params.id
+    avisoModel.atualizarEmpresa(id).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
+function atualizarFuncionario(req, res) {
+    var id = req.params.id
+    avisoModel.atualizarFuncionario(id).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
+
 function listarPorUsuario(req, res) {
     var idUsuario = req.params.idUsuario;
 
@@ -96,20 +140,42 @@ function cadastrarEmpresa(req, res) {
     }
 }
 
+function cadastrarEmpresaAdmin(req, res) {
+    var cnpj = req.body.cnpj;
+    var cpf = req.body.id;
+
+    if (cpf == undefined) {
+        res.status(400).send("O cep está indefinido!");
+    } else if (cnpj == undefined) {
+        res.status(400).send("o cnpj indefinido!");
+    } else {
+        avisoModel.cadastrarEmpresaAdmin(cpf, cnpj)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            )
+            .catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 
 function cadastrarFuncionario(req, res) {
     var cnpj = req.body.cnpj;
-    var tipo = req.body.tipo;
     var cpf = req.body.cpf;
 
     if (cpf == undefined) {
         res.status(400).send("O cep está indefinido!");
     } else if (cnpj == undefined) {
         res.status(400).send("o cnpj indefinido!");
-    } else if (tipo == undefined) {
-        res.status(403).send("O nome da empresa está indefinido!");
     } else {
-        avisoModel.cadastrarFuncionario(cnpj,tipo,cpf)
+        avisoModel.cadastrarFuncionario(cnpj,cpf)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -132,6 +198,7 @@ function cadastrarUsuario(req, res) {
     var tipo = req.body.tipo;
     var cpf = req.body.cpf;
     var senha = req.body.senha;
+    var id = req.body.id;
 
     if (cpf == undefined) {
         res.status(400).send("O cep está indefinido!");
@@ -140,7 +207,7 @@ function cadastrarUsuario(req, res) {
     } else if (nome == undefined) {
         res.status(403).send("O nome da empresa está indefinido!");
     } else {
-        avisoModel.cadastrarUsuario(nome,email,tipo,cpf,senha)
+        avisoModel.cadastrarUsuario(nome,email,tipo,cpf,senha, id)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -229,7 +296,11 @@ module.exports = {
     pesquisarDescricao,
     cadastrarEmpresa,
     cadastrarUsuario,
+    atualizarArmazem,
+    atualizarEmpresa,
+    atualizarFuncionario,
     cadastrarFuncionario,
+    cadastrarEmpresaAdmin,
     publicar,
     editar,
     deletar
