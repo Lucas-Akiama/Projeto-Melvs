@@ -16,7 +16,7 @@ function buscarUltimasMedidas(idArmazem, limite_linhas) {
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `
             select temperatura1 as temperatura, umidade1 as umidade,
-                DATE_FORMAT(dtLeitura,'%H:%i:%s') as momento_grafico, fkSensor 
+                DATE_FORMAT(dtLeitura,'%H:%i') as momento_grafico, fkSensor 
                 from leitura where fkSensor = ${idArmazem}
                 order by idLeitura desc limit ${limite_linhas};`;
     } else {
@@ -35,14 +35,14 @@ function buscarMedidasEmTempoReal(idArmazem) {
     if (process.env.AMBIENTE_PROCESSO == "producao") {
         instrucaoSql = `
         select temperatura1 as temperatura, umidade1 as umidade,
-            DATE_FORMAT(dtLeitura,'%H:%i:%s') as momento_grafico, fkSensor 
+            DATE_FORMAT(dtLeitura,'%H:%i') as momento_grafico, fkSensor 
             from leitura where fkSensor = ${idArmazem}
             order by idLeitura desc limit 1;`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `
         select temperatura1 as temperatura, umidade1 as umidade,
-            DATE_FORMAT(dtLeitura,'%H:%i:%s') as momento_grafico, fkSensor 
+            DATE_FORMAT(dtLeitura,'%H:%i') as momento_grafico, fkSensor 
             from leitura where fkSensor = ${idArmazem}
             order by idLeitura desc limit 1;`;
     } else {
@@ -53,7 +53,6 @@ function buscarMedidasEmTempoReal(idArmazem) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
-
 
 module.exports = {
     buscarUltimasMedidas,

@@ -19,6 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
+    <script src="gauge.min.js"></script>
 </head>
 
 <body>
@@ -150,199 +151,85 @@
         </div>
     </div>
 
-    <!-- **************************************************************************************** -->
 
-    <!--KPI'S-->
-
-    <!-- A div que engloba todas as caixas -->
-    <div class="caixas">
-
-        <!-- Primeira Caixa -->
-        <div class="caixa">
-            <div>
-
-                <!-- Conteudo dentro da caixa -->
-                <div class="KPI-nome">Temperatura</div>
-                <div class="KPI-TerceiraLinha">
-                    Temperatura Maxima
-                    <span id="temperatura_maxima" class="ideal">15ºc</span>
+    <div class="container-conteudo">
+        <div class="conteudo-esquerda">
+            <div class="container-gauge">
+                <div class="gauge-temperatura">
+                    <canvas id='gauge-temperatura'></canvas>
+                    <span>Temperatura: <b id="b_temperatura"></b></span>
+                </div>
+                <div class="gauge-umidade">
+                    <canvas id='gauge-umidade'></canvas>
+                    <span>Umidade: <b id="b_umidade"></b></span>
+                </div>
+                <div class="contador">
+                    <h2>Quantidade de vezes que sairam do ideal:</h2>
+                    <span>Temperatura: <b>X</b> vezes</span>
+                    <span>Umidade: <b>X</b> vezes</span>
                 </div>
             </div>
-
-            <div class="KPI-numeros">
-                Temperatura Minima
-                <span id="temperatura_minima" class="ideal">1ºc</span>
+            <div class="grafico-linha">
+                <canvas id="myChartCanvas"></canvas>
             </div>
         </div>
-
-        <!-- Segunda Caixa -->
-        <div class="caixa">
-            <div>
-
-                <!-- Conteudo dentro da caixa -->
-                <div class="KPI-nome"> Umidade</span></div>
-                <div class="KPI-TerceiraLinha"> Umidade Maxima
-                    <span id="umidade_maxima" class="ideal">14%</span>
-                </div>
-                <div class="KPI-numeros">Umidade Minima
-                    <span id="umidade_minima" class="ideal">12%</span>
-                </div>
-
+        <div class="conteudo-direita">
+            <div class="grafico-mes">
+                <h2>Média mensal</h2>
+                <canvas id="grafico-mes" height="230%"></canvas>
+            </div>
+            <div class="grafico-ano">
+                <h2>Média anual</h2>
+                <canvas id="grafico-ano" height="230%"></canvas>
             </div>
         </div>
-
-        <!-- Terceira Caixa -->
-        <div class="caixa">
-            <div>
-
-                <!-- Conteudo dentro da caixa -->
-                <div class="KPI-nome"> Quantidade de vezes </div>
-                <div class="KPI-nome"> que saiu do ideal</div>
-                <div class="KPI-numeros">
-                    <spans id="quantidade" class='ideal'>0</span>
-                </div>
-
-
-            </div>
-        </div>
-
-        <!-- Quarta Caixa -->
-
-    </div>
-
-
-    <!-- **************************************************************************************** -->
-
-
-    <!--Graficos-->
-    <div class="graficos">
-
-        <!-- Grafico de Linha -->
-        <div class="grafico_de_linha">
-            <canvas id="myChartCanvas"></canvas>
-        </div>
-
-        <!-- Grafico de Barra -->
-        <div class="grafico_de_barra">
-            <canvas id="grafico_barra"></canvas>
-        </div>
-
     </div>
 
 </div>
 
 </html>
 
-
-<!-- SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  SCRIPT  -->
-
-<!--GRAFICO 1 (grafico de TEMPERATURA E UMIDADE )-->
-
 <script>
-
-    // colcoar o nome do usuario
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-//     // TEMPERATURA  TEMPERATURA  TEMPERATURA  TEMPERATURA  TEMPERATURA  TEMPERATURA  TEMPERATURA  TEMPERATURA 
-
-//     // Definindo de quanto em quanto tempo vamos pegar o Grafico 
-
-//     // const labels = [
-
-//     //     '00:00',
-//     //     '01:00',
-//     //     '02:00',
-//     //     '03:00',
-//     //     '04:00',
-//     //     '05:00',
-//     //     '06:00',
-//     //     '07:00',
-//     //     '08:00',
-//     //     '09:00',
-//     //     '10:00',
-//     //     '11:00',
-//     //     '12:00',
-//     //     '13:00',
-//     //     '14:00',
-//     //     '15:00',
-//     //     '16:00',
-//     //     '17:00',
-//     //     '18:00',
-//     //     '19:00',
-//     //     '20:00',
-//     //     '21:00',
-//     //     '22:00',
-//     //     '23:00',
-//     // ];
-
-
-
-//     // CORES DO GRAFICO 
-
-//     var AzulClaro = 'rgba(168,217,254,1)'
-//     var VermelhoClaro = 'rgba(239,203,198,1)'
-
-
-//     // Definindo as temperatura do nosso Grafico 
-//     const data = {
-//         labels: labels,
-//         datasets: [{
-//             label: 'Temperatura',
-//             backgroundColor: 'rgba(240,0,0)',
-//             borderColor: VermelhoClaro,
-//             data: [20, 21, 19, 19, 18, 18.5, 18, 19, 20, 19, 21, 23, 25, 26, 24, 25, 23, 22, 22, 20, 19, 20, 18, 19],
-//         },
-
-
-//         // Definindo a Umidade do nosso Grafico 
-//         {
-//             label: 'Umidade',
-//             backgroundColor: 'rgba(0,0,240)',
-//             borderColor: AzulClaro,
-//             data: [15, 15, 14, 15, 16, 15, 15, 14, 15, 16, 17, 18, 18, 17, 18, 19, 19, 19, 18, 18, 18, 15, 15, 15],
-//         }
-//         ]
-//     };
-
-//     // Definindo o tipo do Grafico (Que seria em linha)
-//     Chart.defaults.font.size = 14;
-//     const config = {
-//         type: 'line',
-//         data: data,
-//         options: {}
-//     };
-
-
-// </script>
-
-
-<script>
-
-    // const myChart = new Chart(
-    //     document.getElementById('grafico_linha'),
-    //     config
-    // );
-
-
-</script>
-
-<!--GRAFICO 2 (grafico de Barra que demonstra o desempenho semanal )-->
-
-<script>
-
-    // Defindo de qaunto em quanto tempo vamos pegar os dados (4 semanas )
-    const labels2 = [
-        'semana 1',
-        'semana 2',
-        'semana 3',
-        'semana 4',
+    const labels = [
+        '00h', '01h', '02h', '03h', '04h', '05h', '06h', '07h', '08h', '09h', '10h', '11h', '12h', '13h', '14h', '15h', '16h', '17h', '18h', '19h', '20h', '21h', '22h', '23h'
     ];
 
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Temperatura',
+            backgroundColor: 'rgba(240,0,0)',
+            borderColor: 'rgba(239,203,198,1)',
+            tension: 0.3,
+            data: [20, 21, 19, 19, 18, 18.5, 18, 19, 20, 19, 21, 23, 25, 26, 24, 25, 23, 22, 22, 20, 19, 20, 18, 19],
+        }, {
+            label: 'Umidade',
+            backgroundColor: 'rgba(0,0,240)',
+            borderColor: 'rgba(168,217,254,1)',
+            tension: 0.3,
+            data: [15, 15, 14, 15, 16, 15, 15, 14, 15, 16, 17, 18, 18, 17, 18, 19, 19, 19, 18, 18, 18, 15, 15, 15],
+        }
+        ]
+    };
+    Chart.defaults.color = "#054A29";
+    Chart.defaults.font.size = 12;
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+    const myChart = new Chart(
+        document.getElementById('grafico_linha'),
+        config
+    );
 
-    // Pegando a Temperatura e Umidade media dos graficos de cada semana 
-
-    const data2 = {
-        labels: labels2,
+    const semanas_mes = [
+        'Semana 1', 'Semana 2', 'Semana 3', 'Semana 4',
+    ];
+    const temperatura_umidade_mes = {
+        labels: semanas_mes,
         datasets: [{
             label: 'Temperatura Média',
             backgroundColor: 'rgba(247, 45, 45)',
@@ -356,36 +243,52 @@
         }
         ]
     };
-
-    // Definindo nosso grafico em estilo de barra 
     const config2 = {
         type: 'bar',
-        data: data2,
+        data: temperatura_umidade_mes,
         options: {}
     };
-
-</script>
-
-
-<script>
-
-
     const myChart1 = new Chart(
-        document.getElementById('grafico_barra'),
+        document.getElementById('grafico-mes'),
         config2
     );
 
-
+    const meses_ano = [
+        'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez',
+    ];
+    const temperatura_umidade_ano = {
+        labels: meses_ano,
+        datasets: [{
+            label: 'Temperatura Média',
+            backgroundColor: 'rgba(247, 45, 45)',
+            borderColor: 'rgba(239,203,198,1)',
+            tension: 0.5,
+            data: [20, 21, 19, 19, 20, 21, 19, 19, 20, 21, 19, 19],
+        }, {
+            label: 'Umidade Média',
+            backgroundColor: 'rgba(25, 25, 251)',
+            borderColor: 'rgba(25, 25, 251)',
+            tension: 0.5,
+            data: [65, 63, 65, 67, 65, 63, 65, 67, 65, 63, 65, 67],
+        }
+        ]
+    };
+    const config3 = {
+        type: 'line',
+        data: temperatura_umidade_ano,
+        options: {}
+    };
+    const myChart2 = new Chart(
+        document.getElementById('grafico-ano'),
+        config3
+    );
 </script>
 
-
-<!-- MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU  -->
 <script>
     //deixar o menu toggle 
     let toggle = document.querySelector('.toggle');
     let navegacao = document.querySelector('.navegacao');
     let menu = document.querySelector('.menu');
-
 
     //Criando a função para quando clicar ativar e desativar
     toggle.onclick = function () {
@@ -394,15 +297,11 @@
     }
     navegacao.classList.toggle('ativar');
     menu.classList.toggle('ativar');
-
 </script>
-
-
 
 <!-- MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO  MODO ESCURO -->
 <script>
     var clique = 1;
-
 
     // Mudando a frase ao clicar 
     function ModoClaro() {
@@ -419,88 +318,13 @@
         }
     }
 
-    // 
-
-
     const body = document.querySelector("body");
     const modoEscuro = body.querySelector(".Modo");
 
     modoEscuro.addEventListener("click", () => {
         body.classList.toggle("Escuro");
     });
-
-    var contador = 0;
-    function grafico() {
-        if (contador == 4) {
-            contador = 0;
-        }
-        if (contador == 1) {
-            temperatura_maxima.classList = 'atencao';
-            temperatura_minima.classList = 'atencao';
-
-
-            temperatura_maxima.innerHTML = '20ºc';
-            temperatura_minima.innerHTML = '16ºc';
-
-
-            umidade_maxima.innerHTML = '15%';
-            umidade_minima.innerHTML = '13%';
-
-
-            umidade_maxima.classList = 'atencao'
-            umidade_minima.classList = 'atencao'
-
-            quantidade.innerHTML = '1'
-            quantidade.classList = 'atencao'
-        }
-
-        if (contador == 2) {
-            temperatura_maxima.classList = 'critico';
-            temperatura_minima.classList = 'critico';
-
-            temperatura_maxima.innerHTML = '30ºc';
-            temperatura_minima.innerHTML = '21ºc';
-
-            umidade_maxima.innerHTML = '20%';
-            umidade_minima.innerHTML = '16%';
-
-
-            umidade_maxima.classList = 'critico'
-            umidade_minima.classList = 'critico'
-
-            quantidade.innerHTML = '2'
-            quantidade.classList = 'critico'
-        }
-
-        if (contador == 3) {
-            temperatura_maxima.classList = 'ideal';
-            temperatura_minima.classList = 'ideal';
-
-
-            temperatura_maxima.innerHTML = '15ºc';
-            temperatura_minima.innerHTML = '1ºc';
-
-
-            umidade_maxima.innerHTML = '14%';
-            umidade_minima.innerHTML = '12%';
-
-
-            umidade_maxima.classList = 'ideal';
-            umidade_minima.classList = 'ideal';
-
-            quantidade.innerHTML = '0'
-            quantidade.classList = 'ideal'
-        }
-
-        if (contador == 1) {
-
-
-        }
-        contador += 1;
-    }
 </script>
-
-
 
 <script>
     var adicionar = 0;
@@ -549,11 +373,8 @@
         obterDadosGrafico(4)
     }
 
-    // verificar_autenticacao();
-
     function alterarTitulo(idArmazem) {
         var tituloAquario = document.getElementById(`tituloAquario${idArmazem}`)
-        // tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>Aquário " + idArmazem + "</span>"
     }
 
     function exibirAquario(idArmazem) {
@@ -586,17 +407,6 @@
         btnExibir.classList.add("btn-pink")
     }
 
-    // O gráfico é construído com três funções:
-    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
-    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
-    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
-
-    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
-    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
-    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
-
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
     function obterDadosGrafico(idArmazem) {
 
         alterarTitulo(idArmazem)
@@ -622,38 +432,35 @@
             });
     }
 
-    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
     function plotarGrafico(resposta, idArmazem) {
 
         console.log('iniciando plotagem do gráfico...');
 
-        // Criando estrutura para plotar gráfico - labels
         let labels = [];
-
-        // Criando estrutura para plotar gráfico - dados
         let dados = {
             labels: labels,
             datasets: [{
-                label: 'Umidade',
                 data: [],
-                fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
-            },
-            {
+                label: 'Umidade',
+                backgroundColor: 'rgba(0,0,240)',
+                borderColor: 'rgba(168,217,254,1)',
+                tension: 0.31
+            }, {
                 label: 'Temperatura',
                 data: [],
                 fill: false,
-                borderColor: 'rgb(199, 52, 52)',
-                tension: 0.1
+                backgroundColor: 'rgba(240,0,0)',
+                borderColor: 'rgba(239,203,198,1)',
+                tension: 0.3,
             }]
         };
 
         console.log('----------------------------------------------')
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
         console.log(resposta)
+
+        console.log("ISSO É O RESPOSTA.UMIDADE")
+        console.log(resposta.temperatura)
 
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
@@ -671,13 +478,11 @@
         console.log(dados.datasets)
         console.log('----------------------------------------------')
 
-        // Criando estrutura para plotar gráfico - config
         const config = {
             type: 'line',
             data: dados,
         };
 
-        // Adicionando gráfico criado em div na tela
         let myChart2 = new Chart(
             document.getElementById(`myChartCanvas`),
             config
@@ -686,15 +491,7 @@
         setTimeout(() => atualizarGrafico(idArmazem, dados, myChart2), 2000);
     }
 
-
-    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-    // buscando a última medida inserida em tabela contendo as capturas, 
-
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
     function atualizarGrafico(idArmazem, dados, myChart2) {
-
-
 
         fetch(`/medidas/tempo-real/${idArmazem}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
@@ -704,21 +501,15 @@
                     console.log(`Dados atuais do gráfico:`);
                     console.log(dados);
 
-                    // let avisoCaptura = document.getElementById(`avisoCaptura${idArmazem}`)
-                    // avisoCaptura.innerHTML = ""
-
-
                     if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
                         console.log("---------------------------------------------------------------")
                         console.log("Como não há dados novos para captura, o gráfico não atualizará.")
-                        // avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
                         console.log("Horário do novo dado capturado:")
                         console.log(novoRegistro[0].momento_grafico)
                         console.log("Horário do último dado capturado:")
                         console.log(dados.labels[dados.labels.length - 1])
                         console.log("---------------------------------------------------------------")
                     } else {
-                        // tirando e colocando valores no gráfico
                         dados.labels.shift(); // apagar o primeiro
                         dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
 
@@ -731,18 +522,84 @@
                         myChart2.update();
                     }
 
-                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idArmazem, dados, myChart2), 2000);
+                    var opts_temperatura = {
+                        angle: 0,
+                        lineWidth: 0.4,
+                        radiusScale: 1,
+                        pointer: {
+                            length: 0.5,
+                            strokeWidth: 0.035,
+                            color: '#054A29'
+                        },
+                        staticLabels: {
+                            font: "10px sans-serif",
+                            labels: [-3, 16, 21, 45],
+                        },
+
+                        limitMax: false,
+                        limitMin: false,
+                        strokeColor: '#EEEEEE',
+                        generateGradient: true,
+                        highDpiSupport: true,
+                        staticZones: [
+                            { strokeStyle: "#a7c957", min: -3, max: 16 },
+                            { strokeStyle: "#ffb703", min: 16, max: 21 },
+                            { strokeStyle: "#d62828", min: 21, max: 45 },
+                        ],
+                    };
+                    var target_temperatura = document.getElementById('gauge-temperatura');
+                    var gauge_temperatura = new Gauge(target_temperatura).setOptions(opts_temperatura);
+
+                    gauge_temperatura.maxValue = 45;
+                    gauge_temperatura.setMinValue(-3);
+                    gauge_temperatura.animationSpeed = 5;
+                    gauge_temperatura.set(novoRegistro[0].temperatura);
+                    b_temperatura.innerHTML = novoRegistro[0].temperatura + "ºC"
+
+                    var opts_umidade = {
+                        angle: 0,
+                        lineWidth: 0.4,
+                        radiusScale: 1,
+                        pointer: {
+                            length: 0.5,
+                            strokeWidth: 0.035,
+                            color: '#054A29'
+                        },
+                        staticLabels: {
+                            font: "10px sans-serif",
+                            labels: [0, 13, 15, 17, 40],
+                        },
+
+                        limitMax: false,
+                        limitMin: false,
+                        strokeColor: '#EEEEEE',
+                        generateGradient: true,
+                        highDpiSupport: true,
+                        staticZones: [
+                            { strokeStyle: "#a7c957", min: 0, max: 13 },
+                            { strokeStyle: "#ffb703", min: 13, max: 15 },
+                            { strokeStyle: "#fb8500", min: 15, max: 17 },
+                            { strokeStyle: "#d62828", min: 17, max: 40 },
+                        ],
+                    };
+                    var target_umidade = document.getElementById('gauge-umidade');
+                    var gauge_umidade = new Gauge(target_umidade).setOptions(opts_umidade);
+
+                    gauge_umidade.maxValue = 40;
+                    gauge_umidade.setMinValue(0);
+                    gauge_umidade.animationSpeed = 5;
+                    gauge_umidade.set(novoRegistro[0].umidade);
+                    b_umidade.innerHTML = novoRegistro[0].umidade + "%"
+
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idArmazem, dados, myChart2), 10000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
-                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idArmazem, dados, myChart2), 2000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idArmazem, dados, myChart2), 10000);
             }
         })
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
-
     }
 </script>

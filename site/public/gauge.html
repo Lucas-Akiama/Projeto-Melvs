@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ta página HTML</title>
+    <script src="gauge.min.js"></script>
+</head>
+
+<body>
+
+    <h1>Gauge widget</h1>
+    <canvas id='foo'></canvas>
+
+</body>
+
+</html>
+    <script>
+        var opts = {
+            angle: 0,
+            lineWidth: 0.3,
+            radiusScale: 0.5,
+            pointer: {
+                length: 0.5,
+                strokeWidth: 0.035,
+                color: '#6F6EA0'
+            },
+            staticLabels: {
+                font: "20px sans-serif",
+                labels: [10, 25, 70, 80, 90],
+            },
+
+            limitMax: false,
+            limitMin: false,
+            strokeColor: '#EEEEEE',
+            generateGradient: true,
+            highDpiSupport: true,
+            staticZones: [
+                { strokeStyle: "#d62828", min: 0, max: 10 },
+                { strokeStyle: "#ffb703", min: 10, max: 25 },
+                { strokeStyle: "#a7c957", min: 25, max: 70 },
+                { strokeStyle: "#ffb703", min: 70, max: 80 },
+                { strokeStyle: "#d62828", min: 80, max: 100 },
+            ],
+        };
+        var target = document.getElementById('foo');
+        var gauge = new Gauge(target).setOptions(opts);
+
+        gauge.maxValue = 100;
+        gauge.setMinValue(0);
+        gauge.animationSpeed = 128;
+        gauge.set(50);
+    </script>
