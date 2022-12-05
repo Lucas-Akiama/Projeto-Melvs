@@ -58,10 +58,10 @@ function atualizarFuncionario(id) {
     JOIN usuario c
         ON u.fkFuncionario = c.cpf
             JOIN relacao_usuario_empresa rela
-                ON rela.fkUsuario = c.cpf
+                ON rela.fkUsuario = u.cpf
                     JOIN empresa e
                         on rela.fkEmpresa = e.cnpj
-						  join tipoPerfil on idTipoPerfil = u.fkTipo where u.fkFuncionario = '${id}';
+                          join tipoPerfil on idTipoPerfil = u.fkTipo where u.fkFuncionario = '${id}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
