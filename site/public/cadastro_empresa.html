@@ -156,117 +156,108 @@
     <div class="add_emp">
         <div class="lista_emp">
             <h1 class="titulo_empresa">Empresas</h1>
-            <div class="lista">
-                <div class="itens_lista" id="lista_nome_empresa">
-                    <li>Nome</li>
-                    <div class="div_lista_armazem" id="div_nome_empresa"></div>
-                </div>
-                <button onclick="modal()">asdsada</button>
-                <div class="itens_lista" id="lista_cnpj">
-                    <li>Cnpj</li>
-                    <div class="div_lista_armazem" id="div_cnpj"></div>
-                </div>
-                <div class="itens_lista" id="lista_cep">
-                    <li>Cep</li>
-                    <div class="div_lista_armazem" id="div_cep"></div>
-                </div>
-                <div class="itens_lista" id="lista_cidade">
-                    <li>Cidade</li>
-                    <div class="div_lista_armazem" id="div_cidade"></div>
-                </div>
-                <div class="itens_lista" id="lista_estado">
-                    <li>Estado</li>
-                    <div class="div_lista_armazem" id="div_estado"></div>
-                </div>
-                <div class="itens_lista" id="lista_omplemento">
-                    <li>Complemento</li>
-                    <div class="div_lista_armazem" id="div_complemento"></div>
-                </div>
-            </div>
 
-            <div>
+                    <dialog class="dialogzinho">
 
-                <dialog class="dialogzinho">
-
-                    <div class="dialog">
-                        <div class="form">
+                        <div class="dialog">
                             <div class="form">
+                                <div class="form">
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="header">
-                            <h2>Cadastrar Empresa</h2>
-                            <i class="uil uil-times-circle" onclick='fechar()'></i>
-                        </div>
-                        <div id="form" class="form">
-                            <div class="containerInput">
-                                <label>Nome Fantasia</label>
-                                <input class="input margin" placeholder="Melvs" id="input_nome_empresa">
-                                <small>Error message</small>
+                            <div class="header">
+                                <h2>Cadastrar Empresa</h2>
+                                <i class="uil uil-times-circle" onclick='fechar()'></i>
                             </div>
-                            <div class="containerInput">
-                                <label>CNPJ</label>
-                                <input class="input margin" placeholder="XX.XXX.XXX/0001-XX" id="input_cnpj_empresa"
-                                    maxlength="14" onkeyup="cnpjPontos()">
-                                <small>Error message</small>
-                            </div>
-                            <div class="containerInput">
-                                <label>CEP</label>
-                                <input class="input margin" placeholder="00000-000" id="input_cep_empresa" maxlength="8"
-                                    onkeyup="cepPontos()">
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error message</small>
-                            </div>
-                            <div class="containerInput">
-                                <label>Cidade</label>
-                                <input class="input margin" placeholder="Parana" id="input_cidade_empresa">
-                                <small>Error message</small>
-                            </div>
-                            <div class="containerInput">
-                                <label>Estado</label>
-                                <select id="input_estado_empresa" class="input margin">
-                                    <option value="">Escolha um estado</option>
-                                    <option value="ac">Acre</option>
-                                    <option value="al">Alagoas</option>
-                                    <option value="ap">Amapa</option>
-                                    <option value="am">Amazonas</option>
-                                    <option value="ba">Bahia</option>
-                                    <option value="ce">Ceara</option>
-                                    <option value="df">Distrito Federal</option>
-                                    <option value="es">Espirito Santo</option>
-                                    <option value="go">Goiás</option>
-                                    <option value="ma">Maranhão </option>
-                                    <option value="mt">Mato Grosso</option>
-                                    <option value="ms">Mato Grosso do Sul</option>
-                                    <option value="mg">Minas Gerais</option>
-                                    <option value="pa">Pará</option>
-                                    <option value="pb">Paraíba</option>
-                                    <option value="pr">Paraná</option>
-                                    <option value="pe">Pernambuco</option>
-                                    <option value="pi">Piauí</option>
-                                    <option value="rj">Rio de Janeiro</option>
-                                    <option value="rn">Rio Grande do Norte</option>
-                                    <option value="rs">Rio Grande do Sul</option>
-                                    <option value="ro">Rondônia</option>
-                                    <option value="rr">Roraima</option>
-                                    <option value="sc">Santa Catarina</option>
-                                    <option value="sp">São Paulo</option>
-                                    <option value="se">Sergipe</option>
-                                    <option value="to">tocantins</option>
-                                </select>
-                                <small>Error message</small>
-                            </div><!-- Container input-->
-                            <button onclick='cadastrarEmpresa()'>Cadastrar</button>
-                        </div> <!-- formulario -->
-                    </div> <!-- div - menu -->
-                </dialog>
-            </div>
-    </div><!-- div - menu -->
+                            <div id="form" class="form">
+                                <div class="containerInput">
+                                    <label>Nome Fantasia</label>
+                                    <input class="input margin" placeholder="Melvs" id="input_nome_empresa">
+                                    <small>Error message</small>
+                                </div>
+                                <div class="containerInput">
+                                    <label>CNPJ</label>
+                                    <input class="input margin" placeholder="XX.XXX.XXX/0001-XX" id="input_cnpj_empresa"
+                                        maxlength="14" onkeyup="cnpjPontos()">
+                                    <small>Error message</small>
+                                </div>
+                                <div class="containerInput">
+                                    <label>CEP</label>
+                                    <input class="input margin" placeholder="00000-000" id="input_cep_empresa"
+                                        maxlength="8" onkeyup="cepPontos()">
+                                    <i class="fas fa-check-circle"></i>
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <small>Error message</small>
+                                </div>
+                                <div class="containerInput">
+                                    <label>Cidade</label>
+                                    <input class="input margin" placeholder="Parana" id="input_cidade_empresa">
+                                    <small>Error message</small>
+                                </div>
+                                <div class="containerInput">
+                                    <label>Estado</label>
+                                    <select id="input_estado_empresa" class="input margin">
+                                        <option value="">Escolha um estado</option>
+                                        <option value="ac">Acre</option>
+                                        <option value="al">Alagoas</option>
+                                        <option value="ap">Amapa</option>
+                                        <option value="am">Amazonas</option>
+                                        <option value="ba">Bahia</option>
+                                        <option value="ce">Ceara</option>
+                                        <option value="df">Distrito Federal</option>
+                                        <option value="es">Espirito Santo</option>
+                                        <option value="go">Goiás</option>
+                                        <option value="ma">Maranhão </option>
+                                        <option value="mt">Mato Grosso</option>
+                                        <option value="ms">Mato Grosso do Sul</option>
+                                        <option value="mg">Minas Gerais</option>
+                                        <option value="pa">Pará</option>
+                                        <option value="pb">Paraíba</option>
+                                        <option value="pr">Paraná</option>
+                                        <option value="pe">Pernambuco</option>
+                                        <option value="pi">Piauí</option>
+                                        <option value="rj">Rio de Janeiro</option>
+                                        <option value="rn">Rio Grande do Norte</option>
+                                        <option value="rs">Rio Grande do Sul</option>
+                                        <option value="ro">Rondônia</option>
+                                        <option value="rr">Roraima</option>
+                                        <option value="sc">Santa Catarina</option>
+                                        <option value="sp">São Paulo</option>
+                                        <option value="se">Sergipe</option>
+                                        <option value="to">tocantins</option>
+                                    </select>
+                                    <small>Error message</small>
+                                </div><!-- Container input-->
+                                <button onclick='cadastrarEmpresa()'>Cadastrar</button>
+                            </div> <!-- formulario -->
+                        </div> <!-- div - menu -->
+                    </dialog>
+                </div>
 
-</div> <!-- div - menu -->
+        </div> <!-- div - menu -->
+        <div class="listaConteudo">
+            <ul>
+              <li>
+                <div class="avatar">
+                    <img src="./assets/icons/user (1).svg" alt="">
+                </div>
+                <div class="descrisao">
 
-</div>
+                    Teste linha
+                </div>
+              </li>
+              <li>
+                <div class="avatar">
+                    <img src="./assets/icons/building.svg" alt="">
+                </div>
+                <div class="descrisao">
+
+                </div>
+              </li>
+            </ul>
+          </div>
+
+    </div>
 
 </html>
 
@@ -332,7 +323,7 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-window.location = 'cadastro_empresa.html'
+                window.location = 'cadastro_empresa.html'
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {

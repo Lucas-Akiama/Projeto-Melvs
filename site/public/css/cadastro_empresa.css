@@ -16,7 +16,7 @@ body{
 .add_emp{
     display: flex;
     justify-content: center;
-
+  flex-direction: column;
 }
 .dialogzinho{
     width: 100%;
@@ -50,7 +50,7 @@ body{
     display: flex;
     flex-direction: column;
     margin-left:50px;
-    width:70%;
+    width:90%;
     border: 1px solid #054A29;
     border-radius: 5px;
 }
@@ -62,6 +62,8 @@ body{
     flex-direction: row;
     justify-content: space-around;
     list-style: none;
+    background-color: yellow;
+    width: 100%;
 }
 
 
@@ -260,4 +262,50 @@ opacity: 0.5;
 }
 
 
+.listaConteudo {
+    display: flex;
+    flex-direction: column;
+    margin-left:50px;
+    width:90%;
+    border: 1px solid #054A29;
+    border-radius: 5px;
+}
+
+.listaConteudo ul {
+  list-style-type: none;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 0 15px;
+}
+.listaConteudo li {
+  width: 90%;
+  background: white;
+  border-radius: 8px;
+  margin-top: 20px;
+  overflow: hidden;
+  padding: 20px;  width: 90%;
+
+  position: relative;
+}
+.avatar {
+  background: #eaeaea;
+  border-radius: 4px;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar img {
+  width: 80px;
+  height: 80px;
+}
+
+.descrisao {
+  height: 80px;
+  margin-left: 20px;
+}
 
