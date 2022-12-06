@@ -36,7 +36,7 @@ router.post("/cadastrarEmpresa", function (req, res) {
     avisoController.cadastrarEmpresa(req, res);
 });
 
-router.post("/cadastrarEmpresaAdmin", function (req, res) {
+router.post("/cadastrarEmpresaAdmin/:id", function (req, res) {
     avisoController.cadastrarEmpresaAdmin(req, res);
 });
 
