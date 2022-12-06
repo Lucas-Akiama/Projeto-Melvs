@@ -337,7 +337,6 @@ background-color: var(--HoverMenu);
     border-top: 1px solid var(--TextoPreto);
     flex-direction: column;
     position: relative;
-    height: 50%;
     justify-content: end;
 
 }

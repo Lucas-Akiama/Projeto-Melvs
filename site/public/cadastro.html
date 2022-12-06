@@ -11,14 +11,14 @@
     <script src="./js/funcoes.js"></script>
 
 
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/style_geral.css">
-        <link rel="stylesheet" href="./css/cadastro.css">
-        <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
-    
-        <title>Registro | Melvs</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style_geral.css">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
+
+    <title>Registro | Melvs</title>
 </head>
 
 <body>
@@ -54,81 +54,83 @@
                 <span id="mensagem_erro"></span>
             </div>
         </div>
-    <div class="principal-cadastro">
-        <div class="esquerda-cadastro">
-            <img src="./assets/img/forms-animate.svg" class="esquerda-cadastro-imagem" alt="representação do cadastro">
-        </div>
-        <div class="direita-cadastro">
-            <div class="card-cadastro">
-                <h1>Registro</h1>
-                <div class="campo">
-                    <span class="span_titulo">Nome:</span>
-                    <input type="text" id="nome_input" placeholder="Nome e sobrenome">
-                    <span class="validacao" id="span_validacao_nome"></span>
-                </div>
-                <div class="campo">
-                    <span class="span_titulo">Email:</span>
-                    <input type="text" id="email_input" placeholder="usuario@email.com">
-                    <span class="validacao" id="span_validacao_email"></span>
-                </div>
-                <div class="campo">
-                    <span class="span_titulo">CPF:</span>
-                    <input type="text" maxlength="11" id="cpf_input" placeholder="XXX.XXX.XXX-XX" onkeyup="cpfPontos()">
-                    <span class="validacao" id="span_validacao_cpf"></span>
-                </div>
-                <div class="organizar-senhas">
-                    <div class="senha">
-                        <div class="campo">
-                            <span class="span_titulo">Senha:</span>
-                            <input type="password" id="senha_input" placeholder="••••••">
-                            <span class="validacao" id="span_validacao_senha"></span>
+        <div class="principal-cadastro">
+            <div class="esquerda-cadastro">
+                <img src="./assets/img/forms-animate.svg" class="esquerda-cadastro-imagem"
+                    alt="representação do cadastro">
+            </div>
+            <div class="direita-cadastro">
+                <div class="card-cadastro">
+                    <h1>Registro</h1>
+                    <div class="campo">
+                        <span class="span_titulo">Nome:</span>
+                        <input type="text" id="nome_input" placeholder="Nome e sobrenome">
+                        <span class="validacao" id="span_validacao_nome"></span>
+                    </div>
+                    <div class="campo">
+                        <span class="span_titulo">Email:</span>
+                        <input type="text" id="email_input" placeholder="usuario@email.com">
+                        <span class="validacao" id="span_validacao_email"></span>
+                    </div>
+                    <div class="campo">
+                        <span class="span_titulo">CPF:</span>
+                        <input type="text" maxlength="11" id="cpf_input" placeholder="XXX.XXX.XXX-XX"
+                            onkeyup="cpfPontos()">
+                        <span class="validacao" id="span_validacao_cpf"></span>
+                    </div>
+                    <div class="organizar-senhas">
+                        <div class="senha">
+                            <div class="campo">
+                                <span class="span_titulo">Senha:</span>
+                                <input type="password" id="senha_input" placeholder="••••••">
+                                <span class="validacao" id="span_validacao_senha"></span>
+                            </div>
+                        </div>
+                        <div class="senha">
+                            <div class="campo">
+                                <span class="span_titulo">Confirme a senha:</span>
+                                <input type="password" id="confirmacao_senha_input" placeholder="••••••">
+                                <span class="validacao" id="span_validacao_confirme_senha"></span>
+                            </div>
                         </div>
                     </div>
-                    <div class="senha">
-                        <div class="campo">
-                            <span class="span_titulo">Confirme a senha:</span>
-                            <input type="password" id="confirmacao_senha_input" placeholder="••••••">
-                            <span class="validacao" id="span_validacao_confirme_senha"></span>
-                        </div>
+                    <button class="botao-cadastro" onclick="cadastrar()">Registrar</button>
+                    <div id="div_aguardar" class="loading-div">
+                        <img src="./assets/carregando.gif" id="loading-gif">
                     </div>
                 </div>
-                <button class="botao-cadastro" onclick="cadastrar()">Registrar</button>
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/carregando.gif" id="loading-gif">
+                <div id="div_erros_login">
+
                 </div>
             </div>
-            <div id="div_erros_login">
-
-            </div>
         </div>
-    </div>
 
-    <footer>
-        <div class="container">
-            <div class="faleConosco">
-                <span class="titulo">Fale Conosco</span>
-                <div class="email">
-                    <img src="./assets/icons/mail.png" alt="">
-                    <span class="textoEmail">melvs@melvs.com</span>
+        <footer>
+            <div class="container">
+                <div class="faleConosco">
+                    <span class="titulo">Fale Conosco</span>
+                    <div class="email">
+                        <img src="./assets/icons/mail.png" alt="">
+                        <span class="textoEmail">melvs@melvs.com</span>
+                    </div>
+                    <div class="tel">
+                        <img src="./assets/icons/call.png" alt="" srcset="">
+                        <span class="textoTell">(11)91234-5678</span>
+                    </div>
                 </div>
-                <div class="tel">
-                    <img src="./assets/icons/call.png" alt="" srcset="">
-                    <span class="textoTell">(11)91234-5678</span>
+                <div class="imgFaleConosco">
+                    <img src="./assets/img/melvs_logo.png" alt="">
                 </div>
             </div>
-            <div class="imgFaleConosco">
-                <img src="./assets/img/melvs_logo.png" alt="">
-            </div>
-        </div>
-        <div class="hr">
+            <div class="hr">
 
-        </div>
-        <div class="container">
-            <div class="fimFooter">
-                <span>© 2022 Melvs | A Solução da Sua Plantação</span>
             </div>
-        </div>
-    </footer>
+            <div class="container">
+                <div class="fimFooter">
+                    <span>© 2022 Melvs | A Solução da Sua Plantação</span>
+                </div>
+            </div>
+        </footer>
 
 </body>
 
@@ -146,56 +148,89 @@
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
+        if (nomeVar.length < 3) {
+            span_validacao_nome.innerHTML = `Nome invalido`
+        } else {
+            span_validacao_nome.innerHTML = ''
+        }
+
+        if (emailVar.indexOf("@") > -1) {
+            span_validacao_email.innerHTML = ''
+        } else {
+            span_validacao_email.innerHTML = `Email invalido`
+        }
+
+        if (cpfVar.length == 14) {
+            span_validacao_cpf.innerHTML = ''
+        } else {
+            span_validacao_cpf.innerHTML = `CPF invalido`
+        }
+
+        if (senhaVar.length < 5) {
+            span_validacao_senha.innerHTML = `Senha fraca`
+        } else {
+            span_validacao_senha.innerHTML = ''
+        }
+
+        if (confirmacaoSenhaVar != senhaVar) {
+            span_validacao_confirme_senha.innerHTML = `Senha incorreta`
+        } else {
+            span_validacao_confirme_senha.innerHTML = ''
+
+        }
+        var bundinha = true
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || cpfVar == '') {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-
+            bundinha = false
             finalizarAguardar();
             return false;
         }
         else {
             setInterval(sumirMensagem, 5000)
         }
+        if (bundinha) {
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    nomeServer: nomeVar,
+                    cpfServer: cpfVar,
+                    emailServer: emailVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
 
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                cpfServer: cpfVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
+                console.log("resposta: ", resposta);
 
-            console.log("resposta: ", resposta);
+                if (resposta.ok) {
+                    cardErro.style.display = "block";
 
-            if (resposta.ok) {
-                cardErro.style.display = "block";
+                    /* mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login..."; */
 
-               /* mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login..."; */
+                    setTimeout(() => {
 
-                setTimeout(() => {
-                    
-                    window.location = "./tela_Inicial_Do_Grafico.html";
-                }, 2000)
-                
-                limparFormulario();
+                        window.location = "./tela_de_planos.html";
+                    }, 2000)
+
+                    limparFormulario();
+                    finalizarAguardar();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
                 finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        });
+            });
 
-        return false;
+            return false;
+        }
+
     }
 
     function sumirMensagem() {
