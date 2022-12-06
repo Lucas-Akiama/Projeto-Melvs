@@ -102,13 +102,13 @@
 
         <div class="container-duvidas">
             <div class="conteudo-duvida" id="comecando">
-                <div class="duvidas-cima">
+                <div class="duvidas-cima" onclick="botton()">
                     <h2>Acabei de contratar um plano da Melvs, o que faço? </h2>
                     <div id="ceta">
                         <i class="uil uil-arrow-down"></i>
                     </div>
                 </div>
-                <div class="texto-duvida">
+                <div class="texto-duvida2" id="texto1">
                     <span>
                         Primeiramente, obrigado por confiar o seu negócio conosco! <br>
                         Agora você deve entrar em contato conosco para fazer um agendamento de visita do nosso técnico
@@ -121,13 +121,13 @@
 
         <div class="container-duvidas">
             <div class="conteudo-duvida" id="comecando">
-                <div class="duvidas-cima">
+                <div class="duvidas-cima" onclick="botton1()">
                     <h2>O tecnico instalou o sensor, mas não sei como acessar a ferramenta</h2>
                     <div id="ceta">
                         <i class="uil uil-arrow-down"></i>
                     </div>
                 </div>
-                <div class="texto-duvida">
+                <div class="texto-duvida2" id="texto2">
                     <span>
                         Para acessar a ferramenta você deve fazer o login em nossa plataforma que você acessar clicando
                         <b><a href="./login.html">Aqui</a>!</b>
@@ -138,13 +138,13 @@
 
         <div class="container-duvidas">
             <div class="conteudo-duvida" id="comecando">
-                <div class="duvidas-cima">
+                <div class="duvidas-cima" onclick="botton2()">
                     <h2>Onde ficam os gráficos da ferramenta? </h2>
                     <div id="ceta">
                         <i class="uil uil-arrow-down"></i>
                     </div>
                 </div>
-                <div class="texto-duvida">
+                <div class="texto-duvida2" id="texto3">
                     <span>
                         Os gráficos podem ser acessados através de cada silo individualmente. Para ver os gráficos você
                         só precisa clicar em "Vizualizar Armazém"
@@ -155,13 +155,13 @@
 
         <div class="container-duvidas">
             <div class="conteudo-duvida" id="comecando">
-                <div class="duvidas-cima">
+                <div class="duvidas-cima" onclick="botton3()">
                     <h2>Quando a ferramenta está disponível?</h2>
                     <div id="ceta">
                         <i class="uil uil-arrow-down"></i>
                     </div>
                 </div>
-                <div class="texto-duvida">
+                <div class="texto-duvida2" id="texto4">
                     <span>
                         A nossa ferramenta é disponível 24h por dia, porém em casos de atualizações de novas funções
                         para você, nosso cliente, há a possibilidade do serviço ficar indisponível por um determinado
@@ -171,13 +171,13 @@
             </div>
         </div>
         <div class="conteudo-duvida" id="sensores">
-            <div class="duvidas-cima">
+            <div class="duvidas-cima" onclick="botton4()">
                 <h2>O gráfico não está funcionando!</h2>
                 <div id="ceta">
                     <i class="uil uil-arrow-down"></i>
                 </div>
             </div>
-            <div class="texto-duvida">
+            <div class="texto-duvida2" id="texto5">
                 <span>
                     O gráfico pode não estar funcionando por diversos motivos. <br>
                     Um desses pode ser por má conexão entre o sensor e o computador com qual está conectado. Verifique
@@ -191,13 +191,13 @@
 
     <div class="container-duvidas">
         <div class="conteudo-duvida" id="sensores">
-            <div class="duvidas-cima">
+            <div class="duvidas-cima" onclick="botton5()">
                 <h2>Qual o ambiente o sensor deve ficar para funcionar</h2>
                 <div id="ceta">
                     <i class="uil uil-arrow-down"></i>
                 </div>
             </div>
-            <div class="texto-duvida">
+            <div class="texto-duvida2" id="texto6">
                 <span>
                     O sensor deve ficar no topo do seu silo, de preferência um pouco longe de onde está a soja, uma
                     distância de 5 a 10 centímetros deve ser o suficiente para que o sensor capte os dados para enviar a
@@ -210,13 +210,13 @@
 
     <div class="container-duvidas">
         <div class="conteudo-duvida" id="sensores">
-            <div class="duvidas-cima">
+            <div class="duvidas-cima" onclick="botton6()">
                 <h2>Como funciona o sensor?</h2>
                 <div id="ceta">
                     <i class="uil uil-arrow-down"></i>
                 </div>
             </div>
-            <div class="texto-duvida">
+            <div class="texto-duvida2" id="texto7">
                 <span>
                     O sensor funciona captando os dados de dentro do silo após a secagem dos grãos. Esses dados são
                     enviados para o nosso banco de dados de onde mostramos através de gráficos para você
@@ -227,28 +227,36 @@
 
     <div class="container-duvidas">
         <div class="conteudo-duvida" id="sensores">
-            <div class="duvidas-cima">
-                <h2>Especificações do sensor</div>
+            <div class="duvidas-cima" onclick="botton7()">
+                <h2>Especificações do sensor</h2>
                     <div id="ceta">
-                    <i class="uil uil-arrow-down"></i>
+                        <i class="uil uil-arrow-down"></i>
                     </div>
-                </div>
-                    <div class="texto-duvida">
-                        <span>
-                            O sensor que utilizanos é o DHT11, esse sensor em sua estrutura tem quatro pinos para a
-                            conexão. Um dos
-                            pinos é o de energia que recebe 5v, outro recebe o aterramento do sistema, já o último é o
-                            que está
-                            transferindo os dados para serem processados.
-                        </span>
-                    </div>
+
+            </div>
         </div>
+        <div class="texto-duvida2" id="texto8">
+            <span>
+                O sensor que utilizanos é o DHT11, esse sensor em sua estrutura tem quatro pinos para a
+                conexão. Um dos
+                pinos é o de energia que recebe 5v, outro recebe o aterramento do sistema, já o último é o
+                que está
+                transferindo os dados para serem processados.
+            </span>
+        </div>
+    </div>
     </div>
 
     <div class="container-duvidas">
         <div class="conteudo-duvida" id="seguranca">
-            <h2>Meus dados estão seguros com a Melvs?<h2>
-                    <div class="texto-duvida">
+            <div class="duvidas-cima" onclick="botton8()">
+                <h2>Meus dados estão seguros com a Melvs?</h2>
+
+                <div id="ceta">
+                    <i class="uil uil-arrow-down"></i>
+                </div>
+            </div>
+                    <div class="texto-duvida2" id="texto9">
                         <span>
                             Com total certeza! <br>
                             Com a Melvs você pode confiar que os seus dados estão no maior nível de segurança em
@@ -260,8 +268,13 @@
 
     <div class="container-duvidas">
         <div class="conteudo-duvida" id="seguranca">
-            <h2>Como posso identificar um tecnico da Melvs?<h2>
-                    <div class="texto-duvida">
+            <div class="duvidas-cima" onclick="botton9()">
+                <h2>Como posso identificar um tecnico da Melvs?</h2>
+                <div id="ceta">
+                    <i class="uil uil-arrow-down"></i>
+                </div>
+            </div>
+                    <div class="texto-duvida2" id="texto10">
                         <span>
                             Os técnicos da Melvs que vão até a sua casa instalar o sensor em seus silos podem ser
                             facilmente identificados pelo uniforme e pelo código que precisa ser confirmado por você
@@ -273,8 +286,14 @@
 
     <div class="container-duvidas">
         <div class="conteudo-duvida" id="seguranca">
-            <h2>A estrutura colocada no meu silo vai funcionar?<h2>
-                    <div class="texto-duvida">
+            <div class="duvidas-cima" onclick="botton10()">
+
+                <h2>A estrutura colocada no meu silo vai funcionar?</h2>
+                <div id="ceta">
+                    <i class="uil uil-arrow-down"></i>
+                </div>
+            </div>
+                    <div class="texto-duvida2" id="texto11">
                         <span>
                             Os técnicos da Melvs analisam a melhor forma de fazer a estrutura para que seja a mais
                             durável o possível então não precisa se preocupar com a estrutura caindo sobre os seus
@@ -287,8 +306,13 @@
 
     <div class="container-duvidas">
         <div class="conteudo-duvida" id="seguranca">
-            <h2>Posso confiar nos dados que estão sendo mostrados?<h2>
-                    <div class="texto-duvida">
+            <div class="duvidas-cima" onclick="botton11()">
+                <h2>Posso confiar nos dados que estão sendo mostrados?</h2>
+                <div id="ceta">
+                    <i class="uil uil-arrow-down"></i>
+                </div>
+            </div>
+                    <div class="texto-duvida2" id="texto12">
                         <span>
                             Os dados que obtemos com a nossa tecnologia tem uma margem de apenas 2 graus célsius na
                             temperatura e de 2% na umidade então você pode confiar no nosso produto!
@@ -300,8 +324,13 @@
 
     <div class="container-duvidas">
         <div class="conteudo-duvida" id="financeiro">
-            <h2>Como funcionam os planos da Melvs?<h2>
-                    <div class="texto-duvida">
+            <div class="duvidas-cima" onclick="botton12()">
+                <h2>Como funcionam os planos da Melvs?</h2>
+                <div id="ceta">
+                    <i class="uil uil-arrow-down"></i>
+                </div>
+            </div>
+                    <div class="texto-duvida2" id="texto13">
                         <span>
                             Os planos da Melvs são cobrados mensalmente com diferentes níveis de valor, com esses níveis
                             diferentes também há uma diferença nas vantagens que se tem com cada um dos níveis.
@@ -312,8 +341,14 @@
 
     <div class="container-duvidas">
         <div class="conteudo-duvida" id="financeiro">
-            <h2>Quais são as formas de pagamento<h2>
-                    <div class="texto-duvida">
+            <div class="duvidas-cima" onclick="botton13()">
+
+                <h2>Quais são as formas de pagamento</h2>
+                <div id="ceta">
+                    <i class="uil uil-arrow-down"></i>
+                </div>
+            </div>
+                    <div class="texto-duvida2" id="texto14">
                         <span>
                             Aceitamos todas as formas de pagamento disponíveis no mercado, desde o boleto até o pix!
                         </span>
@@ -324,8 +359,14 @@
 
     <div class="container-duvidas">
         <div class="conteudo-duvida" id="quem-somos">
-            <h2>O que é a Melvs?<h2>
-                    <div class="texto-duvida">
+            <div class="duvidas-cima" onclick="botton14()">
+
+                <h2>O que é a Melvs?</h2>
+                <div id="ceta">
+                    <i class="uil uil-arrow-down"></i>
+                </div>
+            </div>
+                    <div class="texto-duvida2" id="texto15">
                         <span>
                             A Melvs é uma empresa de tecnologia que tem um foco em ajudar você, o produtor de grãos, a
                             melhor armazenar o seu grão e até ajudar você a melhorar as suas sacas para a venda!
@@ -336,8 +377,13 @@
 
     <div class="container-duvidas">
         <div class="conteudo-duvida" id="quem-somos">
-            <h2>Como trabalha a Melvs?<h2>
-                    <div class="texto-duvida">
+            <div class="duvidas-cima" onclick="botton15()">
+                <h2>Como trabalha a Melvs?</h2>
+                <div id="ceta">
+                    <i class="uil uil-arrow-down"></i>
+                </div>
+            </div>
+                    <div class="texto-duvida2" id="texto16">
                         <span>
                             A Melvs trabalha focando nos silos para que durante esse período você possa ter mais
                             controle e mais qualidade.
@@ -377,3 +423,198 @@
 </body>
 
 </html>
+
+<script>
+    var i1 = 0
+    var i2 = 0
+    var i3 = 0
+    var i4 = 0
+    var i5 = 0
+    var i6 = 0
+    var i7 = 0
+    var i8 = 0
+    var i9 = 0
+    var i10 = 0
+    var i11 = 0
+    var i12 = 0
+    var i13 = 0
+    var i14 = 0
+    var i15 = 0
+    var i16 = 0
+
+    function botton() {
+        if (i1 == 0) {
+            texto1.classList = "texto-duvida"
+            i1++
+        } else {
+            texto1.classList = "texto-duvida2"
+            i1 = 0
+        }
+
+
+    }
+    function botton1() {
+        if (i2 == 0) {
+            texto2.classList = "texto-duvida"
+            i2++
+        } else {
+            texto2.classList = "texto-duvida2"
+            i2 = 0
+        }
+
+
+    }
+    function botton2() {
+        if (i3 == 0) {
+            texto3.classList = "texto-duvida"
+            i3++
+        } else {
+            texto3.classList = "texto-duvida2"
+            i3 = 0
+        }
+
+
+    }
+    function botton3() {
+        if (i4 == 0) {
+            texto4.classList = "texto-duvida"
+            i4++
+        } else {
+            texto4.classList = "texto-duvida2"
+            i4 = 0
+        }
+
+
+    }
+    function botton4() {
+        if (i5 == 0) {
+            texto5.classList = "texto-duvida"
+            i5++
+        } else {
+            texto5.classList = "texto-duvida2"
+            i5 = 0
+        }
+
+
+    }
+    function botton5() {
+        if (i6 == 0) {
+            texto6.classList = "texto-duvida"
+            i6++
+        } else {
+            texto6.classList = "texto-duvida2"
+            i6 = 0
+        }
+
+
+    } function botton6() {
+        if (i7 == 0) {
+            texto7.classList = "texto-duvida"
+            i7++
+        } else {
+            texto7.classList = "texto-duvida2"
+            i7 = 0
+        }
+
+
+    }
+    function botton7() {
+        if (i8 == 0) {
+            texto8.classList = "texto-duvida"
+            i8++
+        } else {
+            texto8.classList = "texto-duvida2"
+            i8 = 0
+        }
+
+
+    } function botton8() {
+        if (i9 == 0) {
+            texto9.classList = "texto-duvida"
+            i9++
+        } else {
+            texto9.classList = "texto-duvida2"
+            i9 = 0
+        }
+
+
+    } function botton9() {
+        if (i10 == 0) {
+            texto10.classList = "texto-duvida"
+            i10++
+        } else {
+            texto10.classList = "texto-duvida2"
+            i10 = 0
+        }
+
+
+    } function botton10() {
+        if (i11 == 0) {
+            texto11.classList = "texto-duvida"
+            i11++
+        } else {
+            texto11.classList = "texto-duvida2"
+            i11 = 0
+        }
+
+
+    } function botton11() {
+        if (i12 == 0) {
+            texto12.classList = "texto-duvida"
+            i12++
+        } else {
+            texto12.classList = "texto-duvida2"
+            i12 = 0
+        }
+
+
+    } function botton12() {
+        if (i13 == 0) {
+            texto13.classList = "texto-duvida"
+            i13++
+        } else {
+            texto13.classList = "texto-duvida2"
+            i13 = 0
+        }
+
+
+    } function botton13() {
+        if (i14 == 0) {
+            texto14.classList = "texto-duvida"
+            i14++
+        } else {
+            texto14.classList = "texto-duvida2"
+            i14 = 0
+        }
+
+
+    } function botton14() {
+        if (i15 == 0) {
+            texto15.classList = "texto-duvida"
+            i15++
+        } else {
+            texto15.classList = "texto-duvida2"
+            i15 = 0
+        }
+
+
+    } function botton15() {
+        if (i16 == 0) {
+            texto16.classList = "texto-duvida"
+            i16++
+        } else {
+            texto16.classList = "texto-duvida2"
+            i16 = 0
+        }
+
+
+    } function botton16() {
+        if (i17 == 0) {
+            texto17.classList = "texto-duvida"
+            i17++
+        } else {
+            texto17.classList = "texto-duvida2"
+            i17 = 0
+        }
+    }
+</script>
