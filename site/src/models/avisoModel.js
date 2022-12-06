@@ -98,7 +98,7 @@ function cadastrarFuncionario(cnpj,cpf) {
 function cadastrarEmpresaAdmin(cpf, cnpj) {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarEmpresaFuncionario()",cpf, cnpj);
     var instrucao = `
-    insert into relacao_usuario_empresa (fkUsuario,fkTipoPerfil,fkEmpresa) values ('${cpf}',1,'${cnpj}');
+    insert into relacao_usuario_empresa (fkUsuario,fkEmpresa) values ('${cpf}','${cnpj}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

@@ -41,7 +41,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="./tela_Inicial_Do_Grafico.html">
 
                         <!-- Imagem do ICONE DO planos-->
                         <span class="icone"> <i class="uil uil-home"></i> </span>
@@ -89,11 +89,21 @@
                     </li>
                 </div>
                 <li>
-                    <a href="#">
+                    <a href="./configuracoes.html">
 
                         <!-- Imagem do ICONE DE CONFIGURAÇÕES -->
                         <span class="icone"><i class="uil uil-cog"></i></span>
                         <span class="titulo"> Configurações</span>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="http://suporteMelvs.auvo.com.br">
+
+                        <!-- Imagem do ICONE DE SUPORTE -->
+                        <span class="icone"><i class="uil uil-comment-question"></i>
+                        </span>
+                        <span class="titulo"> Suporte</span>
 
                     </a>
                 </li>
@@ -107,7 +117,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="./index.html">
 
                         <!-- Botão de Sair  -->
                         <span class="icone"><i class="uil uil-signout"></i> </span>
@@ -156,116 +166,85 @@
     <div class="add_emp">
         <div class="lista_emp">
             <h1 class="titulo_empresa">Empresas</h1>
-            <div class="lista">
-                <div class="itens_lista" id="lista_nome_empresa">
-                    <li>Nome</li>
-                    <div class="div_lista_armazem" id="div_nome_empresa"></div>
-                </div>
-                <button onclick="modal()">asdsada</button>
-                <div class="itens_lista" id="lista_cnpj">
-                    <li>Cnpj</li>
-                    <div class="div_lista_armazem" id="div_cnpj"></div>
-                </div>
-                <div class="itens_lista" id="lista_cep">
-                    <li>Cep</li>
-                    <div class="div_lista_armazem" id="div_cep"></div>
-                </div>
-                <div class="itens_lista" id="lista_cidade">
-                    <li>Cidade</li>
-                    <div class="div_lista_armazem" id="div_cidade"></div>
-                </div>
-                <div class="itens_lista" id="lista_estado">
-                    <li>Estado</li>
-                    <div class="div_lista_armazem" id="div_estado"></div>
-                </div>
-                <div class="itens_lista" id="lista_omplemento">
-                    <li>Complemento</li>
-                    <div class="div_lista_armazem" id="div_complemento"></div>
-                </div>
-            </div>
 
-            <div>
+            <dialog class="dialogzinho">
 
-                <dialog class="dialogzinho">
+                <div class="dialog">
 
-                    <div class="dialog">
-                        <div class="form">
-                            <div class="form">
-
-                            </div>
+                    <div class="header">
+                        <h2>Cadastrar Empresa</h2>
+                        <i class="uil uil-times-circle" onclick='fechar()'></i>
+                    </div>
+                    <div id="form" class="form">
+                        <div class="containerInput">
+                            <input class="input margin" placeholder="Nome Fantasia" id="input_nome_empresa">
                         </div>
-                        <div class="header">
-                            <h2>Cadastrar Empresa</h2>
-                            <i class="uil uil-times-circle" onclick='fechar()'></i>
+                        <div class="containerInput">
+                            <input class="input margin" placeholder="CNPJ" id="input_cnpj_empresa"
+                                maxlength="14" onkeyup="cnpjPontos()">
                         </div>
-                        <div id="form" class="form">
+                        <div class="cep-cidade">
                             <div class="containerInput">
-                                <label>Nome Fantasia</label>
-                                <input class="input margin" placeholder="Melvs" id="input_nome_empresa">
-                                <small>Error message</small>
-                            </div>
-                            <div class="containerInput">
-                                <label>CNPJ</label>
-                                <input class="input margin" placeholder="XX.XXX.XXX/0001-XX" id="input_cnpj_empresa"
-                                    maxlength="14" onkeyup="cnpjPontos()">
-                                <small>Error message</small>
-                            </div>
-                            <div class="containerInput">
-                                <label>CEP</label>
-                                <input class="input margin" placeholder="00000-000" id="input_cep_empresa" maxlength="8"
-                                    onkeyup="cepPontos()">
+                                <input class="input margin" placeholder="CEP" id="input_cep_empresa" maxlength="8"
+                                onkeyup="cepPontos()">
                                 <i class="fas fa-check-circle"></i>
                                 <i class="fas fa-exclamation-circle"></i>
-                                <small>Error message</small>
                             </div>
                             <div class="containerInput">
-                                <label>Cidade</label>
-                                <input class="input margin" placeholder="Parana" id="input_cidade_empresa">
-                                <small>Error message</small>
+                                <input class="input margin" placeholder="Cidade" id="input_cidade_empresa">
                             </div>
                             <div class="containerInput">
-                                <label>Estado</label>
-                                <select id="input_estado_empresa" class="input margin">
-                                    <option value="">Escolha um estado</option>
-                                    <option value="ac">Acre</option>
-                                    <option value="al">Alagoas</option>
-                                    <option value="ap">Amapa</option>
-                                    <option value="am">Amazonas</option>
-                                    <option value="ba">Bahia</option>
-                                    <option value="ce">Ceara</option>
-                                    <option value="df">Distrito Federal</option>
-                                    <option value="es">Espirito Santo</option>
-                                    <option value="go">Goiás</option>
-                                    <option value="ma">Maranhão </option>
-                                    <option value="mt">Mato Grosso</option>
-                                    <option value="ms">Mato Grosso do Sul</option>
-                                    <option value="mg">Minas Gerais</option>
-                                    <option value="pa">Pará</option>
-                                    <option value="pb">Paraíba</option>
-                                    <option value="pr">Paraná</option>
-                                    <option value="pe">Pernambuco</option>
-                                    <option value="pi">Piauí</option>
-                                    <option value="rj">Rio de Janeiro</option>
-                                    <option value="rn">Rio Grande do Norte</option>
-                                    <option value="rs">Rio Grande do Sul</option>
-                                    <option value="ro">Rondônia</option>
-                                    <option value="rr">Roraima</option>
-                                    <option value="sc">Santa Catarina</option>
-                                    <option value="sp">São Paulo</option>
-                                    <option value="se">Sergipe</option>
-                                    <option value="to">tocantins</option>
-                                </select>
-                                <small>Error message</small>
-                            </div><!-- Container input-->
-                            <button onclick='cadastrarEmpresa()'>Cadastrar</button>
-                        </div> <!-- formulario -->
-                    </div> <!-- div - menu -->
-                </dialog>
-            </div>
-        </div> <!-- div - menu -->
-    </div><!-- div - menu -->
+                                <input class="input margin" placeholder="Complemento" id="input_complemento_empresa">
+                            </div>
+                        </div>
+                        <div class="containerInput">
+                            <select id="input_estado_empresa" class="input margin">
+                                <option value="">Escolha um estado</option>
+                                <option value="ac">Acre</option>
+                                <option value="al">Alagoas</option>
+                                <option value="ap">Amapa</option>
+                                <option value="am">Amazonas</option>
+                                <option value="ba">Bahia</option>
+                                <option value="ce">Ceara</option>
+                                <option value="df">Distrito Federal</option>
+                                <option value="es">Espirito Santo</option>
+                                <option value="go">Goiás</option>
+                                <option value="ma">Maranhão </option>
+                                <option value="mt">Mato Grosso</option>
+                                <option value="ms">Mato Grosso do Sul</option>
+                                <option value="mg">Minas Gerais</option>
+                                <option value="pa">Pará</option>
+                                <option value="pb">Paraíba</option>
+                                <option value="pr">Paraná</option>
+                                <option value="pe">Pernambuco</option>
+                                <option value="pi">Piauí</option>
+                                <option value="rj">Rio de Janeiro</option>
+                                <option value="rn">Rio Grande do Norte</option>
+                                <option value="rs">Rio Grande do Sul</option>
+                                <option value="ro">Rondônia</option>
+                                <option value="rr">Roraima</option>
+                                <option value="sc">Santa Catarina</option>
+                                <option value="sp">São Paulo</option>
+                                <option value="se">Sergipe</option>
+                                <option value="to">tocantins</option>
+                            </select>
+                        </div>
 
-</div> <!-- div - menu -->
+                        <!-- Container input-->
+                        <button onclick='cadastrarEmpresa()' class="input margin">Cadastrar</button>
+                    </div> <!-- formulario -->
+                </div> <!-- div - menu -->
+            </dialog>
+        </div>
+
+    </div> <!-- div - menu -->
+    <div class="listaConteudo">
+        <div class="cadastrar">
+            <button onclick="modal()"><i class="uil uil-building"></i>     Cadastrar Empresa</button>
+        </div>
+        <ul id="listaEmpresa">
+        </ul>
+    </div>
 
 </div>
 
@@ -290,6 +269,7 @@
             cep: input_cep_empresa.value,
             cidade: input_cidade_empresa.value,
             estado: input_estado_empresa.value,
+            complemento: input_complemento_empresa.value
         }
 
         fetch(`/avisos/cadastrarEmpresa`, {
@@ -319,11 +299,10 @@
     var id = sessionStorage.ID_USUARIO
     function cadastrarEmpresaAdmin() {
         var dadosInput = {
-            cnpj: input_cnpj_empresa.value,
-            cpf: id
+            cnpj: input_cnpj_empresa.value
         }
 
-        fetch(`/avisos/cadastrarEmpresaAdmin`, {
+        fetch(`/avisos/cadastrarEmpresaAdmin/${id}`, {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
@@ -334,9 +313,7 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                window.location = "/dashboard/mural.html";
-                limparFormulario();
+                window.location = 'cadastro_empresa.html'
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -362,11 +339,35 @@
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
                     for (let i = 0; i < resposta.length; i++) {
                         var publicacao = resposta[i];
+                        listaEmpresa.innerHTML += `
 
-                        div_nome_empresa.innerHTML += `${publicacao.nomeFantasia} <br>`;
-                        div_cnpj.innerHTML += `${publicacao.cnpj} <br>`;
-                        div_cep.innerHTML += `${publicacao.cep} <br>`;
-                        div_complemento.innerHTML += `${publicacao.div_complemento} <br>`;
+                        <li>
+                    <div class="avatar">
+                    <img src="./assets/icons/building.svg" alt="">
+                </div>
+                <div class="descrisao">
+                    <span>                   
+                        Nome fantasia: ${publicacao.nomeFantasia}
+                    </span>
+                    <span>
+                        CNPJ: ${publicacao.cnpj}
+                    </span>
+                    <span>
+                        CEP: ${publicacao.cep}
+                    </span>
+                    <span>                   
+                        Cidade: ${publicacao.cidade}
+                    </span>
+                    <span>                   
+                        Estado: ${publicacao.estado}
+                    </span>
+                    <span>                   
+                        Complemento: ${publicacao.complemento}
+                    </span>
+                    
+                </div>
+            </li>
+        `
                     }
 
                 });

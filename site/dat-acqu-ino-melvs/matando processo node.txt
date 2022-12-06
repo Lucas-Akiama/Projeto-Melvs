@@ -1,0 +1,13 @@
+1- Abrir CMD na pasta (dat-acqu-ino)
+
+2- Comando "npm start" no CMD
+
+3- Abrir um novo CMD na pasta "dat-acqu-ino" (NÃO FECHAR O PRIMEIRO CMD)
+
+4- Comando "netstat -ano" no segundo CMD
+
+5- Anotar o PID do endereço local (3300)
+
+6- Comando "taskkill /pid (pid da porta 3300) /f" 
+
+
