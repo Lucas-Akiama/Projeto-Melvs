@@ -165,8 +165,8 @@
                 </div>
                 <div class="contador">
                     <h2>Quantidade de vezes que sairam do ideal:</h2>
-                    <span>Temperatura: <b>X</b> vezes</span>
-                    <span>Umidade: <b>X</b> vezes</span>
+                    <span>Temperatura:  <b><span id="span_temperatura">X</span></b> vezes</span>
+                    <span>Umidade: <b><span id="span_umidade">X</span></b> vezes</span>
                 </div>
             </div>
             <div class="grafico-linha">
@@ -234,12 +234,12 @@
             label: 'Temperatura Média',
             backgroundColor: 'rgba(247, 45, 45)',
             borderColor: 'rgba(247, 45, 45)',
-            data: [20, 21, 19, 19],
+            data: [15, 13, 13.5, 14],
         }, {
             label: 'Umidade Média',
             backgroundColor: 'rgba(25, 25, 251)',
             borderColor: 'rgba(25, 25, 251)',
-            data: [65, 63, 65, 67],
+            data: [11, 12, 12.7, 11],
         }
         ]
     };
@@ -263,13 +263,13 @@
             backgroundColor: 'rgba(247, 45, 45)',
             borderColor: 'rgba(239,203,198,1)',
             tension: 0.5,
-            data: [9, 14, 11, 13, 15, 8, 10, 12, 9, 13, 16, 11],
+            data: [9, 12, 11, 13, 15, 8, 10, 12, 9, 13, 14, 11],
         }, {
             label: 'Umidade Média',
             backgroundColor: 'rgba(25, 25, 251)',
-            borderColor: 'rgba(25, 25, 251)',
+            borderColor: 'rgba(198, 203, 239,1)',
             tension: 0.5,
-            data: [3, 7, 5, 1, 2, 2, 6, 12, 13, 9, 5, 1],
+            data: [10, 8, 9, 11, 9, 13, 15, 13, 11, 10, 8, 10],
         }
         ]
     };
@@ -406,7 +406,7 @@
         btnExibir.classList.remove("btn-white")
         btnExibir.classList.add("btn-pink")
     }
-
+        
     function obterDadosGrafico(idArmazem) {
 
         alterarTitulo(idArmazem)
@@ -420,8 +420,10 @@
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
-
+                    
                     plotarGrafico(resposta, idArmazem);
+
+                    
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -490,7 +492,8 @@
 
         setTimeout(() => atualizarGrafico(idArmazem, dados, myChart2), 2000);
     }
-
+    var temp_fora_ideal = 0;
+    var umidade_fora_ideal = 0;
     function atualizarGrafico(idArmazem, dados, myChart2) {
 
         fetch(`/medidas/tempo-real/${idArmazem}`, { cache: 'no-store' }).then(function (response) {
@@ -499,8 +502,16 @@
 
                     console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
                     console.log(`Dados atuais do gráfico:`);
-                    console.log(dados);
-
+                    console.log(dados);     
+                   
+                    if(novoRegistro[0].temperatura > 16){
+                        temp_fora_ideal+= 1
+                        span_temperatura.innerHTML = temp_fora_ideal 
+                    }
+                    if(novoRegistro[0].umidade > 13){
+                        umidade_fora_ideal +=1
+                        span_umidade.innerHTML = umidade_fora_ideal
+                    }
                     if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
                         console.log("---------------------------------------------------------------")
                         console.log("Como não há dados novos para captura, o gráfico não atualizará.")
