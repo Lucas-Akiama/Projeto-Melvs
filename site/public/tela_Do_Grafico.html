@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
-    <script src="gauge.min.js"></script>
+    <script src="./dist/gauge.min.js"></script>
 </head>
 
 <body>
@@ -263,13 +263,13 @@
             backgroundColor: 'rgba(247, 45, 45)',
             borderColor: 'rgba(239,203,198,1)',
             tension: 0.5,
-            data: [20, 21, 19, 19, 20, 21, 19, 19, 20, 21, 19, 19],
+            data: [9, 14, 11, 13, 15, 8, 10, 12, 9, 13, 16, 11],
         }, {
             label: 'Umidade Média',
             backgroundColor: 'rgba(25, 25, 251)',
             borderColor: 'rgba(25, 25, 251)',
             tension: 0.5,
-            data: [65, 63, 65, 67, 65, 63, 65, 67, 65, 63, 65, 67],
+            data: [3, 7, 5, 1, 2, 2, 6, 12, 13, 9, 5, 1],
         }
         ]
     };
@@ -529,7 +529,7 @@
                         pointer: {
                             length: 0.5,
                             strokeWidth: 0.035,
-                            color: '#054A29'
+                            color: '#d62828'
                         },
                         staticLabels: {
                             font: "10px sans-serif",
@@ -584,6 +584,8 @@
                     };
                     var target_umidade = document.getElementById('gauge-umidade');
                     var gauge_umidade = new Gauge(target_umidade).setOptions(opts_umidade);
+
+                    console.log(novoRegistro[0])
 
                     gauge_umidade.maxValue = 40;
                     gauge_umidade.setMinValue(0);
