@@ -19,7 +19,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon" />
+
     <script src="./dist/gauge.min.js"></script>
+
 </head>
 
 <body>
@@ -178,6 +180,7 @@
                     <span>Temperatura:  <b><span id="span_temperatura">X</span></b> vezes</span>
                     <span>Umidade: <b><span id="span_umidade">X</span></b> vezes</span>
                 </div>
+
             </div>
             <div class="grafico-linha">
                 <canvas id="myChartCanvas"></canvas>
@@ -280,6 +283,7 @@
             borderColor: 'rgba(198, 203, 239,1)',
             tension: 0.5,
             data: [10, 8, 9, 11, 9, 13, 15, 13, 11, 10, 8, 10],
+
         }
         ]
     };
@@ -433,7 +437,6 @@
                     
                     plotarGrafico(resposta, idArmazem);
 
-                    
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -502,8 +505,10 @@
 
         setTimeout(() => atualizarGrafico(idArmazem, dados, myChart2), 2000);
     }
+
     var temp_fora_ideal = 0;
     var umidade_fora_ideal = 0;
+
     function atualizarGrafico(idArmazem, dados, myChart2) {
 
         fetch(`/medidas/tempo-real/${idArmazem}`, { cache: 'no-store' }).then(function (response) {
@@ -522,6 +527,7 @@
                         umidade_fora_ideal +=1
                         span_umidade.innerHTML = umidade_fora_ideal
                     }
+                    
                     if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
                         console.log("---------------------------------------------------------------")
                         console.log("Como não há dados novos para captura, o gráfico não atualizará.")
@@ -551,6 +557,7 @@
                             length: 0.5,
                             strokeWidth: 0.035,
                             color: '#d62828'
+
                         },
                         staticLabels: {
                             font: "10px sans-serif",
